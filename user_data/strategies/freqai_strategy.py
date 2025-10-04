@@ -24,6 +24,37 @@ class freqai_strategy(IStrategy):
         dataframe[f"future_max_{period}"] = dataframe["high"].rolling(period).max().shift(-period)
         return dataframe
 
+    def populate_indicators(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
+        """
+        Adds technical indicators to the dataframe.
+        This function is called by FreqAI to add features for training.
+        """
+        # Momentum Indicators
+        dataframe['rsi'] = ta.RSI(dataframe)
+        dataframe['mfi'] = ta.MFI(dataframe)
+        dataframe['adx'] = ta.ADX(dataframe)
+        macd = ta.MACD(dataframe)
+        dataframe['macd'] = macd['macd']
+        dataframe['macdsignal'] = macd['macdsignal']
+        dataframe['macdhist'] = macd['macdhist']
+
+        # Trend Indicators
+        dataframe['ema_20'] = ta.EMA(dataframe, timeperiod=20)
+        dataframe['ema_50'] = ta.EMA(dataframe, timeperiod=50)
+        dataframe['ema_100'] = ta.EMA(dataframe, timeperiod=100)
+
+        # Volatility Indicators
+        bollinger = qtpylib.bollinger_bands(qtpylib.typical_price(dataframe), window=20, stds=2)
+        dataframe['bb_lowerband'] = bollinger['lower']
+        dataframe['bb_middleband'] = bollinger['mid']
+        dataframe['bb_upperband'] = bollinger['upper']
+        dataframe['atr'] = ta.ATR(dataframe)
+
+        # Volume Indicators
+        dataframe['obv'] = ta.OBV(dataframe)
+
+        return dataframe
+
     def feature_engineering_expand_basic(
         self, dataframe: DataFrame, metadata: dict, **kwargs
     ) -> DataFrame:
@@ -31,29 +62,7 @@ class freqai_strategy(IStrategy):
         Adds technical indicators to the dataframe.
         This function is called by FreqAI to add features for training.
         """
-        # Momentum Indicators
-        dataframe["rsi"] = ta.RSI(dataframe)
-        dataframe["mfi"] = ta.MFI(dataframe)
-        dataframe["adx"] = ta.ADX(dataframe)
-        macd = ta.MACD(dataframe)
-        dataframe["macd"] = macd["macd"]
-        dataframe["macdsignal"] = macd["macdsignal"]
-        dataframe["macdhist"] = macd["macdhist"]
-
-        # Trend Indicators
-        dataframe["ema_20"] = ta.EMA(dataframe, timeperiod=20)
-        dataframe["ema_50"] = ta.EMA(dataframe, timeperiod=50)
-        dataframe["ema_100"] = ta.EMA(dataframe, timeperiod=100)
-
-        # Volatility Indicators
-        bollinger = qtpylib.bollinger_bands(qtpylib.typical_price(dataframe), window=20, stds=2)
-        dataframe["bb_lowerband"] = bollinger["lower"]
-        dataframe["bb_middleband"] = bollinger["mid"]
-        dataframe["bb_upperband"] = bollinger["upper"]
-        dataframe["atr"] = ta.ATR(dataframe)
-
-        # Volume Indicators
-        dataframe["obv"] = ta.OBV(dataframe)
+        dataframe = self.populate_indicators(dataframe, metadata)
 
         return dataframe
 
@@ -64,11 +73,9 @@ class freqai_strategy(IStrategy):
         """
         # For this baseline, we're predicting if the price will simply
         # increase in the next 10 candles.
-        dataframe["target_profit"] = (dataframe["future_max_10"] > dataframe["close"]).astype(int)
-        return dataframe
-
-    def populate_indicators(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
-        # The indicators are defined in feature_engineering_expand_basic
+        dataframe["target_profit"] = (
+            dataframe["future_max_10"] > dataframe["close"]
+        ).astype(int)
         return dataframe
 
     def populate_entry_trend(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
