@@ -56,12 +56,8 @@
             ]
         },
         "data_split_parameters": {
-            "train_split_ratio": 0.85
+            "train_size": 0.85
         },
-        "freqaimodel": "LightGBMClassifier",
-        "triggers": {
-            "buy_trigger": "&.pred > {buy_pred_threshold}",
-            "sell_trigger": "&.pred < 0.49"
-        }
+        "freqaimodel": "LightGBMRegressor",
     }
 }

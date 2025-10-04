@@ -341,5 +341,5 @@ exclude = [
 ]
 
 [tool.codespell]
-ignore-words-list = "coo,fo,strat,zar,selectin"
+ignore-words-list = "coo,fo,strat,zar,selectin,bu,sizin,aktive,stil"
 skip="*.svg,./user_data,freqtrade/rpc/api_server/ui/installed,freqtrade/exchange/*.json"
