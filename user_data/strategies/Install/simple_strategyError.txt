@@ -1,0 +1,187 @@
+total 164K
+drwxr-xr-x  3 tarik tarik 4.0K Sep 27 02:11 .
+drwxr-xr-x 25 tarik tarik 4.0K Sep 27 01:45 ..
+-rw-r--r--  1 tarik tarik 1.3K Sep 27 01:00 __init__.py
+drwxr-xr-x  2 tarik tarik 4.0K Sep 27 02:03 __pycache__
+-rw-r--r--  1 tarik tarik 8.2K Sep 27 01:00 hyper.py
+-rw-r--r--  1 tarik tarik 6.0K Sep 27 01:00 informative_decorator.py
+-rw-r--r--  1 tarik tarik  79K Sep 27 01:00 interface.py
+-rw-r--r--  1 tarik tarik  13K Sep 27 01:00 parameters.py
+-rw-r--r--  1 tarik tarik 2.8K Sep 27 02:11 simple_strategy.py
+-rw-r--r--  1 tarik tarik 7.1K Sep 27 01:00 strategy_helper.py
+-rw-r--r--  1 tarik tarik 1.7K Sep 27 01:00 strategy_validation.py
+-rw-r--r--  1 tarik tarik 1.7K Sep 27 01:00 strategy_wrapper.py
+-rw-r--r--  1 tarik tarik  11K Sep 27 01:00 strategyupdater.py
+(.venv) tarik@Duo ~/git/freqtrade/freqtrade/strategy
+$ cd ../..
+(.venv) tarik@Duo ~/git/freqtrade
+$ ls -l freqtrade/strategy/simple_strategy.py
+-rw-r--r-- 1 tarik tarik 2866 Sep 27 02:11 freqtrade/strategy/simple_strategy.py
+(.venv) tarik@Duo ~/git/freqtrade
+$ cat freqtrade/strategy/simple_strategy.py
+# --- Do not remove these libs ---
+from freqtrade.strategy import IStrategy
+from pandas import DataFrame
+# --------------------------------
+
+# Add your lib to import here
+import talib.abstract as ta
+
+class Simple(IStrategy):
+    """
+    This is a sample strategy to inspire you.
+    More information on writing strategies can be found here:
+    https://www.freqtrade.io/en/stable/strategy-customization/
+
+    The strategy uses a simple EMA crossover to determine buy and sell signals.
+    """
+    # Strategy interface version - allow new iterations of the strategy interface.
+    # Check the documentation or the Sample strategy to get the latest version.
+    INTERFACE_VERSION = 3
+
+    # Minimal ROI designed for the strategy.
+    # This attribute will be overridden if the config file contains "minimal_roi".
+    minimal_roi = {
+        "0": 0.01
+    }
+
+    # Optimal stoploss designed for the strategy.
+    # This attribute will be overridden if the config file contains "stoploss".
+    stoploss = -0.05
+
+    # Trailing stoploss
+    trailing_stop = False
+    # trailing_only_offset_is_reached = False
+    # trailing_stop_positive = 0.01
+    # trailing_stop_positive_offset = 0.0  # Disabled
+
+    # Optimal timeframe for the strategy.
+    timeframe = '5m'
+
+    # Run "populate_indicators()" only for new candle.
+    process_only_new_candles = True
+
+    # These values can be overridden in the config.
+    use_exit_signal = True
+    exit_profit_only = False
+    ignore_roi_if_entry_signal = False
+
+    # Number of candles the strategy requires before producing valid signals
+    startup_trend_req = 20
+
+    def populate_indicators(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
+        """
+        Adds several different TA indicators to the given DataFrame
+        """
+        # EMA - Exponential Moving Average
+        dataframe['ema20'] = ta.EMA(dataframe, timeperiod=20)
+        dataframe['ema50'] = ta.EMA(dataframe, timeperiod=50)
+
+        return dataframe
+
+    def populate_entry_trend(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
+        """
+        Based on TA indicators, populates the entry signal for the given dataframe
+        """
+        dataframe.loc[
+            (
+                (dataframe['ema20'] > dataframe['ema50']) &  # crossover
+                (dataframe['volume'] > 0)  # Make sure Volume is not 0
+            ),
+            'enter_long'] = 1
+
+        return dataframe
+
+    def populate_exit_trend(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
+        """
+        Based on TA indicators, populates the exit signal for the given dataframe
+        """
+        dataframe.loc[
+            (
+                (dataframe['ema20'] < dataframe['ema50']) &  # crossunder
+                (dataframe['volume'] > 0)  # Make sure Volume is not 0
+            ),
+            'exit_long'] = 1
+        return dataframe
+(.venv) tarik@Duo ~/git/freqtrade
+$ freqtrade backtesting --strategy simple
+2025-09-27 02:13:13,045 - freqtrade - INFO - freqtrade 2025.9-dev-70a25f983
+2025-09-27 02:13:13,403 - numexpr.utils - INFO - Note: NumExpr detected 20 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of
+16.
+2025-09-27 02:13:13,403 - numexpr.utils - INFO - NumExpr defaulting to 16 threads.
+2025-09-27 02:13:14,810 - freqtrade.configuration.load_config - INFO - Using config: config.json ...
+2025-09-27 02:13:14,812 - freqtrade.loggers - INFO - Enabling colorized output.
+2025-09-27 02:13:14,813 - freqtrade.loggers - INFO - Logfile configured
+2025-09-27 02:13:14,813 - freqtrade.loggers - INFO - Verbosity set to 0
+2025-09-27 02:13:14,813 - freqtrade.configuration.configuration - INFO - Using max_open_trades: 3 ...
+2025-09-27 02:13:14,814 - freqtrade.configuration.configuration - INFO - Using user-data directory: /home/tarik/git/freqtrade/user_data ...
+2025-09-27 02:13:14,814 - freqtrade.configuration.configuration - INFO - Using data directory:
+/home/tarik/git/freqtrade/user_data/data/binance ...
+2025-09-27 02:13:14,814 - freqtrade.configuration.configuration - INFO - Parameter --cache=day detected ...
+2025-09-27 02:13:14,815 - freqtrade.exchange.check_exchange - INFO - Checking exchange...
+2025-09-27 02:13:14,821 - freqtrade.exchange.check_exchange - INFO - Exchange "binance" is officially supported by the Freqtrade development
+team.
+2025-09-27 02:13:14,822 - freqtrade.configuration.configuration - INFO - Using pairlist from configuration.
+2025-09-27 02:13:14,822 - freqtrade.configuration.config_validation - INFO - Validating configuration ...
+2025-09-27 02:13:14,824 - freqtrade.commands.optimize_commands - INFO - Starting freqtrade in Backtesting mode
+2025-09-27 02:13:14,825 - freqtrade.exchange.exchange - INFO - Instance is running with dry_run enabled
+2025-09-27 02:13:14,825 - freqtrade.exchange.exchange - INFO - Using CCXT 4.5.5
+2025-09-27 02:13:14,839 - freqtrade.exchange.exchange - INFO - Using Exchange "Binance"
+2025-09-27 02:13:16,908 - freqtrade.resolvers.exchange_resolver - INFO - Using resolved exchange 'Binance'...
+2025-09-27 02:13:16,910 - freqtrade - ERROR - Impossible to load Strategy 'simple'. This class does not exist or contains Python code errors.
+(.venv) tarik@Duo ~/git/freqtrade
+$ freqtrade backtesting --strategy simple_strategy.py
+2025-09-27 02:13:35,259 - freqtrade - INFO - freqtrade 2025.9-dev-70a25f983
+2025-09-27 02:13:35,418 - numexpr.utils - INFO - Note: NumExpr detected 20 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of
+16.
+2025-09-27 02:13:35,418 - numexpr.utils - INFO - NumExpr defaulting to 16 threads.
+2025-09-27 02:13:36,201 - freqtrade.configuration.load_config - INFO - Using config: config.json ...
+2025-09-27 02:13:36,203 - freqtrade.loggers - INFO - Enabling colorized output.
+2025-09-27 02:13:36,203 - freqtrade.loggers - INFO - Logfile configured
+2025-09-27 02:13:36,203 - freqtrade.loggers - INFO - Verbosity set to 0
+2025-09-27 02:13:36,204 - freqtrade.configuration.configuration - INFO - Using max_open_trades: 3 ...
+2025-09-27 02:13:36,204 - freqtrade.configuration.configuration - INFO - Using user-data directory: /home/tarik/git/freqtrade/user_data ...
+2025-09-27 02:13:36,204 - freqtrade.configuration.configuration - INFO - Using data directory:
+/home/tarik/git/freqtrade/user_data/data/binance ...
+2025-09-27 02:13:36,204 - freqtrade.configuration.configuration - INFO - Parameter --cache=day detected ...
+2025-09-27 02:13:36,205 - freqtrade.exchange.check_exchange - INFO - Checking exchange...
+2025-09-27 02:13:36,211 - freqtrade.exchange.check_exchange - INFO - Exchange "binance" is officially supported by the Freqtrade development
+team.
+2025-09-27 02:13:36,212 - freqtrade.configuration.configuration - INFO - Using pairlist from configuration.
+2025-09-27 02:13:36,212 - freqtrade.configuration.config_validation - INFO - Validating configuration ...
+2025-09-27 02:13:36,213 - freqtrade.commands.optimize_commands - INFO - Starting freqtrade in Backtesting mode
+2025-09-27 02:13:36,214 - freqtrade.exchange.exchange - INFO - Instance is running with dry_run enabled
+2025-09-27 02:13:36,214 - freqtrade.exchange.exchange - INFO - Using CCXT 4.5.5
+2025-09-27 02:13:36,227 - freqtrade.exchange.exchange - INFO - Using Exchange "Binance"
+2025-09-27 02:13:38,186 - freqtrade.resolvers.exchange_resolver - INFO - Using resolved exchange 'Binance'...
+2025-09-27 02:13:38,186 - freqtrade - ERROR - Impossible to load Strategy 'simple_strategy.py'. This class does not exist or contains Python
+code errors.
+(.venv) tarik@Duo ~/git/freqtrade
+$ freqtrade backtesting --strategy simple_strategy
+2025-09-27 02:13:42,161 - freqtrade - INFO - freqtrade 2025.9-dev-70a25f983
+2025-09-27 02:13:42,317 - numexpr.utils - INFO - Note: NumExpr detected 20 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of
+16.
+2025-09-27 02:13:42,317 - numexpr.utils - INFO - NumExpr defaulting to 16 threads.
+2025-09-27 02:13:43,086 - freqtrade.configuration.load_config - INFO - Using config: config.json ...
+2025-09-27 02:13:43,088 - freqtrade.loggers - INFO - Enabling colorized output.
+2025-09-27 02:13:43,088 - freqtrade.loggers - INFO - Logfile configured
+2025-09-27 02:13:43,088 - freqtrade.loggers - INFO - Verbosity set to 0
+2025-09-27 02:13:43,088 - freqtrade.configuration.configuration - INFO - Using max_open_trades: 3 ...
+2025-09-27 02:13:43,089 - freqtrade.configuration.configuration - INFO - Using user-data directory: /home/tarik/git/freqtrade/user_data ...
+2025-09-27 02:13:43,089 - freqtrade.configuration.configuration - INFO - Using data directory:
+/home/tarik/git/freqtrade/user_data/data/binance ...
+2025-09-27 02:13:43,089 - freqtrade.configuration.configuration - INFO - Parameter --cache=day detected ...
+2025-09-27 02:13:43,090 - freqtrade.exchange.check_exchange - INFO - Checking exchange...
+2025-09-27 02:13:43,097 - freqtrade.exchange.check_exchange - INFO - Exchange "binance" is officially supported by the Freqtrade development
+team.
+2025-09-27 02:13:43,097 - freqtrade.configuration.configuration - INFO - Using pairlist from configuration.
+2025-09-27 02:13:43,098 - freqtrade.configuration.config_validation - INFO - Validating configuration ...
+2025-09-27 02:13:43,099 - freqtrade.commands.optimize_commands - INFO - Starting freqtrade in Backtesting mode
+2025-09-27 02:13:43,099 - freqtrade.exchange.exchange - INFO - Instance is running with dry_run enabled
+2025-09-27 02:13:43,099 - freqtrade.exchange.exchange - INFO - Using CCXT 4.5.5
+2025-09-27 02:13:43,111 - freqtrade.exchange.exchange - INFO - Using Exchange "Binance"
+2025-09-27 02:13:44,750 - freqtrade.resolvers.exchange_resolver - INFO - Using resolved exchange 'Binance'...
+2025-09-27 02:13:44,750 - freqtrade - ERROR - Impossible to load Strategy 'simple_strategy'. This class does not exist or contains Python code
+errors.
+(.venv) tarik@Duo ~/git/freqtrade
+$

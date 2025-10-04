@@ -53,8 +53,7 @@ class RsiStrategy(IStrategy):
         dataframe.loc[
             (
                 # If RSI value drops below 30...
-                (dataframe["rsi"] < 30)
-                & (dataframe["volume"] > 0)  # Ensure volume is not zero.
+                (dataframe["rsi"] < 30) & (dataframe["volume"] > 0)  # Ensure volume is not zero.
             ),
             "enter_long",
         ] = 1
@@ -67,8 +66,7 @@ class RsiStrategy(IStrategy):
         dataframe.loc[
             (
                 # If RSI value rises above 70...
-                (dataframe["rsi"] > 70)
-                & (dataframe["volume"] > 0)  # Ensure volume is not zero.
+                (dataframe["rsi"] > 70) & (dataframe["volume"] > 0)  # Ensure volume is not zero.
             ),
             "exit_long",
         ] = 1

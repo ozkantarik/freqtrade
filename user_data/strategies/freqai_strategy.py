@@ -1,9 +1,9 @@
 # --- Do not remove these imports ---
 import talib.abstract as ta
 from pandas import DataFrame
+from technical import qtpylib
 
 from freqtrade.strategy import IStrategy
-from technical import qtpylib
 
 
 class freqai_strategy(IStrategy):
@@ -51,13 +51,15 @@ class freqai_strategy(IStrategy):
         dataframe["atr"] = ta.ATR(dataframe)
 
         # Volume Indicators
-        dataframe['obv'] = ta.OBV(dataframe)
+        dataframe["obv"] = ta.OBV(dataframe)
 
         # Advanced Feature: Rate of Change of RSI
-        dataframe['rsi_roc_10'] = ta.ROC(dataframe['rsi'], timeperiod=10)
+        dataframe["rsi_roc_10"] = ta.ROC(dataframe["rsi"], timeperiod=10)
 
         # Advanced Feature: Distance from EMA50, normalized by ATR
-        dataframe['dist_from_ema_50_norm'] = (dataframe['close'] - dataframe['ema_50']) / dataframe['atr']
+        dataframe["dist_from_ema_50_norm"] = (dataframe["close"] - dataframe["ema_50"]) / dataframe[
+            "atr"
+        ]
 
         return dataframe
 
@@ -79,8 +81,8 @@ class freqai_strategy(IStrategy):
         period = self.config["freqai"]["feature_parameters"]["label_period_candles"]
 
         dataframe["&s-future_return"] = (
-            (dataframe[f"future_max_{period}"] - dataframe["close"]) / dataframe["close"]
-        )
+            dataframe[f"future_max_{period}"] - dataframe["close"]
+        ) / dataframe["close"]
         return dataframe
 
     def populate_entry_trend(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
