@@ -4,8 +4,8 @@
 *.sqlite-shm
 *.sqlite-wal
 logfile.txt
-# user_data/*
 logs/*
+# user_data/*
 # !user_data/strategy/sample_strategy.py
 # !user_data/notebooks
 # !user_data/models
@@ -17,6 +17,7 @@ freqtrade-plot.html
 freqtrade-profit-plot.html
 user_data/hyperopt_results/*
 user_data/backtest_results/*
+user_data/plot/*
 freqtrade/rpc/api_server/ui/*
 build_helpers/ta-lib/*
 
