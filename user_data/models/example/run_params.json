@@ -12,7 +12,7 @@
                 "BTC/USDT",
                 "ETH/USDT"
             ],
-            "label_period_candles": 20,
+            "label_period_candles": 10,
             "indicator_periods_candles": [
                 10,
                 20,
