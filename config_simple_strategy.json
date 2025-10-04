@@ -60,7 +60,7 @@
         "chat_id": "5709016282"
     },
     "api_server": {
-        "enabled": false,
+        "enabled": true,
         "listen_ip_address": "127.0.0.1",
         "listen_port": 8080,
         "verbosity": "error",
@@ -68,8 +68,8 @@
         "jwt_secret_key": "5aff26a267fd2fb98da06e1d1b653d53075fbaa96004c838b976c0ec419b11ea",
         "ws_token": "gzp2CekfxEs-2lGLFvISi5cSOKqaaoqHYQ",
         "CORS_origins": [],
-        "username": "",
-        "password": ""
+        "username": "tarik",
+        "password": "traderbot"
     },
     "bot_name": "freqtrade",
     "initial_state": "running",

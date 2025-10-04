@@ -84,7 +84,7 @@ class SimpleFreqaiV2(IStrategy):
             pred_col = f"&s-future_mean_returns_10_pred_{label_period}"
             if pred_col in dataframe.columns:
                 dataframe.loc[
-                    ((dataframe[pred_col] > 0.02) & (dataframe["volume"] > 0)), "enter_long"
+                    ((dataframe[pred_col] > 0.005) & (dataframe["volume"] > 0)), "enter_long"
                 ] = 1
         else:
             # This is a sample entry signal for non-FreqAI runs
