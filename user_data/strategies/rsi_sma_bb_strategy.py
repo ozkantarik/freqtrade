@@ -1,4 +1,4 @@
-# --- Freqtrade Kütüphaneleri ---
+# --- Freqtrade Libraries ---
 from freqtrade.strategy import IStrategy, IntParameter
 from pandas import DataFrame
 import talib.abstract as ta
@@ -7,36 +7,36 @@ from technical import qtpylib
 
 class rsi_sma_bb_strategy(IStrategy):
     """
-    Bu bizim Hyperopt için optimize edilecek üçüncü ve en gelişmiş stratejimiz (v3.0).
+    This is our third and most advanced strategy to be optimized by Hyperopt (v3.0).
     """
 
     INTERFACE_VERSION = 3
     timeframe = "5m"
 
-    # Kâr alma ve zarar durdurma ayarları
+    # Take profit and stoploss settings
     minimal_roi = {"0": 0.05}
     stoploss = -0.10
 
-    # Stratejinin genel davranışını belirleyen ayarlar
+    # General strategy behavior settings
     process_only_new_candles = True
     use_exit_signal = True
     exit_profit_only = False
     startup_trend_req = 200
 
-    # --- Hyperopt Parametreleri ---
-    # ALIM AYARLARI
+    # --- Hyperopt Parameters ---
+    # BUY SETTINGS
     buy_rsi = IntParameter(10, 40, default=22, space="buy")
     buy_bb_window = IntParameter(15, 30, default=15, space="buy")
     buy_bb_std = IntParameter(1, 4, default=2, space="buy")
 
-    # SATIM AYARLARI
+    # SELL SETTINGS
     sell_rsi = IntParameter(60, 90, default=61, space="sell")
 
     def populate_indicators(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
         """
-        Strateji için gerekli olan 3 indikatörü de Hyperopt'tan gelen değerlerle hesaplar.
+        Calculates the 3 indicators required for the strategy using values from Hyperopt.
         """
-        # Bollinger Bands - Artık sabit sayılar yerine Hyperopt'un deneyeceği değerleri kullanıyor.
+        # Bollinger Bands - Now uses values that Hyperopt will test, instead of fixed numbers.
         bollinger = qtpylib.bollinger_bands(
             qtpylib.typical_price(dataframe),
             window=self.buy_bb_window.value,
@@ -54,7 +54,7 @@ class rsi_sma_bb_strategy(IStrategy):
 
     def populate_entry_trend(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
         """
-        Alım sinyali için 3 koşulu birden kontrol eder.
+        Checks all 3 conditions for a buy signal.
         """
         dataframe.loc[
             (
@@ -70,7 +70,7 @@ class rsi_sma_bb_strategy(IStrategy):
 
     def populate_exit_trend(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
         """
-        Satım sinyalini belirler.
+        Determines the sell signal.
         """
         dataframe.loc[
             ((dataframe["rsi"] > self.sell_rsi.value) & (dataframe["volume"] > 0)), "exit_long"
