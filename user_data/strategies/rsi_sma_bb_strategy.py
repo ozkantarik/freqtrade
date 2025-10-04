@@ -1,8 +1,9 @@
 # --- Freqtrade Libraries ---
-from freqtrade.strategy import IStrategy, IntParameter
-from pandas import DataFrame
 import talib.abstract as ta
+from pandas import DataFrame
 from technical import qtpylib
+
+from freqtrade.strategy import IntParameter, IStrategy
 
 
 class rsi_sma_bb_strategy(IStrategy):

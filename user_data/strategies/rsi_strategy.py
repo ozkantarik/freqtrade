@@ -1,7 +1,8 @@
 # --- Freqtrade Libraries ---
-from freqtrade.strategy import IStrategy
-from pandas import DataFrame
 import talib.abstract as ta
+from pandas import DataFrame
+
+from freqtrade.strategy import IStrategy
 
 
 class RsiStrategy(IStrategy):

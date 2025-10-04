@@ -1,10 +1,10 @@
 # --- Do not remove these libs ---
-from freqtrade.strategy import IStrategy
-from pandas import DataFrame
 # --------------------------------
-
 # Add your lib to import here
 import talib.abstract as ta
+from pandas import DataFrame
+
+from freqtrade.strategy import IStrategy
 
 
 class Simple(IStrategy):
