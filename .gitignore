@@ -1,11 +1,11 @@
 # Freqtrade rules
 # config*.json
-# *.sqlite
-# *.sqlite-shm
-# *.sqlite-wal
-# logfile.txt
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+logfile.txt
 # user_data/*
-# logs/*
+logs/*
 # !user_data/strategy/sample_strategy.py
 # !user_data/notebooks
 # !user_data/models
@@ -13,8 +13,9 @@
 # user_data/freqaimodels/*
 # user_data/models/*
 # user_data/notebooks/*
-# freqtrade-plot.html
-# freqtrade-profit-plot.html
+freqtrade-plot.html
+freqtrade-profit-plot.html
+user_data/hyperopt_results/*
 freqtrade/rpc/api_server/ui/*
 build_helpers/ta-lib/*
 

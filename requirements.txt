@@ -41,7 +41,7 @@ fastapi==0.117.1
 fastjsonschema==2.21.2
 filelock==3.19.1
 fonttools==4.60.0
--e git+https://github.com/freqtrade/freqtrade.git@70a25f9837bea30249fd064476c6ac239c59e4a9#egg=freqtrade
+-e git+https://github.com/ozkantarik/freqtrade.git@00c241558eaf6c58e5371cdaa3f17e105f901be6#egg=freqtrade
 freqtrade-client==2025.8
 frozenlist==1.7.0
 fsspec==2025.9.0
