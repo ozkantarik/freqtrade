@@ -3,16 +3,12 @@ import talib.abstract as ta
 from pandas import DataFrame
 
 from freqtrade.strategy import IStrategy
-from freqtrade.strategy.parameters import RealParameter
 from technical import qtpylib
 
 
 class freqai_strategy(IStrategy):
     INTERFACE_VERSION = 3
     timeframe = "5m"
-
-    # Hyperoptable parameters
-    buy_pred_threshold = RealParameter(0.5, 1.0, default=0.7, space="buy")
 
     can_short = False
     use_exit_signal = True
@@ -34,28 +30,34 @@ class freqai_strategy(IStrategy):
         This function is called by FreqAI to add features for training.
         """
         # Momentum Indicators
-        dataframe['rsi'] = ta.RSI(dataframe)
-        dataframe['mfi'] = ta.MFI(dataframe)
-        dataframe['adx'] = ta.ADX(dataframe)
+        dataframe["rsi"] = ta.RSI(dataframe)
+        dataframe["mfi"] = ta.MFI(dataframe)
+        dataframe["adx"] = ta.ADX(dataframe)
         macd = ta.MACD(dataframe)
-        dataframe['macd'] = macd['macd']
-        dataframe['macdsignal'] = macd['macdsignal']
-        dataframe['macdhist'] = macd['macdhist']
+        dataframe["macd"] = macd["macd"]
+        dataframe["macdsignal"] = macd["macdsignal"]
+        dataframe["macdhist"] = macd["macdhist"]
 
         # Trend Indicators
-        dataframe['ema_20'] = ta.EMA(dataframe, timeperiod=20)
-        dataframe['ema_50'] = ta.EMA(dataframe, timeperiod=50)
-        dataframe['ema_100'] = ta.EMA(dataframe, timeperiod=100)
+        dataframe["ema_20"] = ta.EMA(dataframe, timeperiod=20)
+        dataframe["ema_50"] = ta.EMA(dataframe, timeperiod=50)
+        dataframe["ema_100"] = ta.EMA(dataframe, timeperiod=100)
 
         # Volatility Indicators
         bollinger = qtpylib.bollinger_bands(qtpylib.typical_price(dataframe), window=20, stds=2)
-        dataframe['bb_lowerband'] = bollinger['lower']
-        dataframe['bb_middleband'] = bollinger['mid']
-        dataframe['bb_upperband'] = bollinger['upper']
-        dataframe['atr'] = ta.ATR(dataframe)
+        dataframe["bb_lowerband"] = bollinger["lower"]
+        dataframe["bb_middleband"] = bollinger["mid"]
+        dataframe["bb_upperband"] = bollinger["upper"]
+        dataframe["atr"] = ta.ATR(dataframe)
 
         # Volume Indicators
         dataframe['obv'] = ta.OBV(dataframe)
+
+        # Advanced Feature: Rate of Change of RSI
+        dataframe['rsi_roc_10'] = ta.ROC(dataframe['rsi'], timeperiod=10)
+
+        # Advanced Feature: Distance from EMA50, normalized by ATR
+        dataframe['dist_from_ema_50_norm'] = (dataframe['close'] - dataframe['ema_50']) / dataframe['atr']
 
         return dataframe
 
@@ -63,7 +65,6 @@ class freqai_strategy(IStrategy):
         self, dataframe: DataFrame, metadata: dict, **kwargs
     ) -> DataFrame:
         """
-        Adds technical indicators to the dataframe.
         This function is called by FreqAI to add features for training.
         """
         dataframe = self.populate_indicators(dataframe, metadata)
@@ -75,11 +76,11 @@ class freqai_strategy(IStrategy):
         Adds the training target to the dataframe.
         This function is called by FreqAI to set the target for training.
         """
-        # For this baseline, we're predicting if the price will simply
-        # increase in the next 10 candles.
-        dataframe["target_profit"] = (
-            dataframe["future_max_10"] > dataframe["close"]
-        ).astype(int)
+        period = self.config["freqai"]["feature_parameters"]["label_period_candles"]
+
+        dataframe["&s-future_return"] = (
+            (dataframe[f"future_max_{period}"] - dataframe["close"]) / dataframe["close"]
+        )
         return dataframe
 
     def populate_entry_trend(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
