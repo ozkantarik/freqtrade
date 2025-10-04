@@ -1,0 +1,31 @@
+{
+  "strategy_name": "rsi_sma_bb_strategy",
+  "params": {
+    "roi": {
+      "0": 0.05
+    },
+    "stoploss": {
+      "stoploss": -0.1
+    },
+    "trailing": {
+      "trailing_stop": false,
+      "trailing_stop_positive": null,
+      "trailing_stop_positive_offset": 0.0,
+      "trailing_only_offset_is_reached": false
+    },
+    "max_open_trades": {
+      "max_open_trades": 3
+    },
+    "buy": {
+      "buy_bb_std": 2,
+      "buy_bb_window": 15,
+      "buy_rsi": 22
+    },
+    "sell": {
+      "sell_rsi": 61
+    },
+    "protection": {}
+  },
+  "ft_stratparam_v": 1,
+  "export_time": "2025-10-03 15:02:19.649038+00:00"
+}

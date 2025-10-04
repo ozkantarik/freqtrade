@@ -1,0 +1,2441 @@
+total 8.0K
+drwxrwxrwx 1 tarik tarik  512 Jun 25 08:05 .
+drwxrwxrwx 1 tarik tarik  512 Jun 25 05:45 ..
+-rwxrwxrwx 1 tarik tarik  182 Jun 25 07:02 .env
+drwxrwxrwx 1 tarik tarik  512 Jun 25 10:35 .git
+-rwxrwxrwx 1 tarik tarik 4.5K Jun 24 08:06 .gitignore
+drwxrwxrwx 1 tarik tarik  512 Jun 24 08:28 .venv
+-rwxrwxrwx 1 tarik tarik   11 Jun 24 08:06 README.md
+-rwxrwxrwx 1 tarik tarik  290 Jun 25 06:52 requirements.txt
+tarik@Duo /mnt/c/git/traderbot
+$ v
+(.venv) tarik@Duo /mnt/c/git/traderbot
+$ python --version
+Python 3.12.3
+(.venv) tarik@Duo /mnt/c/git/traderbot
+$ py --version
+Command 'py' not found, but can be installed with:
+sudo apt install pythonpy
+(.venv) tarik@Duo /mnt/c/git/traderbot
+$ git --version
+git version 2.43.0
+(.venv) tarik@Duo /mnt/c/git/traderbot
+$ kv
+tarik@Duo /mnt/c/git/traderbot
+$ bashrc
+tarik@Duo /mnt/c/git/traderbot
+$ bashrc
+tarik@Duo /mnt/c/git/traderbot
+$ bashrc
+tarik@Duo /mnt/c/git/traderbot
+$ repo
+tarik@Duo ~/git
+$ ls
+leftpad  pattern-core  rightpad  snake  tetris  traderai
+tarik@Duo ~/git
+$ pwd
+/home/tarik/git
+tarik@Duo ~/git
+$ h
+  826  cls
+  827  s'ldek
+  828  exit
+  829  tetris
+  830  rep
+  831  exit
+  832  tetris
+  833  claude
+  834  tetris
+  835  exit
+  836  codex
+  837  exit
+  838  bashrc
+  839  lsa
+  840  tetris
+  841  lsa
+  842  npp tetris.log
+  843  bashrc
+  844  npp
+  845  npp tetris.log
+  846  wslpath
+  847  bashrc
+  848  npp tetris.log
+  849  exp
+  850  bashrc
+  851  tetris
+  852  exp
+  853  npp
+  854  git web
+  855  bashrc
+  856  npp tetris.log
+  857  npp
+  858  npp .
+  859  bashrc
+  860  cls
+  861  bashrc
+  862  npp tetris.log
+  863  npp
+  864  bashrc
+  865  npp
+  866  bashrc
+  867  npp
+  868  bashrc
+  869  npp
+  870  npp
+  871  exp
+  872  bashrc
+  873  npp
+  874  tetris
+  875  npp
+  876  bashrc
+  877  npp
+  878  bashrc
+  879  npp
+  880  pwd
+  881  bashrc
+  882  pwd
+  883  npp
+  884  bashrc
+  885  npp
+  886  bashrc
+  887  npp
+  888  bashrc
+  889  npp
+  890  source ~/.bashrc
+  891  npp
+  892  source ~/.bashrc
+  893  npp
+  894  source ~/.bashrc
+  895  npp
+  896  tetris
+  897  npp
+  898  ls
+  899  cls
+  900  exit
+  901  tetris
+  902  rep
+  903  exit
+  904  rep
+  905  rec
+  906  rep
+  907  rep5x
+  908  rep 2x
+  909  rep
+  910  reptrim
+  911  asciinema -h
+  912  exit
+  913  tetris
+  914  exit
+  915  testststststststst
+  916  exit
+  917  denemememe
+  918  exit
+  919  tetris
+  920  exit
+  921  tetris
+  922  exit
+  923  demeeeeeeeeee
+  924  exit
+  925  tetris
+  926  exit
+  927  rec demoootime
+  928  rep demoootime
+  929  exit
+  930  rec
+  931  rep
+  932  recx 5
+  933  repx 5
+  934  tetris
+  935  rec
+  936  rep
+  937  rec
+  938  repx 5
+  939  repx 3
+  940  rec tetris
+  941  rep
+  942  rep tetris
+  943  time
+  944  date
+  945  git s
+  946  rec tetris2
+  947  rec
+  948  bas
+  949  asciinema -h
+  950  bashrc
+  951  rep5x
+  952  rep
+  953  reptrim
+  954  bashrc
+  955  time rep
+  956  time rep5x
+  957  source ~/.bashrc
+  958  cls
+  959  rep5x
+  960  rep
+  961  rep2x
+  962  repff
+  963  rep2xff
+  964  set -x                  # debug: her komutu göster
+  965  rep2x | head            # neyin çağrıldığı net görünür
+  966  set +x
+  967  source ~/.bashrc
+  968  rp5
+  969  source ~/.bashrc
+  970  rep5x
+  971  rep2x
+  972  repff
+  973  rep2xff
+  974  sudo apt update
+  975  sudo apt install asciinema
+  976  source ~/.bashrc
+  977  cls
+  978  source ~/.bashrc
+  979  rep
+  980  rec
+  981  tetris
+  982  rep
+  983  rep2x
+  984  source ~/.bashrc
+  985  tetris
+  986  exit
+  987  tetris
+  988  exit
+  989  tetris
+  990  exit
+  991  tetris
+  992  exit
+  993  tetris
+  994  exit
+  995  tetris
+  996  exit
+  997  tetris
+  998  exit
+  999  tetris
+ 1000  exit
+ 1001  tetris
+ 1002  exit
+ 1003  rec
+ 1004  rec demorecok
+ 1005  rec
+ 1006  rep demorecok
+ 1007  repx 2 demorecok
+ 1008  cls
+ 1009  repx 2 demorecok
+ 1010  rep
+ 1011  repx 2
+ 1012  repx
+ 1013  rep
+ 1014  cls
+ 1015  reccast
+ 1016  repcast
+ 1017  repcastx 2
+ 1018  rec
+ 1019  repcastx 5
+ 1020  repx 5
+ 1021  repx 2
+ 1022  rec
+ 1023  rep
+ 1024  repx 2
+ 1025  rec
+ 1026  rep
+ 1027  repx 3
+ 1028  repx 5
+ 1029  rec
+ 1030  rep
+ 1031  cla
+ 1032  cls
+ 1033  repx 3
+ 1034  repx 5
+ 1035  repx
+ 1036  repx 5 /home/tarik/terminal/terminal_recording.log
+ 1037  repx 5 /home/tarik/terminal/terminal_recording
+ 1038  scriptreplay -h
+ 1039  rec
+ 1040  dddddd
+ 1041  exit
+ 1042  pppp
+ 1043  exit
+ 1044  rrrrrrrrrrrrrrrrrrrr
+ 1045  exit
+ 1046  rec
+ 1047  rep
+ 1048  rec
+ 1049  repx2
+ 1050  repx 2
+ 1051  rec
+ 1052  repx 2
+ 1053  script -h
+ 1054  cls
+ 1055  rec
+ 1056  exit
+ 1057  deneme
+ 1058  rec
+ 1059  rec demo
+ 1060  deneme
+ 1061  test
+ 1062  testttt
+ 1063  testtttt
+ 1064  denemeeeee
+ 1065  testingggg
+ 1066  okkkkkkkkkk
+ 1067  rec
+ 1068  rec
+ 1069  lsa
+ 1070  rec
+ 1071  rec
+ 1072  rep
+ 1073  cls
+ 1074  repx 2
+ 1075  repx 5
+ 1076  cls
+ 1077  repx 2
+ 1078  rep
+ 1079  cls
+ 1080  rec
+ 1081  repx 2
+ 1082  rec
+ 1083  repx 2
+ 1084  cls
+ 1085  rec
+ 1086  reccast
+ 1087  repcast
+ 1088  repcastx 2
+ 1089  reccast
+ 1090  repcastx 2
+ 1091  rec
+ 1092  repcastx 5
+ 1093  asciinema -h
+ 1094  denemeee
+ 1095  testttt
+ 1096  okkkk
+ 1097  ttttttt
+ 1098  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+ 1099  11111111111111111111
+ 1100  heloooo
+ 1101  1111111111
+ 1102  rrrrrrrrrr
+ 1103  ssssssssssssss
+ 1104  111111
+ 1105  rec
+ 1106  repx 2
+ 1107  rec
+ 1108  cls
+ 1109  repx 2
+ 1110  rec
+ 1111  repx 2
+ 1112  rec
+ 1113  repx 2
+ 1114  rec
+ 1115  repx 2
+ 1116  rec
+ 1117  repx 2
+ 1118  rep
+ 1119  rec
+ 1120  repx 2
+ 1121  rec
+ 1122  repx 2
+ 1123  rec
+ 1124  repx 2
+ 1125  rec
+ 1126  repx 2
+ 1127  rec
+ 1128  repx 2
+ 1129  tetris
+ 1130  exp
+ 1131  cls
+ 1132  rec
+ 1133  repx 5
+ 1134  git s
+ 1135  rep
+ 1136  rec tetris_demo
+ 1137  rep
+ 1138  rec tetris_demo
+ 1139  rep tetris_demo
+ 1140  1111
+ 1141  11111
+ 1142  111111
+ 1143  2222222222
+ 1144  33333
+ 1145  4444
+ 1146  aaa
+ 1147  wwwww
+ 1148  dddddd
+ 1149  script -q -a "$_TREC_DIR/$name.log"
+ 1150  repx 2
+ 1151  script -q -O "$_TREC_DIR/$name.log" -T "$_TREC_DIR/$name.timing"
+ 1152  repx 2
+ 1153  script -q -a -O "$_TREC_DIR/$name.log" -T "$_TREC_DIR/$name.timing"
+ 1154  repx 2
+ 1155  script -q -a -O "$_TREC_DIR/$name.log" -T "$_TREC_DIR/$name.timing"
+ 1156  repx 2
+ 1157  script -q -a -O "$_TREC_DIR/$name.log" -T "$_TREC_DIR/$name.timing" < /dev/null
+ 1158  rec
+ 1159  repx 2
+ 1160  rec
+ 1161  repx 2
+ 1162  rec
+ 1163  repx 2
+ 1164  terminal_recording
+ 1165  rec
+ 1166  rec
+ 1167  repx 2
+ 1168  rep
+ 1169  rec
+ 1170  repx 2
+ 1171  1111111111111
+ 1172  2222222
+ 1173  111111111
+ 1174  222
+ 1175  11111111111111
+ 1176  rec
+ 1177  repx 2
+ 1178  rec
+ 1179  script -q -a -t "$_TREC_DIR/$name.timing" "$_TREC_DIR/$name.log"
+ 1180  script -q -a -t "$_TREC_DIR/$name.timing"         "$_TREC_DIR/$name.log"
+ 1181  1111111
+ 1182  repx 2
+ 1183  cls
+ 1184  rec
+ 1185  repx 2
+ 1186  rec
+ 1187  repx 2
+ 1188  rec
+ 1189  repx 2
+ 1190  rec
+ 1191  repx 2
+ 1192  rec
+ 1193  repx2
+ 1194  repx 2
+ 1195  rec
+ 1196  repx 2
+ 1197  script -h
+ 1198  111111111
+ 1199  22222222222
+ 1200  tetris
+ 1201  okkkkkkkkkkkkkkkkkk
+ 1202  rec
+ 1203  repx 2
+ 1204  rec
+ 1205  repx 2
+ 1206  rec
+ 1207  repx 2
+ 1208  cls
+ 1209  rep
+ 1210  cls
+ 1211  rec
+ 1212  rep
+ 1213  rec
+ 1214  tetris
+ 1215  repx 2
+ 1216  rec
+ 1217  repx 2
+ 1218  cls
+ 1219  111111111111111111111
+ 1220  222222
+ 1221  333333
+ 1222  tetris
+ 1223  ooooooooo
+ 1224  tetris
+ 1225  1111111
+ 1226  tetris
+ 1227  5555555
+ 1228  rec
+ 1229  repx 2
+ 1230  rec
+ 1231  repx 2
+ 1232  rep
+ 1233  cls
+ 1234  rec
+ 1235  rep
+ 1236  rec demo
+ 1237  repx 2
+ 1238  repx 2 demo
+ 1239  rep demo
+ 1240  cls
+ 1241  reccast
+ 1242  repcastx 2
+ 1243  reccast
+ 1244  repcastx 5
+ 1245  tetris
+ 1246  git web
+ 1247  tetris
+ 1248  repcastx 3
+ 1249  reccast demo
+ 1250  repcastx 2
+ 1251  repcastx 2 demo
+ 1252  dd
+ 1253  111111111111111111
+ 1254  codex
+ 1255  tetris
+ 1256  codex
+ 1257  rec
+ 1258  repx 2
+ 1259  cls
+ 1260  rec codex
+ 1261  repx 3
+ 1262  repx 3 codex
+ 1263  repx 5 codex
+ 1264  tetris
+ 1265  git ac
+ 1266  git push
+ 1267  git s
+ 1268  git web
+ 1269  codex
+ 1270  rec
+ 1271  repx 2
+ 1272  rec
+ 1273  rep
+ 1274  repx 2
+ 1275  script -h
+ 1276  cd tetris
+ 1277  git s
+ 1278  mkdir apps
+ 1279  cd apps
+ 1280  cd ..
+ 1281  rmdir apps
+ 1282  lsa
+ 1283  cd snake
+ 1284  git copy https://github.com/ozkantarik/snake.git
+ 1285  cd snake
+ 1286  lsa
+ 1287  claude
+ 1288  cd ../tetris
+ 1289  claude
+ 1290  cd ../snake
+ 1291  git web
+ 1292  echo "# snake" >> README.md
+ 1293  git add README.md
+ 1294  git commit -m "first commit"
+ 1295  git push
+ 1296  git pull
+ 1297  python3 snake.py
+ 1298  git pull
+ 1299  python3 snake.py
+ 1300  openai api usage -s 2025-06-28 -e 2025-06-28
+ 1301  openai api usage -s $(date +%F) -e $(date +%F)
+ 1302  git pull
+ 1303  git s
+ 1304  git sync
+ 1305  git s
+ 1306  python3 snake.py
+ 1307  codex
+ 1308  snake
+ 1309  lsa
+ 1310  ./snake
+ 1311  lsa
+ 1312  lsd
+ 1313  lsc
+ 1314  bashrc
+ 1315  lsr
+ 1316  lsa
+ 1317  chmod +x ./snake
+ 1318  lsa
+ 1319  ./snake
+ 1320  git pull
+ 1321  git ac
+ 1322  git push
+ 1323  git s
+ 1324  git sync
+ 1325  bashrc
+ 1326  gits
+ 1327  snake
+ 1328  git pull
+ 1329  # returns USD-cost, request count & token totals for TODAY
+ 1330  openai api request   --method GET   --path /v1/dashboard/billing/usage   --query "start_date=$(date +%F)&end_date=$(date +%F)"
+ 1331  openai api request   --method GET   --path /v1/dashboard/billing/usage   --query "start_date=2025-06-01&end_date=2025-06-30"
+ 1332  cd tetris
+ 1333  lsa
+ 1334  git s
+ 1335  git sync
+ 1336  git s
+ 1337  git pull
+ 1338  gir s
+ 1339  git s
+ 1340  git sync
+ 1341  snake
+ 1342  gits
+ 1343  snake
+ 1344  cd snake
+ 1345  snake
+ 1346  ./snake
+ 1347  git sync
+ 1348  bashrc
+ 1349  snake
+ 1350  tetris
+ 1351  snake
+ 1352  # returns USD-cost, request count & token totals for TODAY
+ 1353  openai api request   --method GET   --path /v1/dashboard/billing/usage   --query "start_date=$(date +%F)&end_date=$(date +%F)"
+ 1354  tetris
+ 1355  git s
+ 1356  codex
+ 1357  git s
+ 1358  git sync
+ 1359  git push
+ 1360  git pull
+ 1361  git sync
+ 1362  git web
+ 1363  git sync
+ 1364  git s
+ 1365  snake
+ 1366  pytest
+ 1367  lsa
+ 1368  cd test
+ 1369  cd tests
+ 1370  lsa
+ 1371  python test_snake.py
+ 1372  python3 test_snake.py
+ 1373  cls
+ 1374  # returns USD-cost, request count & token totals for TODAY
+ 1375  openai api request   --method GET   --path /v1/dashboard/billing/usage   --query "start_date=$(date +%F)&end_date=$(date +%F)"
+ 1376  cd ..
+ 1377  # one-liner to run hooks, linter & tests locally
+ 1378  pre-commit run --all-files && pytest
+ 1379  # upgrade to the modern CLI (requires Python ≥ 3.8)
+ 1380  pip install --upgrade --quiet openai
+ 1381  # confirm new sub-commands are present
+ 1382  openai api -h | grep request          # should list “request” now
+ 1383  cls
+ 1384  # Environment: OPENAI_API_KEY must already be exported
+ 1385  start=$(date +%F)
+ 1386  openai api request                                     --method GET                                         --path /v1/dashboard/billing/usage                  --query "start_date=$start&end_date=$start" | jq '
+ 1387      .daily_costs[0]
+ 1388      | {date:.timestamp | strftime("%F"),
+ 1389         requests:.line_items|length,
+ 1390         usd:.total_cost/100.0}                       # endpoint returns *cents*
+ 1391    '
+ 1392  total_cost/100.0}                       # endpoint returns *cents*
+ 1393  jq: 1 compile
+ 1394  curl https://api.openai.com/v1/dashboard/billing/usage   -H "Authorization: Bearer $OPENAI_API_KEY"             -G                                 --data-urlencode "start_date=$start"                    --data-urlencode "end_date=$start" | jq …
+ 1395  # 1)  enter repo and create an isolated env
+ 1396  cd ~/git/tetris        # or  ~/git/snake
+ 1397  python3 -m venv .venv
+ 1398  source .venv/bin/activate
+ 1399  # 2)  install runtime + test deps  (adjust versions as you like)
+ 1400  pip install -q -U pip
+ 1401  pip install -q pytest pytest-cov pytest-curses coverage ruff
+ 1402  today=$(date -u +%Y-%m-%d)
+ 1403  curl -s https://api.openai.com/v1/usage/costs   -G --data-urlencode "start_date=$today"      --data-urlencode "end_date=$today"   -H "Authorization: Bearer $OPENAI_API_KEY" | jq '{date:.data[0].timestamp|strftime("%F"),
+ 1404       requests:.data[0].num_requests,
+ 1405       usd:(.data[0].total_cost/100)|round(3)}'
+ 1406  curl -s https://api.openai.com/v1/usage/costs   -G --data-urlencode "start_date=$today"      --data-urlencode "end_date=$today"   -H "Authorization: Bearer $OPENAI_API_KEY" | jq '{date:.data[0].timestamp|strftime("%F"),
+ 1407       requests:.data[0].num_requests,
+ 1408       usd:(.data[0].total_cost/100)|round(3)}'
+ 1409  start=$(date -u +%Y-%m-%d)
+ 1410  openai api request   --method GET   --path /v1/dashboard/billing/usage   --query "start_date=$start&end_date=$start" | jq '{date:(.daily_costs[0].timestamp | strftime("%F")),
+ 1411       requests:(.daily_costs[0].line_items | length),
+ 1412       usd:(.daily_costs[0].total_cost/100)}'
+ 1413  start=$(date -u +%Y-%m-%d)
+ 1414  openai api request   --method GET   --path /v1/dashboard/billing/usage   --query "start_date=$start&end_date=$start" | jq '{date:(.daily_costs[0].timestamp | strftime("%F")),
+ 1415       requests:(.daily_costs[0].line_items | length),
+ 1416       usd:(.daily_costs[0].total_cost/100)}'
+ 1417  kv
+ 1418  start=$(date -u +%Y-%m-%d)
+ 1419  openai api request   --method GET   --path /v1/dashboard/billing/usage   --query "start_date=$start&end_date=$start" | jq '{date:(.daily_costs[0].timestamp | strftime("%F")),
+ 1420       requests:(.daily_costs[0].line_items | length),
+ 1421       usd:(.daily_costs[0].total_cost/100)}'
+ 1422  sudo apt install pre-commit
+ 1423  today=$(date -u +%Y-%m-%d)
+ 1424  curl -s https://api.openai.com/v1/usage/costs   -G --data-urlencode "start_date=$today"      --data-urlencode "end_date=$today"   -H "Authorization: Bearer $OPENAI_API_KEY" | jq '{date:.data[0].timestamp|strftime("%F"),
+ 1425       requests:.data[0].num_requests,
+ 1426       usd:(.data[0].total_cost/100)|round(3)}'
+ 1427  sudo apt update && sudo apt install -y jq
+ 1428  start=$(date +%F)
+ 1429  openai api usage --start-date "$start" --end-date "$start"
+ 1430  curl -sG https://api.openai.com/v1/dashboard/billing/usage      -H "Authorization: Bearer $OPENAI_API_KEY"      --data-urlencode start_date="$start"      --data-urlencode end_date="$start" |   jq '.daily_costs[0] |
+ 1431        {date:(.timestamp|strftime("%F")),
+ 1432         requests:(.line_items|length),
+ 1433         usd:(.total_cost/100)}'
+ 1434  openai -h
+ 1435  openai -V
+ 1436  curl -sG https://api.openai.com/v1/dashboard/billing/usage      -H "Authorization: Bearer $OPENAI_API_KEY"      --data-urlencode start_date="$start"      --data-urlencode end_date="$start" |   jq '.daily_costs[0] |
+ 1437        {date:(.timestamp|strftime("%F")),
+ 1438         requests:(.line_items|length),
+ 1439         usd:(.total_cost/100)}'
+ 1440  # ENV değişkeni zaten var:  export OPENAI_API_KEY="sk-..."
+ 1441  today=$(date -u +%Y-%m-%d)
+ 1442  curl -s https://api.openai.com/v1/usage/costs   -G --data-urlencode start_date=$today      --data-urlencode end_date=$today   -H "Authorization: Bearer $OPENAI_API_KEY" | jq '{date:(.data[0].timestamp|strftime("%F")),
+ 1443       requests:.data[0].num_requests,
+ 1444       usd:(.data[0].total_cost/100)}'
+ 1445  cd ~/git/tetris        # or  ~/git/snake
+ 1446  python3 -m venv .venv
+ 1447  source .venv/bin/activate
+ 1448  # 2)  install runtime + test deps  (adjust versions as you like)
+ 1449  pip install -q -U pip
+ 1450  pip install -q pytest pytest-cov pytest-curses coverage ruff
+ 1451  pip install pytest pytest-cov pytest-curses coverage ruff
+ 1452  # şimdiki tarihi zaten today değişkenine aldın
+ 1453  today=$(date -u +%Y-%m-%d)
+ 1454  curl -s https://api.openai.com/v1/usage/costs   -G --data-urlencode start_date=$today      --data-urlencode end_date=$today   -H "Authorization: Bearer $OPENAI_API_KEY" | jq --arg date "$today"   '{date:$date,
+ 1455      requests:.data[0].num_requests,
+ 1456      usd:(.data[0].total_cost/100)}'
+ 1457  kv
+ 1458  curl -s https://api.openai.com/v1/usage/costs      -G --data-urlencode start_date=$today         --data-urlencode end_date=$today-H "Authorization: Bearer $OPENAI_API_KEY" | jq '.data[0].timestamp'
+ 1459  curl -s https://api.openai.com/v1/usage/costs      -G --data-urlencode start_date=$today         --data-urlencode end_date=$today-H "Authorization: Bearer $OPENAI_API_KEY" | jq '.data[0].timestamp'
+ 1460  v
+ 1461  $ python3 --version     # büyük ihtimalle 3.13.x görünür
+ 1462  python3 --version     # büyük ihtimalle 3.13.x görünür
+ 1463  # 2)  Yeni sanal ortam
+ 1464  python3.12 -m venv .venv
+ 1465  source .venv/bin/activate
+ 1466  # 3)  Araçları kur
+ 1467  pip install -U pip
+ 1468  pip install pytest pytest-cov pytest-curses coverage ruff
+ 1469  pytest -q
+ 1470  pytest tests/test_snake.py -q
+ 1471  kv
+ 1472  gits
+ 1473  traderai
+ 1474  lsa
+ 1475  nano scheduler.py
+ 1476  lsa
+ 1477  cd ~/pattern-core          # repo köküne
+ 1478  git status                 # kirli dosya var mı?
+ 1479  cd pattern-core
+ 1480  lsa
+ 1481  git s
+ 1482  pgrep -fl patternloop.py
+ 1483  traderai
+ 1484  python - <<'PY'
+ 1485  import database, time
+ 1486  time.sleep(1)
+ 1487  print(database.get_conn().sql(
+ 1488      "SELECT symbol, price, ts FROM market_data ORDER BY ts DESC LIMIT 5"
+ 1489  ).fetchall())
+ 1490  PY
+ 1491  v
+ 1492  python - <<'PY'
+ 1493  import database, time
+ 1494  time.sleep(1)
+ 1495  print(database.get_conn().sql(
+ 1496      "SELECT symbol, price, ts FROM market_data ORDER BY ts DESC LIMIT 5"
+ 1497  ).fetchall())
+ 1498  PY
+ 1499  lsa
+ 1500  traderai
+ 1501  lsa
+ 1502  cd ~/git/traderai          # repo kökü
+ 1503  source .venv/bin/activate  # sanal ortam
+ 1504  sudo systemctl status redis-server
+ 1505  ls data/traderai.duckdb
+ 1506  lsa
+ 1507  nano market_data.py
+ 1508  nano scheduler.py
+ 1509  celery -A scheduler.celery_app beat   --loglevel=info
+ 1510  nano scheduler.py
+ 1511  nano market_data.py
+ 1512  cls
+ 1513  python - <<'PY'
+ 1514  import database, duckdb, time
+ 1515  time.sleep(2)
+ 1516  print(database.get_conn().sql(
+ 1517      "SELECT symbol, price, ts FROM market_data ORDER BY ts DESC LIMIT 5"
+ 1518  ).fetchall())
+ 1519  PY
+ 1520  bash\npip install python-binance\n
+ 1521  pip install python-binance
+ 1522  cls
+ 1523  celery -A scheduler.celery_app beat --loglevel=info
+ 1524  traderai
+ 1525  celery -A scheduler.celery_app worker --loglevel=info
+ 1526  python - <<'PY'
+ 1527  import database, duckdb, time
+ 1528  time.sleep(2)   # beat’in işi bitirsin diye ufak bekle
+ 1529  print(database.get_conn().sql(
+ 1530      "SELECT symbol, price, ts FROM market_data ORDER BY ts DESC LIMIT 5"
+ 1531  ).fetchall())
+ 1532  PY
+ 1533  lsa
+ 1534  nano scheduler.py
+ 1535  v
+ 1536  celery -A scheduler.celery_app worker --loglevel=info
+ 1537  lsa
+ 1538  nano market_data.py
+ 1539  celery -A scheduler.celery_app worker --loglevel=infols -lh data/pattern.db
+ 1540  ls -lh data/pattern.db
+ 1541  cd data
+ 1542  lsa
+ 1543  ls -lh traderai.duckdb
+ 1544  traderai.duckdb
+ 1545  duckdb data/pattern.db "SELECT COUNT(*) AS signals, MIN(ts), MAX(ts) FROM signal_history;"
+ 1546  traderai
+ 1547  nano market_data.py
+ 1548  echo "python-binance==1.0.29" >> requirements.txt
+ 1549  cat requirements.txt
+ 1550  pip install -r requirements.txt
+ 1551  nano scheduler.py
+ 1552  celery -A scheduler.celery_app worker --loglevel=info
+ 1553  npm search --scope=@openai
+ 1554  curl -s https://registry.npmjs.org/-/orgs/openai/packages?format=cli
+ 1555  curl -s https://registry.npmjs.org/-/orgs/openai/packages
+ 1556  codex --version
+ 1557  npm search "@openai"
+ 1558  bashrc
+ 1559  ta
+ 1560  lsr
+ 1561  nano config.py
+ 1562  celery -A scheduler.celery_app beat --loglevel=info
+ 1563  cls
+ 1564  v
+ 1565  celery -A scheduler.celery_app beat --loglevel=info
+ 1566  celery -A scheduler.celery_app beat --loglevel=infocls
+ 1567  cls
+ 1568  v
+ 1569  traderai
+ 1570  v
+ 1571  python - <<'PY'
+ 1572  import database, duckdb
+ 1573  con = database.get_conn()
+ 1574  print(con.sql("SELECT symbol, price, ts FROM market_data ORDER BY ts DESC LIMIT 5").fetchall())
+ 1575  PY
+ 1576  python - <<'PY'
+ 1577  import database, duckdb
+ 1578  print(database.get_conn().sql(
+ 1579      "SELECT symbol, price, ts FROM market_data ORDER BY ts DESC LIMIT 5"
+ 1580  ).fetchall())
+ 1581  PY
+ 1582  nanoscheduler.py
+ 1583  nano scheduler.py
+ 1584  cls
+ 1585  gptchat deneme
+ 1586  traderbot
+ 1587  v
+ 1588  gptchat deneme
+ 1589  kv
+ 1590  gptchat deneme
+ 1591  cls
+ 1592  gptchat deneme
+ 1593  mkdir -p ~/.config/openai
+ 1594  printf '{\n  "api_key": "sk-proj-•••"\n}\n' > ~/.config/openai/config.json
+ 1595  chmod 600 ~/.config/openai/config.json
+ 1596  nano ~/.config/openai/config.json
+ 1597  bashrc
+ 1598  # bir kez yap
+ 1599  python3 -m pip install --upgrade pipx
+ 1600  pipx ensurepath      # ~/.local/bin’i PATH’e ekler
+ 1601  pipx install openai-cli
+ 1602  h
+ 1603  bashrc
+ 1604  bashrcg
+ 1605  gptchat deneme
+ 1606  sudo apt install jq
+ 1607  bashrcg
+ 1608  bashrc
+ 1609  bashrcg
+ 1610  gptchat deneme
+ 1611  cls
+ 1612  # bir kez yap
+ 1613  python3 -m pip install --upgrade pipx
+ 1614  pipx ensurepath      # ~/.local/bin’i PATH’e ekler
+ 1615  pipx install openai-cli
+ 1616  bashrc
+ 1617  sudo chown root:root /etc/profile.d/global-aliases.sh
+ 1618  sudo chmod 644  /etc/profile.d/global-aliases.sh
+ 1619  bashrcg
+ 1620  bashrc
+ 1621  bashrcg
+ 1622  bashrc
+ 1623  git edit
+ 1624  cls
+ 1625  # yeni terminal aç
+ 1626  echo $OPENAI_API_KEY | sed 's/.\{6\}$/.../'
+ 1627  gptmodels       # model listesi gelmeli
+ 1628  gptchat "Merhaba"   # cevap gelmeli
+ 1629  cleanup         # git alias'ı test
+ 1630  unalias cleanup
+ 1631  cls
+ 1632  echo $OPENAI_API_KEY | sed 's/.\{6\}$/.../'
+ 1633  echo $OPENAI_API_KEY | sed 's/.\{26\}$/.../'
+ 1634  gptcode "print(42)"
+ 1635  codex -q --whoami
+ 1636  codex -q login
+ 1637  codex --help
+ 1638  bash -n /etc/profile.d/global-aliases.sh
+ 1639  # 5-1-A) Proje klasörünü oluştur ve içine gir
+ 1640  mkdir -p ~/git/traderai
+ 1641  cd ~/git/traderai
+ 1642  lsa
+ 1643  codex init
+ 1644  git init
+ 1645  git commit --allow-empty -m "chore: initial empty commit"
+ 1646  # 5-1-C) Kontrol
+ 1647  git status          # “nothing to commit, working tree clean” görmelisin
+ 1648  pwd                 # …/git/traderai
+ 1649  codex init
+ 1650  ls -R | head
+ 1651  lsr
+ 1652  ls
+ 1653  ls -R
+ 1654  ls -r
+ 1655  ls -R
+ 1656  bashrc
+ 1657  lsr
+ 1658  bashrc
+ 1659  lsr
+ 1660  git ac
+ 1661  git push
+ 1662  git remote add origin https://github.com/ozkantarik/traderai.git
+ 1663  git branch -M main
+ 1664  git push -u origin main
+ 1665  git web
+ 1666  exp
+ 1667  # proje klasöründe olduğundan emin ol
+ 1668  cd ~/git/traderai
+ 1669  # venv oluştur (+ zsh kullanıyorsan .zshrc’ye source satırı eklersin)
+ 1670  python3 -m venv .venv
+ 1671  source .venv/bin/activate
+ 1672  kv
+ 1673  v
+ 1674  # pip güncelle + ilk temel paketler
+ 1675  pip install --upgrade pip
+ 1676  pip install fastapi uvicorn duckdb celery redis python-binance openai python-dotenv
+ 1677  # kullandığımız paketleri requirements.txt’ye sabitle
+ 1678  pip freeze > requirements.txt
+ 1679  git remote -v      # “origin  git@github...” satırı
+ 1680  git log --oneline  # “feat: bootstrap Codex multi-agent template” commits
+ 1681  lsr
+ 1682  # config.py  (yeni satır)
+ 1683  DUCKDB_PATH = "data/traderai.duckdb"
+ 1684  codex
+ 1685  python - <<'PY'
+ 1686  import database, pathlib, config, duckdb, os
+ 1687  print("DB exists:", pathlib.Path(config.DUCKDB_PATH).exists())
+ 1688  con = database.get_conn()
+ 1689  print("tables:", con.sql("SHOW TABLES").fetchall())
+ 1690  PY
+ 1691  git add database.py config.py data/.gitkeep
+ 1692  git commit -m "feat: add DuckDB schema and database module"
+ 1693  git push
+ 1694  git log
+ 1695  lsr
+ 1696  git ac
+ 1697  git push
+ 1698  lsr
+ 1699  sudo apt-get update -y
+ 1700  sudo apt-get install -y redis-server
+ 1701  sudo systemctl enable redis-server --now
+ 1702  redis-cli ping
+ 1703  nano market_data.py
+ 1704  nano config.py
+ 1705  nano scheduler.py
+ 1706  nano market_data.py
+ 1707  nano scheduler.py
+ 1708  python -m py_compile scheduler.py
+ 1709  cls
+ 1710  celery -A scheduler.celery_app worker --loglevel=info
+ 1711  cls
+ 1712  celery -A scheduler.celery_app worker --loglevel=info
+ 1713  cls
+ 1714  rec deneme
+ 1715  terminal
+ 1716  lsa
+ 1717  rec
+ 1718  lsa
+ 1719  rep deneme
+ 1720  rep
+ 1721  rec
+ 1722  rep
+ 1723  cls
+ 1724  lsa
+ 1725  rmr *
+ 1726  lsa
+ 1727  cls
+ 1728  rec
+ 1729  h
+ 1730  rep
+ 1731  lsa
+ 1732  exp
+ 1733  bashrc
+ 1734  rep2x
+ 1735  lsa
+ 1736  bashrc
+ 1737  rep2x
+ 1738  rep2xff
+ 1739  bashrc
+ 1740  rep2xff
+ 1741  rep5x
+ 1742  tetris
+ 1743  rec codex
+ 1744  git s
+ 1745  git ac
+ 1746  git push
+ 1747  git web
+ 1748  tetris
+ 1749  git s
+ 1750  # 2) Depodan takibini kaldır (çalışma dizininde kalsın):
+ 1751  git rm --cached tetris_scores.json
+ 1752  # 3) Değişikliği commit et:
+ 1753  git commit -m "chore: ignore local high-score file"
+ 1754  # 4) Push et:
+ 1755  git push
+ 1756  # Takibi bırak:
+ 1757  git rm -r --cached mockups/
+ 1758  git commit -m "chore: ignore mockups folder"
+ 1759  git push
+ 1760  git s
+ 1761  git ac
+ 1762  git push
+ 1763  git s
+ 1764  git sync
+ 1765  git lg             # grafikli, tek satırlık log
+ 1766  git lg -n 20       # son 20
+ 1767  git lg
+ 1768  git log
+ 1769  git main
+ 1770  git s
+ 1771  git sync
+ 1772  git cd1
+ 1773  git cdn 1
+ 1774  git main
+ 1775  git log
+ 1776  git cd c83383907b956c749ffe7a8b382529e6455699ff
+ 1777  tetris
+ 1778  git log
+ 1779  git cd d5427c5654d248485b212e4c6fabe4ed6ecafb03
+ 1780  tetris
+ 1781  git main
+ 1782  tetris
+ 1783  git web
+ 1784  git cd d5427c5654d248485b212e4c6fabe4ed6ecafb03
+ 1785  tetris
+ 1786  git main
+ 1787  tetris
+ 1788  git cdx 1
+ 1789  git main
+ 1790  git s
+ 1791  git main
+ 1792  git cdx 1
+ 1793  git s
+ 1794  git main
+ 1795  git s
+ 1796  git undo
+ 1797  bashrc
+ 1798  exp
+ 1799  bashrc
+ 1800  exp
+ 1801  bashrc
+ 1802  lsa
+ 1803  npp tetris.log
+ 1804  bashrc
+ 1805  npp tetris.log
+ 1806  bashrc
+ 1807  npp tetris.log
+ 1808  bashrc
+ 1809  cls
+ 1810  bashrc
+ 1811  python --version
+ 1812  lsa
+ 1813  traderbot
+ 1814  cd traderbot
+ 1815  lsa
+ 1816  v
+ 1817  python --version
+ 1818  py --version
+ 1819  git --version
+ 1820  kv
+ 1821  bashrc
+ 1822  repo
+ 1823  ls
+ 1824  pwd
+ 1825  h
+tarik@Duo ~/git
+$ h
+  826  cls
+  827  s'ldek
+  828  exit
+  829  tetris
+  830  rep
+  831  exit
+  832  tetris
+  833  claude
+  834  tetris
+  835  exit
+  836  codex
+  837  exit
+  838  bashrc
+  839  lsa
+  840  tetris
+  841  lsa
+  842  npp tetris.log
+  843  bashrc
+  844  npp
+  845  npp tetris.log
+  846  wslpath
+  847  bashrc
+  848  npp tetris.log
+  849  exp
+  850  bashrc
+  851  tetris
+  852  exp
+  853  npp
+  854  git web
+  855  bashrc
+  856  npp tetris.log
+  857  npp
+  858  npp .
+  859  bashrc
+  860  cls
+  861  bashrc
+  862  npp tetris.log
+  863  npp
+  864  bashrc
+  865  npp
+  866  bashrc
+  867  npp
+  868  bashrc
+  869  npp
+  870  npp
+  871  exp
+  872  bashrc
+  873  npp
+  874  tetris
+  875  npp
+  876  bashrc
+  877  npp
+  878  bashrc
+  879  npp
+  880  pwd
+  881  bashrc
+  882  pwd
+  883  npp
+  884  bashrc
+  885  npp
+  886  bashrc
+  887  npp
+  888  bashrc
+  889  npp
+  890  source ~/.bashrc
+  891  npp
+  892  source ~/.bashrc
+  893  npp
+  894  source ~/.bashrc
+  895  npp
+  896  tetris
+  897  npp
+  898  ls
+  899  cls
+  900  exit
+  901  tetris
+  902  rep
+  903  exit
+  904  rep
+  905  rec
+  906  rep
+  907  rep5x
+  908  rep 2x
+  909  rep
+  910  reptrim
+  911  asciinema -h
+  912  exit
+  913  tetris
+  914  exit
+  915  testststststststst
+  916  exit
+  917  denemememe
+  918  exit
+  919  tetris
+  920  exit
+  921  tetris
+  922  exit
+  923  demeeeeeeeeee
+  924  exit
+  925  tetris
+  926  exit
+  927  rec demoootime
+  928  rep demoootime
+  929  exit
+  930  rec
+  931  rep
+  932  recx 5
+  933  repx 5
+  934  tetris
+  935  rec
+  936  rep
+  937  rec
+  938  repx 5
+  939  repx 3
+  940  rec tetris
+  941  rep
+  942  rep tetris
+  943  time
+  944  date
+  945  git s
+  946  rec tetris2
+  947  rec
+  948  bas
+  949  asciinema -h
+  950  bashrc
+  951  rep5x
+  952  rep
+  953  reptrim
+  954  bashrc
+  955  time rep
+  956  time rep5x
+  957  source ~/.bashrc
+  958  cls
+  959  rep5x
+  960  rep
+  961  rep2x
+  962  repff
+  963  rep2xff
+  964  set -x                  # debug: her komutu göster
+  965  rep2x | head            # neyin çağrıldığı net görünür
+  966  set +x
+  967  source ~/.bashrc
+  968  rp5
+  969  source ~/.bashrc
+  970  rep5x
+  971  rep2x
+  972  repff
+  973  rep2xff
+  974  sudo apt update
+  975  sudo apt install asciinema
+  976  source ~/.bashrc
+  977  cls
+  978  source ~/.bashrc
+  979  rep
+  980  rec
+  981  tetris
+  982  rep
+  983  rep2x
+  984  source ~/.bashrc
+  985  tetris
+  986  exit
+  987  tetris
+  988  exit
+  989  tetris
+  990  exit
+  991  tetris
+  992  exit
+  993  tetris
+  994  exit
+  995  tetris
+  996  exit
+  997  tetris
+  998  exit
+  999  tetris
+ 1000  exit
+ 1001  tetris
+ 1002  exit
+ 1003  rec
+ 1004  rec demorecok
+ 1005  rec
+ 1006  rep demorecok
+ 1007  repx 2 demorecok
+ 1008  cls
+ 1009  repx 2 demorecok
+ 1010  rep
+ 1011  repx 2
+ 1012  repx
+ 1013  rep
+ 1014  cls
+ 1015  reccast
+ 1016  repcast
+ 1017  repcastx 2
+ 1018  rec
+ 1019  repcastx 5
+ 1020  repx 5
+ 1021  repx 2
+ 1022  rec
+ 1023  rep
+ 1024  repx 2
+ 1025  rec
+ 1026  rep
+ 1027  repx 3
+ 1028  repx 5
+ 1029  rec
+ 1030  rep
+ 1031  cla
+ 1032  cls
+ 1033  repx 3
+ 1034  repx 5
+ 1035  repx
+ 1036  repx 5 /home/tarik/terminal/terminal_recording.log
+ 1037  repx 5 /home/tarik/terminal/terminal_recording
+ 1038  scriptreplay -h
+ 1039  rec
+ 1040  dddddd
+ 1041  exit
+ 1042  pppp
+ 1043  exit
+ 1044  rrrrrrrrrrrrrrrrrrrr
+ 1045  exit
+ 1046  rec
+ 1047  rep
+ 1048  rec
+ 1049  repx2
+ 1050  repx 2
+ 1051  rec
+ 1052  repx 2
+ 1053  script -h
+ 1054  cls
+ 1055  rec
+ 1056  exit
+ 1057  deneme
+ 1058  rec
+ 1059  rec demo
+ 1060  deneme
+ 1061  test
+ 1062  testttt
+ 1063  testtttt
+ 1064  denemeeeee
+ 1065  testingggg
+ 1066  okkkkkkkkkk
+ 1067  rec
+ 1068  rec
+ 1069  lsa
+ 1070  rec
+ 1071  rec
+ 1072  rep
+ 1073  cls
+ 1074  repx 2
+ 1075  repx 5
+ 1076  cls
+ 1077  repx 2
+ 1078  rep
+ 1079  cls
+ 1080  rec
+ 1081  repx 2
+ 1082  rec
+ 1083  repx 2
+ 1084  cls
+ 1085  rec
+ 1086  reccast
+ 1087  repcast
+ 1088  repcastx 2
+ 1089  reccast
+ 1090  repcastx 2
+ 1091  rec
+ 1092  repcastx 5
+ 1093  asciinema -h
+ 1094  denemeee
+ 1095  testttt
+ 1096  okkkk
+ 1097  ttttttt
+ 1098  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+ 1099  11111111111111111111
+ 1100  heloooo
+ 1101  1111111111
+ 1102  rrrrrrrrrr
+ 1103  ssssssssssssss
+ 1104  111111
+ 1105  rec
+ 1106  repx 2
+ 1107  rec
+ 1108  cls
+ 1109  repx 2
+ 1110  rec
+ 1111  repx 2
+ 1112  rec
+ 1113  repx 2
+ 1114  rec
+ 1115  repx 2
+ 1116  rec
+ 1117  repx 2
+ 1118  rep
+ 1119  rec
+ 1120  repx 2
+ 1121  rec
+ 1122  repx 2
+ 1123  rec
+ 1124  repx 2
+ 1125  rec
+ 1126  repx 2
+ 1127  rec
+ 1128  repx 2
+ 1129  tetris
+ 1130  exp
+ 1131  cls
+ 1132  rec
+ 1133  repx 5
+ 1134  git s
+ 1135  rep
+ 1136  rec tetris_demo
+ 1137  rep
+ 1138  rec tetris_demo
+ 1139  rep tetris_demo
+ 1140  1111
+ 1141  11111
+ 1142  111111
+ 1143  2222222222
+ 1144  33333
+ 1145  4444
+ 1146  aaa
+ 1147  wwwww
+ 1148  dddddd
+ 1149  script -q -a "$_TREC_DIR/$name.log"
+ 1150  repx 2
+ 1151  script -q -O "$_TREC_DIR/$name.log" -T "$_TREC_DIR/$name.timing"
+ 1152  repx 2
+ 1153  script -q -a -O "$_TREC_DIR/$name.log" -T "$_TREC_DIR/$name.timing"
+ 1154  repx 2
+ 1155  script -q -a -O "$_TREC_DIR/$name.log" -T "$_TREC_DIR/$name.timing"
+ 1156  repx 2
+ 1157  script -q -a -O "$_TREC_DIR/$name.log" -T "$_TREC_DIR/$name.timing" < /dev/null
+ 1158  rec
+ 1159  repx 2
+ 1160  rec
+ 1161  repx 2
+ 1162  rec
+ 1163  repx 2
+ 1164  terminal_recording
+ 1165  rec
+ 1166  rec
+ 1167  repx 2
+ 1168  rep
+ 1169  rec
+ 1170  repx 2
+ 1171  1111111111111
+ 1172  2222222
+ 1173  111111111
+ 1174  222
+ 1175  11111111111111
+ 1176  rec
+ 1177  repx 2
+ 1178  rec
+ 1179  script -q -a -t "$_TREC_DIR/$name.timing" "$_TREC_DIR/$name.log"
+ 1180  script -q -a -t "$_TREC_DIR/$name.timing"         "$_TREC_DIR/$name.log"
+ 1181  1111111
+ 1182  repx 2
+ 1183  cls
+ 1184  rec
+ 1185  repx 2
+ 1186  rec
+ 1187  repx 2
+ 1188  rec
+ 1189  repx 2
+ 1190  rec
+ 1191  repx 2
+ 1192  rec
+ 1193  repx2
+ 1194  repx 2
+ 1195  rec
+ 1196  repx 2
+ 1197  script -h
+ 1198  111111111
+ 1199  22222222222
+ 1200  tetris
+ 1201  okkkkkkkkkkkkkkkkkk
+ 1202  rec
+ 1203  repx 2
+ 1204  rec
+ 1205  repx 2
+ 1206  rec
+ 1207  repx 2
+ 1208  cls
+ 1209  rep
+ 1210  cls
+ 1211  rec
+ 1212  rep
+ 1213  rec
+ 1214  tetris
+ 1215  repx 2
+ 1216  rec
+ 1217  repx 2
+ 1218  cls
+ 1219  111111111111111111111
+ 1220  222222
+ 1221  333333
+ 1222  tetris
+ 1223  ooooooooo
+ 1224  tetris
+ 1225  1111111
+ 1226  tetris
+ 1227  5555555
+ 1228  rec
+ 1229  repx 2
+ 1230  rec
+ 1231  repx 2
+ 1232  rep
+ 1233  cls
+ 1234  rec
+ 1235  rep
+ 1236  rec demo
+ 1237  repx 2
+ 1238  repx 2 demo
+ 1239  rep demo
+ 1240  cls
+ 1241  reccast
+ 1242  repcastx 2
+ 1243  reccast
+ 1244  repcastx 5
+ 1245  tetris
+ 1246  git web
+ 1247  tetris
+ 1248  repcastx 3
+ 1249  reccast demo
+ 1250  repcastx 2
+ 1251  repcastx 2 demo
+ 1252  dd
+ 1253  111111111111111111
+ 1254  codex
+ 1255  tetris
+ 1256  codex
+ 1257  rec
+ 1258  repx 2
+ 1259  cls
+ 1260  rec codex
+ 1261  repx 3
+ 1262  repx 3 codex
+ 1263  repx 5 codex
+ 1264  tetris
+ 1265  git ac
+ 1266  git push
+ 1267  git s
+ 1268  git web
+ 1269  codex
+ 1270  rec
+ 1271  repx 2
+ 1272  rec
+ 1273  rep
+ 1274  repx 2
+ 1275  script -h
+ 1276  cd tetris
+ 1277  git s
+ 1278  mkdir apps
+ 1279  cd apps
+ 1280  cd ..
+ 1281  rmdir apps
+ 1282  lsa
+ 1283  cd snake
+ 1284  git copy https://github.com/ozkantarik/snake.git
+ 1285  cd snake
+ 1286  lsa
+ 1287  claude
+ 1288  cd ../tetris
+ 1289  claude
+ 1290  cd ../snake
+ 1291  git web
+ 1292  echo "# snake" >> README.md
+ 1293  git add README.md
+ 1294  git commit -m "first commit"
+ 1295  git push
+ 1296  git pull
+ 1297  python3 snake.py
+ 1298  git pull
+ 1299  python3 snake.py
+ 1300  openai api usage -s 2025-06-28 -e 2025-06-28
+ 1301  openai api usage -s $(date +%F) -e $(date +%F)
+ 1302  git pull
+ 1303  git s
+ 1304  git sync
+ 1305  git s
+ 1306  python3 snake.py
+ 1307  codex
+ 1308  snake
+ 1309  lsa
+ 1310  ./snake
+ 1311  lsa
+ 1312  lsd
+ 1313  lsc
+ 1314  bashrc
+ 1315  lsr
+ 1316  lsa
+ 1317  chmod +x ./snake
+ 1318  lsa
+ 1319  ./snake
+ 1320  git pull
+ 1321  git ac
+ 1322  git push
+ 1323  git s
+ 1324  git sync
+ 1325  bashrc
+ 1326  gits
+ 1327  snake
+ 1328  git pull
+ 1329  # returns USD-cost, request count & token totals for TODAY
+ 1330  openai api request   --method GET   --path /v1/dashboard/billing/usage   --query "start_date=$(date +%F)&end_date=$(date +%F)"
+ 1331  openai api request   --method GET   --path /v1/dashboard/billing/usage   --query "start_date=2025-06-01&end_date=2025-06-30"
+ 1332  cd tetris
+ 1333  lsa
+ 1334  git s
+ 1335  git sync
+ 1336  git s
+ 1337  git pull
+ 1338  gir s
+ 1339  git s
+ 1340  git sync
+ 1341  snake
+ 1342  gits
+ 1343  snake
+ 1344  cd snake
+ 1345  snake
+ 1346  ./snake
+ 1347  git sync
+ 1348  bashrc
+ 1349  snake
+ 1350  tetris
+ 1351  snake
+ 1352  # returns USD-cost, request count & token totals for TODAY
+ 1353  openai api request   --method GET   --path /v1/dashboard/billing/usage   --query "start_date=$(date +%F)&end_date=$(date +%F)"
+ 1354  tetris
+ 1355  git s
+ 1356  codex
+ 1357  git s
+ 1358  git sync
+ 1359  git push
+ 1360  git pull
+ 1361  git sync
+ 1362  git web
+ 1363  git sync
+ 1364  git s
+ 1365  snake
+ 1366  pytest
+ 1367  lsa
+ 1368  cd test
+ 1369  cd tests
+ 1370  lsa
+ 1371  python test_snake.py
+ 1372  python3 test_snake.py
+ 1373  cls
+ 1374  # returns USD-cost, request count & token totals for TODAY
+ 1375  openai api request   --method GET   --path /v1/dashboard/billing/usage   --query "start_date=$(date +%F)&end_date=$(date +%F)"
+ 1376  cd ..
+ 1377  # one-liner to run hooks, linter & tests locally
+ 1378  pre-commit run --all-files && pytest
+ 1379  # upgrade to the modern CLI (requires Python ≥ 3.8)
+ 1380  pip install --upgrade --quiet openai
+ 1381  # confirm new sub-commands are present
+ 1382  openai api -h | grep request          # should list “request” now
+ 1383  cls
+ 1384  # Environment: OPENAI_API_KEY must already be exported
+ 1385  start=$(date +%F)
+ 1386  openai api request                                     --method GET                                         --path /v1/dashboard/billing/usage                  --query "start_date=$start&end_date=$start" | jq '
+ 1387      .daily_costs[0]
+ 1388      | {date:.timestamp | strftime("%F"),
+ 1389         requests:.line_items|length,
+ 1390         usd:.total_cost/100.0}                       # endpoint returns *cents*
+ 1391    '
+ 1392  total_cost/100.0}                       # endpoint returns *cents*
+ 1393  jq: 1 compile
+ 1394  curl https://api.openai.com/v1/dashboard/billing/usage   -H "Authorization: Bearer $OPENAI_API_KEY"             -G                                 --data-urlencode "start_date=$start"                    --data-urlencode "end_date=$start" | jq …
+ 1395  # 1)  enter repo and create an isolated env
+ 1396  cd ~/git/tetris        # or  ~/git/snake
+ 1397  python3 -m venv .venv
+ 1398  source .venv/bin/activate
+ 1399  # 2)  install runtime + test deps  (adjust versions as you like)
+ 1400  pip install -q -U pip
+ 1401  pip install -q pytest pytest-cov pytest-curses coverage ruff
+ 1402  today=$(date -u +%Y-%m-%d)
+ 1403  curl -s https://api.openai.com/v1/usage/costs   -G --data-urlencode "start_date=$today"      --data-urlencode "end_date=$today"   -H "Authorization: Bearer $OPENAI_API_KEY" | jq '{date:.data[0].timestamp|strftime("%F"),
+ 1404       requests:.data[0].num_requests,
+ 1405       usd:(.data[0].total_cost/100)|round(3)}'
+ 1406  curl -s https://api.openai.com/v1/usage/costs   -G --data-urlencode "start_date=$today"      --data-urlencode "end_date=$today"   -H "Authorization: Bearer $OPENAI_API_KEY" | jq '{date:.data[0].timestamp|strftime("%F"),
+ 1407       requests:.data[0].num_requests,
+ 1408       usd:(.data[0].total_cost/100)|round(3)}'
+ 1409  start=$(date -u +%Y-%m-%d)
+ 1410  openai api request   --method GET   --path /v1/dashboard/billing/usage   --query "start_date=$start&end_date=$start" | jq '{date:(.daily_costs[0].timestamp | strftime("%F")),
+ 1411       requests:(.daily_costs[0].line_items | length),
+ 1412       usd:(.daily_costs[0].total_cost/100)}'
+ 1413  start=$(date -u +%Y-%m-%d)
+ 1414  openai api request   --method GET   --path /v1/dashboard/billing/usage   --query "start_date=$start&end_date=$start" | jq '{date:(.daily_costs[0].timestamp | strftime("%F")),
+ 1415       requests:(.daily_costs[0].line_items | length),
+ 1416       usd:(.daily_costs[0].total_cost/100)}'
+ 1417  kv
+ 1418  start=$(date -u +%Y-%m-%d)
+ 1419  openai api request   --method GET   --path /v1/dashboard/billing/usage   --query "start_date=$start&end_date=$start" | jq '{date:(.daily_costs[0].timestamp | strftime("%F")),
+ 1420       requests:(.daily_costs[0].line_items | length),
+ 1421       usd:(.daily_costs[0].total_cost/100)}'
+ 1422  sudo apt install pre-commit
+ 1423  today=$(date -u +%Y-%m-%d)
+ 1424  curl -s https://api.openai.com/v1/usage/costs   -G --data-urlencode "start_date=$today"      --data-urlencode "end_date=$today"   -H "Authorization: Bearer $OPENAI_API_KEY" | jq '{date:.data[0].timestamp|strftime("%F"),
+ 1425       requests:.data[0].num_requests,
+ 1426       usd:(.data[0].total_cost/100)|round(3)}'
+ 1427  sudo apt update && sudo apt install -y jq
+ 1428  start=$(date +%F)
+ 1429  openai api usage --start-date "$start" --end-date "$start"
+ 1430  curl -sG https://api.openai.com/v1/dashboard/billing/usage      -H "Authorization: Bearer $OPENAI_API_KEY"      --data-urlencode start_date="$start"      --data-urlencode end_date="$start" |   jq '.daily_costs[0] |
+ 1431        {date:(.timestamp|strftime("%F")),
+ 1432         requests:(.line_items|length),
+ 1433         usd:(.total_cost/100)}'
+ 1434  openai -h
+ 1435  openai -V
+ 1436  curl -sG https://api.openai.com/v1/dashboard/billing/usage      -H "Authorization: Bearer $OPENAI_API_KEY"      --data-urlencode start_date="$start"      --data-urlencode end_date="$start" |   jq '.daily_costs[0] |
+ 1437        {date:(.timestamp|strftime("%F")),
+ 1438         requests:(.line_items|length),
+ 1439         usd:(.total_cost/100)}'
+ 1440  # ENV değişkeni zaten var:  export OPENAI_API_KEY="sk-..."
+ 1441  today=$(date -u +%Y-%m-%d)
+ 1442  curl -s https://api.openai.com/v1/usage/costs   -G --data-urlencode start_date=$today      --data-urlencode end_date=$today   -H "Authorization: Bearer $OPENAI_API_KEY" | jq '{date:(.data[0].timestamp|strftime("%F")),
+ 1443       requests:.data[0].num_requests,
+ 1444       usd:(.data[0].total_cost/100)}'
+ 1445  cd ~/git/tetris        # or  ~/git/snake
+ 1446  python3 -m venv .venv
+ 1447  source .venv/bin/activate
+ 1448  # 2)  install runtime + test deps  (adjust versions as you like)
+ 1449  pip install -q -U pip
+ 1450  pip install -q pytest pytest-cov pytest-curses coverage ruff
+ 1451  pip install pytest pytest-cov pytest-curses coverage ruff
+ 1452  # şimdiki tarihi zaten today değişkenine aldın
+ 1453  today=$(date -u +%Y-%m-%d)
+ 1454  curl -s https://api.openai.com/v1/usage/costs   -G --data-urlencode start_date=$today      --data-urlencode end_date=$today   -H "Authorization: Bearer $OPENAI_API_KEY" | jq --arg date "$today"   '{date:$date,
+ 1455      requests:.data[0].num_requests,
+ 1456      usd:(.data[0].total_cost/100)}'
+ 1457  kv
+ 1458  curl -s https://api.openai.com/v1/usage/costs      -G --data-urlencode start_date=$today         --data-urlencode end_date=$today-H "Authorization: Bearer $OPENAI_API_KEY" | jq '.data[0].timestamp'
+ 1459  curl -s https://api.openai.com/v1/usage/costs      -G --data-urlencode start_date=$today         --data-urlencode end_date=$today-H "Authorization: Bearer $OPENAI_API_KEY" | jq '.data[0].timestamp'
+ 1460  v
+ 1461  $ python3 --version     # büyük ihtimalle 3.13.x görünür
+ 1462  python3 --version     # büyük ihtimalle 3.13.x görünür
+ 1463  # 2)  Yeni sanal ortam
+ 1464  python3.12 -m venv .venv
+ 1465  source .venv/bin/activate
+ 1466  # 3)  Araçları kur
+ 1467  pip install -U pip
+ 1468  pip install pytest pytest-cov pytest-curses coverage ruff
+ 1469  pytest -q
+ 1470  pytest tests/test_snake.py -q
+ 1471  kv
+ 1472  gits
+ 1473  traderai
+ 1474  lsa
+ 1475  nano scheduler.py
+ 1476  lsa
+ 1477  cd ~/pattern-core          # repo köküne
+ 1478  git status                 # kirli dosya var mı?
+ 1479  cd pattern-core
+ 1480  lsa
+ 1481  git s
+ 1482  pgrep -fl patternloop.py
+ 1483  traderai
+ 1484  python - <<'PY'
+ 1485  import database, time
+ 1486  time.sleep(1)
+ 1487  print(database.get_conn().sql(
+ 1488      "SELECT symbol, price, ts FROM market_data ORDER BY ts DESC LIMIT 5"
+ 1489  ).fetchall())
+ 1490  PY
+ 1491  v
+ 1492  python - <<'PY'
+ 1493  import database, time
+ 1494  time.sleep(1)
+ 1495  print(database.get_conn().sql(
+ 1496      "SELECT symbol, price, ts FROM market_data ORDER BY ts DESC LIMIT 5"
+ 1497  ).fetchall())
+ 1498  PY
+ 1499  lsa
+ 1500  traderai
+ 1501  lsa
+ 1502  cd ~/git/traderai          # repo kökü
+ 1503  source .venv/bin/activate  # sanal ortam
+ 1504  sudo systemctl status redis-server
+ 1505  ls data/traderai.duckdb
+ 1506  lsa
+ 1507  nano market_data.py
+ 1508  nano scheduler.py
+ 1509  celery -A scheduler.celery_app beat   --loglevel=info
+ 1510  nano scheduler.py
+ 1511  nano market_data.py
+ 1512  cls
+ 1513  python - <<'PY'
+ 1514  import database, duckdb, time
+ 1515  time.sleep(2)
+ 1516  print(database.get_conn().sql(
+ 1517      "SELECT symbol, price, ts FROM market_data ORDER BY ts DESC LIMIT 5"
+ 1518  ).fetchall())
+ 1519  PY
+ 1520  bash\npip install python-binance\n
+ 1521  pip install python-binance
+ 1522  cls
+ 1523  celery -A scheduler.celery_app beat --loglevel=info
+ 1524  traderai
+ 1525  celery -A scheduler.celery_app worker --loglevel=info
+ 1526  python - <<'PY'
+ 1527  import database, duckdb, time
+ 1528  time.sleep(2)   # beat’in işi bitirsin diye ufak bekle
+ 1529  print(database.get_conn().sql(
+ 1530      "SELECT symbol, price, ts FROM market_data ORDER BY ts DESC LIMIT 5"
+ 1531  ).fetchall())
+ 1532  PY
+ 1533  lsa
+ 1534  nano scheduler.py
+ 1535  v
+ 1536  celery -A scheduler.celery_app worker --loglevel=info
+ 1537  lsa
+ 1538  nano market_data.py
+ 1539  celery -A scheduler.celery_app worker --loglevel=infols -lh data/pattern.db
+ 1540  ls -lh data/pattern.db
+ 1541  cd data
+ 1542  lsa
+ 1543  ls -lh traderai.duckdb
+ 1544  traderai.duckdb
+ 1545  duckdb data/pattern.db "SELECT COUNT(*) AS signals, MIN(ts), MAX(ts) FROM signal_history;"
+ 1546  traderai
+ 1547  nano market_data.py
+ 1548  echo "python-binance==1.0.29" >> requirements.txt
+ 1549  cat requirements.txt
+ 1550  pip install -r requirements.txt
+ 1551  nano scheduler.py
+ 1552  celery -A scheduler.celery_app worker --loglevel=info
+ 1553  npm search --scope=@openai
+ 1554  curl -s https://registry.npmjs.org/-/orgs/openai/packages?format=cli
+ 1555  curl -s https://registry.npmjs.org/-/orgs/openai/packages
+ 1556  codex --version
+ 1557  npm search "@openai"
+ 1558  bashrc
+ 1559  ta
+ 1560  lsr
+ 1561  nano config.py
+ 1562  celery -A scheduler.celery_app beat --loglevel=info
+ 1563  cls
+ 1564  v
+ 1565  celery -A scheduler.celery_app beat --loglevel=info
+ 1566  celery -A scheduler.celery_app beat --loglevel=infocls
+ 1567  cls
+ 1568  v
+ 1569  traderai
+ 1570  v
+ 1571  python - <<'PY'
+ 1572  import database, duckdb
+ 1573  con = database.get_conn()
+ 1574  print(con.sql("SELECT symbol, price, ts FROM market_data ORDER BY ts DESC LIMIT 5").fetchall())
+ 1575  PY
+ 1576  python - <<'PY'
+ 1577  import database, duckdb
+ 1578  print(database.get_conn().sql(
+ 1579      "SELECT symbol, price, ts FROM market_data ORDER BY ts DESC LIMIT 5"
+ 1580  ).fetchall())
+ 1581  PY
+ 1582  nanoscheduler.py
+ 1583  nano scheduler.py
+ 1584  cls
+ 1585  gptchat deneme
+ 1586  traderbot
+ 1587  v
+ 1588  gptchat deneme
+ 1589  kv
+ 1590  gptchat deneme
+ 1591  cls
+ 1592  gptchat deneme
+ 1593  mkdir -p ~/.config/openai
+ 1594  printf '{\n  "api_key": "sk-proj-•••"\n}\n' > ~/.config/openai/config.json
+ 1595  chmod 600 ~/.config/openai/config.json
+ 1596  nano ~/.config/openai/config.json
+ 1597  bashrc
+ 1598  # bir kez yap
+ 1599  python3 -m pip install --upgrade pipx
+ 1600  pipx ensurepath      # ~/.local/bin’i PATH’e ekler
+ 1601  pipx install openai-cli
+ 1602  h
+ 1603  bashrc
+ 1604  bashrcg
+ 1605  gptchat deneme
+ 1606  sudo apt install jq
+ 1607  bashrcg
+ 1608  bashrc
+ 1609  bashrcg
+ 1610  gptchat deneme
+ 1611  cls
+ 1612  # bir kez yap
+ 1613  python3 -m pip install --upgrade pipx
+ 1614  pipx ensurepath      # ~/.local/bin’i PATH’e ekler
+ 1615  pipx install openai-cli
+ 1616  bashrc
+ 1617  sudo chown root:root /etc/profile.d/global-aliases.sh
+ 1618  sudo chmod 644  /etc/profile.d/global-aliases.sh
+ 1619  bashrcg
+ 1620  bashrc
+ 1621  bashrcg
+ 1622  bashrc
+ 1623  git edit
+ 1624  cls
+ 1625  # yeni terminal aç
+ 1626  echo $OPENAI_API_KEY | sed 's/.\{6\}$/.../'
+ 1627  gptmodels       # model listesi gelmeli
+ 1628  gptchat "Merhaba"   # cevap gelmeli
+ 1629  cleanup         # git alias'ı test
+ 1630  unalias cleanup
+ 1631  cls
+ 1632  echo $OPENAI_API_KEY | sed 's/.\{6\}$/.../'
+ 1633  echo $OPENAI_API_KEY | sed 's/.\{26\}$/.../'
+ 1634  gptcode "print(42)"
+ 1635  codex -q --whoami
+ 1636  codex -q login
+ 1637  codex --help
+ 1638  bash -n /etc/profile.d/global-aliases.sh
+ 1639  # 5-1-A) Proje klasörünü oluştur ve içine gir
+ 1640  mkdir -p ~/git/traderai
+ 1641  cd ~/git/traderai
+ 1642  lsa
+ 1643  codex init
+ 1644  git init
+ 1645  git commit --allow-empty -m "chore: initial empty commit"
+ 1646  # 5-1-C) Kontrol
+ 1647  git status          # “nothing to commit, working tree clean” görmelisin
+ 1648  pwd                 # …/git/traderai
+ 1649  codex init
+ 1650  ls -R | head
+ 1651  lsr
+ 1652  ls
+ 1653  ls -R
+ 1654  ls -r
+ 1655  ls -R
+ 1656  bashrc
+ 1657  lsr
+ 1658  bashrc
+ 1659  lsr
+ 1660  git ac
+ 1661  git push
+ 1662  git remote add origin https://github.com/ozkantarik/traderai.git
+ 1663  git branch -M main
+ 1664  git push -u origin main
+ 1665  git web
+ 1666  exp
+ 1667  # proje klasöründe olduğundan emin ol
+ 1668  cd ~/git/traderai
+ 1669  # venv oluştur (+ zsh kullanıyorsan .zshrc’ye source satırı eklersin)
+ 1670  python3 -m venv .venv
+ 1671  source .venv/bin/activate
+ 1672  kv
+ 1673  v
+ 1674  # pip güncelle + ilk temel paketler
+ 1675  pip install --upgrade pip
+ 1676  pip install fastapi uvicorn duckdb celery redis python-binance openai python-dotenv
+ 1677  # kullandığımız paketleri requirements.txt’ye sabitle
+ 1678  pip freeze > requirements.txt
+ 1679  git remote -v      # “origin  git@github...” satırı
+ 1680  git log --oneline  # “feat: bootstrap Codex multi-agent template” commits
+ 1681  lsr
+ 1682  # config.py  (yeni satır)
+ 1683  DUCKDB_PATH = "data/traderai.duckdb"
+ 1684  codex
+ 1685  python - <<'PY'
+ 1686  import database, pathlib, config, duckdb, os
+ 1687  print("DB exists:", pathlib.Path(config.DUCKDB_PATH).exists())
+ 1688  con = database.get_conn()
+ 1689  print("tables:", con.sql("SHOW TABLES").fetchall())
+ 1690  PY
+ 1691  git add database.py config.py data/.gitkeep
+ 1692  git commit -m "feat: add DuckDB schema and database module"
+ 1693  git push
+ 1694  git log
+ 1695  lsr
+ 1696  git ac
+ 1697  git push
+ 1698  lsr
+ 1699  sudo apt-get update -y
+ 1700  sudo apt-get install -y redis-server
+ 1701  sudo systemctl enable redis-server --now
+ 1702  redis-cli ping
+ 1703  nano market_data.py
+ 1704  nano config.py
+ 1705  nano scheduler.py
+ 1706  nano market_data.py
+ 1707  nano scheduler.py
+ 1708  python -m py_compile scheduler.py
+ 1709  cls
+ 1710  celery -A scheduler.celery_app worker --loglevel=info
+ 1711  cls
+ 1712  celery -A scheduler.celery_app worker --loglevel=info
+ 1713  cls
+ 1714  rec deneme
+ 1715  terminal
+ 1716  lsa
+ 1717  rec
+ 1718  lsa
+ 1719  rep deneme
+ 1720  rep
+ 1721  rec
+ 1722  rep
+ 1723  cls
+ 1724  lsa
+ 1725  rmr *
+ 1726  lsa
+ 1727  cls
+ 1728  rec
+ 1729  h
+ 1730  rep
+ 1731  lsa
+ 1732  exp
+ 1733  bashrc
+ 1734  rep2x
+ 1735  lsa
+ 1736  bashrc
+ 1737  rep2x
+ 1738  rep2xff
+ 1739  bashrc
+ 1740  rep2xff
+ 1741  rep5x
+ 1742  tetris
+ 1743  rec codex
+ 1744  git s
+ 1745  git ac
+ 1746  git push
+ 1747  git web
+ 1748  tetris
+ 1749  git s
+ 1750  # 2) Depodan takibini kaldır (çalışma dizininde kalsın):
+ 1751  git rm --cached tetris_scores.json
+ 1752  # 3) Değişikliği commit et:
+ 1753  git commit -m "chore: ignore local high-score file"
+ 1754  # 4) Push et:
+ 1755  git push
+ 1756  # Takibi bırak:
+ 1757  git rm -r --cached mockups/
+ 1758  git commit -m "chore: ignore mockups folder"
+ 1759  git push
+ 1760  git s
+ 1761  git ac
+ 1762  git push
+ 1763  git s
+ 1764  git sync
+ 1765  git lg             # grafikli, tek satırlık log
+ 1766  git lg -n 20       # son 20
+ 1767  git lg
+ 1768  git log
+ 1769  git main
+ 1770  git s
+ 1771  git sync
+ 1772  git cd1
+ 1773  git cdn 1
+ 1774  git main
+ 1775  git log
+ 1776  git cd c83383907b956c749ffe7a8b382529e6455699ff
+ 1777  tetris
+ 1778  git log
+ 1779  git cd d5427c5654d248485b212e4c6fabe4ed6ecafb03
+ 1780  tetris
+ 1781  git main
+ 1782  tetris
+ 1783  git web
+ 1784  git cd d5427c5654d248485b212e4c6fabe4ed6ecafb03
+ 1785  tetris
+ 1786  git main
+ 1787  tetris
+ 1788  git cdx 1
+ 1789  git main
+ 1790  git s
+ 1791  git main
+ 1792  git cdx 1
+ 1793  git s
+ 1794  git main
+ 1795  git s
+ 1796  git undo
+ 1797  bashrc
+ 1798  exp
+ 1799  bashrc
+ 1800  exp
+ 1801  bashrc
+ 1802  lsa
+ 1803  npp tetris.log
+ 1804  bashrc
+ 1805  npp tetris.log
+ 1806  bashrc
+ 1807  npp tetris.log
+ 1808  bashrc
+ 1809  cls
+ 1810  bashrc
+ 1811  python --version
+ 1812  lsa
+ 1813  traderbot
+ 1814  cd traderbot
+ 1815  lsa
+ 1816  v
+ 1817  python --version
+ 1818  py --version
+ 1819  git --version
+ 1820  kv
+ 1821  bashrc
+ 1822  repo
+ 1823  ls
+ 1824  pwd
+ 1825  h
+tarik@Duo ~/git
+$ b
+  918  exit
+ 1422  sudo apt install pre-commit
+ 1436  curl -sG https://api.openai.com/v1/dashboard/billing/usage      -H "Authorization: Bearer $OPENAI_API_KEY"      --data-urlencode start_ 1601  pipx install openai-cli
+ 1633  echo $OPENAI_API_KEY | sed 's/.\{26\}$/.../'
+ 1853  lsa
+ 1854  tetris
+ 1855  lsa
+ 1856  npp README.md
+ 1857  git s
+ 1858  git main
+ 1859  git
+ 1860  git s
+ 1861  lsa
+ 1862  py
+ 1863  python
+ 1864  bashrc
+ 1865  lsa
+ 1866  npp tetris
+ 1867  python3
+ 1868  git log
+ 1869  git sync
+ 1870  git web
+ 1853  lsa
+ 1854  tetris
+ 1855  lsa
+ 1856  npp README.md
+ 1859  git
+ 1860  git s
+ 1861  lsa
+ 1862  py
+ 1863  python
+ 1864  bashrc
+ 1865  lsa
+ 1866  npp tetris
+ 1867  python3
+ 1868  git log
+ 1869  git sync
+ 1870  git web
+ 1871  codex
+ 1872  claude
+ 1873  bashrc
+ 1874  h
+ 1875  bash -n /etc/profile.d/global-aliases.sh
+ 1876  bashrc
+ 1877  bashrcg
+ 1878  gptmodels
+ 1879  gpt
+ 1880  s
+ 1881  ss
+ 1882  gpt
+ 1883  gpt selam
+ 1884  gpt api cost ne kadar suan>
+ 1885  gpt api cost ne kadar suan?
+ 1886  gpt "api cost ne kadar suan?"
+ 1887  gptmodels
+ 1888  bashrcg
+ 1889  c
+ 1890  codex -q --whoami
+ 1891  git edit
+ 1892  openai-cli
+ 1893  curl -s https://api.openai.com/v1/usage/costs   -G --data-urlencode "start_date=$today"      --data-urlencode "end_date=$today"   -H "Authorization: Bearer $OPENAI_API_KEY" | jq '{date:.data[0].timestamp|strftime("%F"),
+ 1894  curl -s https://api.openai.com/v1/usage/costs   -G --data-urlencode "start_date=$today"      --data-urlencode "end_date=$today"   -H "Authorization: Bearer $OPENAI_API_KEY" | jq '{date:.data[0].timestamp|strftime("%F")
+ 1895  h
+tarik@Duo ~/git
+$ gptq^C
+tarik@Duo ~/git
+$ ^C
+tarik@Duo ~/git
+$logout
+ u  24.04 0:-*                                                                       2! 59m 0.07 20x3.0GHz 15.4G3% 1007G1% 2025-09-27 00:29:25[exited]
+tarik@Duo ~/git
+$ repo
+tarik@Duo ~/git
+$ git clone https://github.com/freqtrade/freqtrade.git
+Cloning into 'freqtrade'...
+remote: Enumerating objects: 172437, done.
+remote: Counting objects: 100% (374/374), done.
+remote: Compressing objects: 100% (165/165), done.
+remote: Total 172437 (delta 289), reused 209 (delta 209), pack-reused 172063 (from 3)
+Receiving objects: 100% (172437/172437), 617.82 MiB | 2.98 MiB/s, done.
+Resolving deltas: 100% (127199/127199), done.
+tarik@Duo ~/git
+$ ft
+ft: command not found
+tarik@Duo ~/git
+$ cd freqtrade
+tarik@Duo ~/git/freqtrade
+$ nv
+created virtual environment CPython3.12.3.final.0-64 in 281ms
+  creator CPython3Posix(dest=/home/tarik/git/freqtrade/.venv, clear=False, no_vcs_ignore=False, global=False)
+  seeder FromAppData(download=False, pip=bundle, via=copy, app_data_dir=/home/tarik/.local/share/virtualenv)
+    added seed packages: pip==24.0
+  activators BashActivator,CShellActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator
+tarik@Duo ~/git/freqtrade
+$ v
+(.venv) tarik@Duo ~/git/freqtrade
+$ pip install -r requirements.txt
+Ignoring pyarrow: markers 'platform_machine == "aarch64"' don't match your environment
+Collecting numpy==2.3.3 (from -r requirements.txt (line 1))
+  Downloading numpy-2.3.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.1/62.1 kB 551.7 kB/s eta 0:00:00
+Collecting pandas==2.3.2 (from -r requirements.txt (line 2))
+  Downloading pandas-2.3.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (91 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 91.2/91.2 kB 2.7 MB/s eta 0:00:00
+Collecting bottleneck==1.6.0 (from -r requirements.txt (line 3))
+  Downloading bottleneck-1.6.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (8.2 kB)
+Collecting numexpr==2.12.1 (from -r requirements.txt (line 4))
+  Downloading numexpr-2.12.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.0 kB)
+Collecting ft-pandas-ta==0.3.15 (from -r requirements.txt (line 6))
+  Downloading ft_pandas_ta-0.3.15-py3-none-any.whl.metadata (2.2 kB)
+Collecting ta-lib==0.6.7 (from -r requirements.txt (line 7))
+  Downloading ta_lib-0.6.7-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (24 kB)
+Collecting technical==1.5.3 (from -r requirements.txt (line 8))
+  Downloading technical-1.5.3-py3-none-any.whl.metadata (7.9 kB)
+Collecting ccxt==4.5.5 (from -r requirements.txt (line 10))
+  Downloading ccxt-4.5.5-py2.py3-none-any.whl.metadata (130 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 130.9/130.9 kB 1.3 MB/s eta 0:00:00
+Collecting cryptography==46.0.1 (from -r requirements.txt (line 11))
+  Downloading cryptography-46.0.1-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (5.7 kB)
+Collecting aiohttp==3.12.15 (from -r requirements.txt (line 12))
+  Downloading aiohttp-3.12.15-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.7 kB)
+Collecting SQLAlchemy==2.0.43 (from -r requirements.txt (line 13))
+  Downloading sqlalchemy-2.0.43-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.6 kB)
+Collecting python-telegram-bot==22.4 (from -r requirements.txt (line 14))
+  Downloading python_telegram_bot-22.4-py3-none-any.whl.metadata (17 kB)
+Collecting httpx>=0.24.1 (from -r requirements.txt (line 16))
+  Using cached httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+Collecting humanize==4.13.0 (from -r requirements.txt (line 17))
+  Downloading humanize-4.13.0-py3-none-any.whl.metadata (7.8 kB)
+Collecting cachetools==6.2.0 (from -r requirements.txt (line 18))
+  Downloading cachetools-6.2.0-py3-none-any.whl.metadata (5.4 kB)
+Collecting requests==2.32.5 (from -r requirements.txt (line 19))
+  Downloading requests-2.32.5-py3-none-any.whl.metadata (4.9 kB)
+Collecting urllib3==2.5.0 (from -r requirements.txt (line 20))
+  Using cached urllib3-2.5.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting certifi==2025.8.3 (from -r requirements.txt (line 21))
+  Downloading certifi-2025.8.3-py3-none-any.whl.metadata (2.4 kB)
+Collecting jsonschema==4.25.1 (from -r requirements.txt (line 22))
+  Downloading jsonschema-4.25.1-py3-none-any.whl.metadata (7.6 kB)
+Collecting tabulate==0.9.0 (from -r requirements.txt (line 23))
+  Downloading tabulate-0.9.0-py3-none-any.whl.metadata (34 kB)
+Collecting pycoingecko==3.2.0 (from -r requirements.txt (line 24))
+  Downloading pycoingecko-3.2.0-py3-none-any.whl.metadata (16 kB)
+Collecting jinja2==3.1.6 (from -r requirements.txt (line 25))
+  Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting joblib==1.5.2 (from -r requirements.txt (line 26))
+  Downloading joblib-1.5.2-py3-none-any.whl.metadata (5.6 kB)
+Collecting rich==14.1.0 (from -r requirements.txt (line 27))
+  Downloading rich-14.1.0-py3-none-any.whl.metadata (18 kB)
+Collecting pyarrow==21.0.0 (from -r requirements.txt (line 28))
+  Downloading pyarrow-21.0.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (3.3 kB)
+Collecting python-rapidjson==1.21 (from -r requirements.txt (line 33))
+  Downloading python_rapidjson-1.21-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (23 kB)
+Collecting orjson==3.11.3 (from -r requirements.txt (line 35))
+  Downloading orjson-3.11.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (41 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 41.9/41.9 kB 1.4 MB/s eta 0:00:00
+Collecting sdnotify==0.3.2 (from -r requirements.txt (line 38))
+  Downloading sdnotify-0.3.2.tar.gz (2.5 kB)
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Preparing metadata (pyproject.toml) ... done
+Collecting fastapi==0.117.1 (from -r requirements.txt (line 41))
+  Downloading fastapi-0.117.1-py3-none-any.whl.metadata (28 kB)
+Collecting pydantic==2.11.9 (from -r requirements.txt (line 42))
+  Downloading pydantic-2.11.9-py3-none-any.whl.metadata (68 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 68.4/68.4 kB 436.9 kB/s eta 0:00:00
+Collecting uvicorn==0.36.0 (from -r requirements.txt (line 43))
+  Downloading uvicorn-0.36.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting pyjwt==2.10.1 (from -r requirements.txt (line 44))
+  Downloading PyJWT-2.10.1-py3-none-any.whl.metadata (4.0 kB)
+Collecting aiofiles==24.1.0 (from -r requirements.txt (line 45))
+  Downloading aiofiles-24.1.0-py3-none-any.whl.metadata (10 kB)
+Collecting psutil==7.1.0 (from -r requirements.txt (line 46))
+  Downloading psutil-7.1.0-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (23 kB)
+Collecting questionary==2.1.1 (from -r requirements.txt (line 49))
+  Downloading questionary-2.1.1-py3-none-any.whl.metadata (5.4 kB)
+Collecting prompt-toolkit==3.0.52 (from -r requirements.txt (line 50))
+  Downloading prompt_toolkit-3.0.52-py3-none-any.whl.metadata (6.4 kB)
+Collecting python-dateutil==2.9.0.post0 (from -r requirements.txt (line 52))
+  Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting pytz==2025.2 (from -r requirements.txt (line 53))
+  Using cached pytz-2025.2-py2.py3-none-any.whl.metadata (22 kB)
+Collecting schedule==1.2.2 (from -r requirements.txt (line 56))
+  Downloading schedule-1.2.2-py3-none-any.whl.metadata (3.8 kB)
+Collecting websockets==15.0.1 (from -r requirements.txt (line 59))
+  Using cached websockets-15.0.1-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.8 kB)
+Collecting janus==2.0.0 (from -r requirements.txt (line 60))
+  Downloading janus-2.0.0-py3-none-any.whl.metadata (5.3 kB)
+Collecting ast-comments==1.2.3 (from -r requirements.txt (line 62))
+  Downloading ast_comments-1.2.3-py3-none-any.whl.metadata (2.1 kB)
+Collecting packaging==25.0 (from -r requirements.txt (line 63))
+  Using cached packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting tzdata>=2022.7 (from pandas==2.3.2->-r requirements.txt (line 2))
+  Using cached tzdata-2025.2-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting build (from ta-lib==0.6.7->-r requirements.txt (line 7))
+  Downloading build-1.3.0-py3-none-any.whl.metadata (5.6 kB)
+Collecting cython (from ta-lib==0.6.7->-r requirements.txt (line 7))
+  Downloading cython-3.1.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (5.0 kB)
+Collecting setuptools>=60.9.0 (from ccxt==4.5.5->-r requirements.txt (line 10))
+  Using cached setuptools-80.9.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting typing-extensions>=4.4.0 (from ccxt==4.5.5->-r requirements.txt (line 10))
+  Downloading typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting aiodns>=1.1.1 (from ccxt==4.5.5->-r requirements.txt (line 10))
+  Downloading aiodns-3.5.0-py3-none-any.whl.metadata (5.8 kB)
+Collecting yarl>=1.7.2 (from ccxt==4.5.5->-r requirements.txt (line 10))
+  Using cached yarl-1.20.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (73 kB)
+Collecting cffi>=2.0.0 (from cryptography==46.0.1->-r requirements.txt (line 11))
+  Downloading cffi-2.0.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.6 kB)
+Collecting aiohappyeyeballs>=2.5.0 (from aiohttp==3.12.15->-r requirements.txt (line 12))
+  Using cached aiohappyeyeballs-2.6.1-py3-none-any.whl.metadata (5.9 kB)
+Collecting aiosignal>=1.4.0 (from aiohttp==3.12.15->-r requirements.txt (line 12))
+  Downloading aiosignal-1.4.0-py3-none-any.whl.metadata (3.7 kB)
+Collecting attrs>=17.3.0 (from aiohttp==3.12.15->-r requirements.txt (line 12))
+  Using cached attrs-25.3.0-py3-none-any.whl.metadata (10 kB)
+Collecting frozenlist>=1.1.1 (from aiohttp==3.12.15->-r requirements.txt (line 12))
+  Using cached frozenlist-1.7.0-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (18 kB)
+Collecting multidict<7.0,>=4.5 (from aiohttp==3.12.15->-r requirements.txt (line 12))
+  Downloading multidict-6.6.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (5.3 kB)
+Collecting propcache>=0.2.0 (from aiohttp==3.12.15->-r requirements.txt (line 12))
+  Using cached propcache-0.3.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (12 kB)
+Collecting greenlet>=1 (from SQLAlchemy==2.0.43->-r requirements.txt (line 13))
+  Downloading greenlet-3.2.4-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (4.1 kB)
+Collecting charset_normalizer<4,>=2 (from requests==2.32.5->-r requirements.txt (line 19))
+  Downloading charset_normalizer-3.4.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (36 kB)
+Collecting idna<4,>=2.5 (from requests==2.32.5->-r requirements.txt (line 19))
+  Using cached idna-3.10-py3-none-any.whl.metadata (10 kB)
+Collecting jsonschema-specifications>=2023.03.6 (from jsonschema==4.25.1->-r requirements.txt (line 22))
+  Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+Collecting referencing>=0.28.4 (from jsonschema==4.25.1->-r requirements.txt (line 22))
+  Downloading referencing-0.36.2-py3-none-any.whl.metadata (2.8 kB)
+Collecting rpds-py>=0.7.1 (from jsonschema==4.25.1->-r requirements.txt (line 22))
+  Downloading rpds_py-0.27.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.2 kB)
+Collecting MarkupSafe>=2.0 (from jinja2==3.1.6->-r requirements.txt (line 25))
+  Downloading MarkupSafe-3.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.0 kB)
+Collecting markdown-it-py>=2.2.0 (from rich==14.1.0->-r requirements.txt (line 27))
+  Downloading markdown_it_py-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+Collecting pygments<3.0.0,>=2.13.0 (from rich==14.1.0->-r requirements.txt (line 27))
+  Downloading pygments-2.19.2-py3-none-any.whl.metadata (2.5 kB)
+Collecting starlette<0.49.0,>=0.40.0 (from fastapi==0.117.1->-r requirements.txt (line 41))
+  Downloading starlette-0.48.0-py3-none-any.whl.metadata (6.3 kB)
+Collecting annotated-types>=0.6.0 (from pydantic==2.11.9->-r requirements.txt (line 42))
+  Using cached annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.33.2 (from pydantic==2.11.9->-r requirements.txt (line 42))
+  Using cached pydantic_core-2.33.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.8 kB)
+Collecting typing-inspection>=0.4.0 (from pydantic==2.11.9->-r requirements.txt (line 42))
+  Using cached typing_inspection-0.4.1-py3-none-any.whl.metadata (2.6 kB)
+Collecting click>=7.0 (from uvicorn==0.36.0->-r requirements.txt (line 43))
+  Downloading click-8.3.0-py3-none-any.whl.metadata (2.6 kB)
+Collecting h11>=0.8 (from uvicorn==0.36.0->-r requirements.txt (line 43))
+  Using cached h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting wcwidth (from prompt-toolkit==3.0.52->-r requirements.txt (line 50))
+  Downloading wcwidth-0.2.14-py2.py3-none-any.whl.metadata (15 kB)
+Collecting six>=1.5 (from python-dateutil==2.9.0.post0->-r requirements.txt (line 52))
+  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting anyio (from httpx>=0.24.1->-r requirements.txt (line 16))
+  Downloading anyio-4.11.0-py3-none-any.whl.metadata (4.1 kB)
+Collecting httpcore==1.* (from httpx>=0.24.1->-r requirements.txt (line 16))
+  Using cached httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+Collecting pycares>=4.9.0 (from aiodns>=1.1.1->ccxt==4.5.5->-r requirements.txt (line 10))
+  Downloading pycares-4.11.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (4.5 kB)
+Collecting pycparser (from cffi>=2.0.0->cryptography==46.0.1->-r requirements.txt (line 11))
+  Downloading pycparser-2.23-py3-none-any.whl.metadata (993 bytes)
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich==14.1.0->-r requirements.txt (line 27))
+  Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Collecting sniffio>=1.1 (from anyio->httpx>=0.24.1->-r requirements.txt (line 16))
+  Using cached sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+Collecting pyproject_hooks (from build->ta-lib==0.6.7->-r requirements.txt (line 7))
+  Downloading pyproject_hooks-1.2.0-py3-none-any.whl.metadata (1.3 kB)
+Downloading numpy-2.3.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.6/16.6 MB 5.0 MB/s eta 0:00:00
+Downloading pandas-2.3.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.0/12.0 MB 4.1 MB/s eta 0:00:00
+Downloading bottleneck-1.6.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (377 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 377.5/377.5 kB 4.4 MB/s eta 0:00:00
+Downloading numexpr-2.12.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (413 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 413.6/413.6 kB 2.2 MB/s eta 0:00:00
+Downloading ft_pandas_ta-0.3.15-py3-none-any.whl (219 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 219.8/219.8 kB 3.6 MB/s eta 0:00:00
+Downloading ta_lib-0.6.7-cp312-cp312-manylinux_2_28_x86_64.whl (4.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.1/4.1 MB 5.3 MB/s eta 0:00:00
+Downloading technical-1.5.3-py3-none-any.whl (52 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 52.1/52.1 kB 1.4 MB/s eta 0:00:00
+Downloading ccxt-4.5.5-py2.py3-none-any.whl (5.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.7/5.7 MB 4.7 MB/s eta 0:00:00
+Downloading cryptography-46.0.1-cp311-abi3-manylinux_2_34_x86_64.whl (4.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.6/4.6 MB 3.9 MB/s eta 0:00:00
+Downloading aiohttp-3.12.15-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 3.5 MB/s eta 0:00:00
+Downloading sqlalchemy-2.0.43-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 4.2 MB/s eta 0:00:00
+Downloading python_telegram_bot-22.4-py3-none-any.whl (729 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 729.4/729.4 kB 3.5 MB/s eta 0:00:00
+Downloading humanize-4.13.0-py3-none-any.whl (128 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 128.9/128.9 kB 2.1 MB/s eta 0:00:00
+Downloading cachetools-6.2.0-py3-none-any.whl (11 kB)
+Downloading requests-2.32.5-py3-none-any.whl (64 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.7/64.7 kB 1.5 MB/s eta 0:00:00
+Using cached urllib3-2.5.0-py3-none-any.whl (129 kB)
+Downloading certifi-2025.8.3-py3-none-any.whl (161 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 161.2/161.2 kB 2.8 MB/s eta 0:00:00
+Downloading jsonschema-4.25.1-py3-none-any.whl (90 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 90.0/90.0 kB 1.9 MB/s eta 0:00:00
+Downloading tabulate-0.9.0-py3-none-any.whl (35 kB)
+Downloading pycoingecko-3.2.0-py3-none-any.whl (10 kB)
+Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB 3.2 MB/s eta 0:00:00
+Downloading joblib-1.5.2-py3-none-any.whl (308 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 308.4/308.4 kB 3.9 MB/s eta 0:00:00
+Downloading rich-14.1.0-py3-none-any.whl (243 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 243.4/243.4 kB 3.0 MB/s eta 0:00:00
+Downloading pyarrow-21.0.0-cp312-cp312-manylinux_2_28_x86_64.whl (42.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.8/42.8 MB 5.2 MB/s eta 0:00:00
+Downloading python_rapidjson-1.21-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (1.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 4.5 MB/s eta 0:00:00
+Downloading orjson-3.11.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (132 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 132.9/132.9 kB 3.3 MB/s eta 0:00:00
+Downloading fastapi-0.117.1-py3-none-any.whl (95 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 96.0/96.0 kB 2.2 MB/s eta 0:00:00
+Downloading pydantic-2.11.9-py3-none-any.whl (444 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 444.9/444.9 kB 3.5 MB/s eta 0:00:00
+Downloading uvicorn-0.36.0-py3-none-any.whl (67 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 67.7/67.7 kB 2.4 MB/s eta 0:00:00
+Downloading PyJWT-2.10.1-py3-none-any.whl (22 kB)
+Downloading aiofiles-24.1.0-py3-none-any.whl (15 kB)
+Downloading psutil-7.1.0-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (291 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 291.2/291.2 kB 2.0 MB/s eta 0:00:00
+Downloading questionary-2.1.1-py3-none-any.whl (36 kB)
+Downloading prompt_toolkit-3.0.52-py3-none-any.whl (391 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 391.4/391.4 kB 4.2 MB/s eta 0:00:00
+Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Using cached pytz-2025.2-py2.py3-none-any.whl (509 kB)
+Downloading schedule-1.2.2-py3-none-any.whl (12 kB)
+Using cached websockets-15.0.1-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (182 kB)
+Downloading janus-2.0.0-py3-none-any.whl (12 kB)
+Downloading ast_comments-1.2.3-py3-none-any.whl (5.8 kB)
+Using cached packaging-25.0-py3-none-any.whl (66 kB)
+Using cached pydantic_core-2.33.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
+Using cached httpx-0.28.1-py3-none-any.whl (73 kB)
+Using cached httpcore-1.0.9-py3-none-any.whl (78 kB)
+Downloading aiodns-3.5.0-py3-none-any.whl (8.1 kB)
+Using cached aiohappyeyeballs-2.6.1-py3-none-any.whl (15 kB)
+Downloading aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+Using cached annotated_types-0.7.0-py3-none-any.whl (13 kB)
+Using cached attrs-25.3.0-py3-none-any.whl (63 kB)
+Downloading cffi-2.0.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (219 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 219.6/219.6 kB 1.8 MB/s eta 0:00:00
+Downloading charset_normalizer-3.4.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (151 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 151.8/151.8 kB 3.1 MB/s eta 0:00:00
+Downloading click-8.3.0-py3-none-any.whl (107 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 107.3/107.3 kB 2.2 MB/s eta 0:00:00
+Using cached frozenlist-1.7.0-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (241 kB)
+Downloading greenlet-3.2.4-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (607 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 607.6/607.6 kB 3.4 MB/s eta 0:00:00
+Using cached h11-0.16.0-py3-none-any.whl (37 kB)
+Using cached idna-3.10-py3-none-any.whl (70 kB)
+Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+Downloading markdown_it_py-4.0.0-py3-none-any.whl (87 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 87.3/87.3 kB 1.9 MB/s eta 0:00:00
+Downloading MarkupSafe-3.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (23 kB)
+Downloading multidict-6.6.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (256 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 256.1/256.1 kB 3.2 MB/s eta 0:00:00
+Using cached propcache-0.3.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (224 kB)
+Downloading pygments-2.19.2-py3-none-any.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 3.4 MB/s eta 0:00:00
+Downloading referencing-0.36.2-py3-none-any.whl (26 kB)
+Downloading rpds_py-0.27.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (386 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 386.9/386.9 kB 4.7 MB/s eta 0:00:00
+Using cached setuptools-80.9.0-py3-none-any.whl (1.2 MB)
+Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+Downloading starlette-0.48.0-py3-none-any.whl (73 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.7/73.7 kB 2.1 MB/s eta 0:00:00
+Downloading anyio-4.11.0-py3-none-any.whl (109 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 109.1/109.1 kB 769.2 kB/s eta 0:00:00
+Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.6/44.6 kB 1.9 MB/s eta 0:00:00
+Using cached typing_inspection-0.4.1-py3-none-any.whl (14 kB)
+Using cached tzdata-2025.2-py2.py3-none-any.whl (347 kB)
+Using cached yarl-1.20.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (355 kB)
+Downloading build-1.3.0-py3-none-any.whl (23 kB)
+Downloading cython-3.1.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (3.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 5.4 MB/s eta 0:00:00
+Downloading wcwidth-0.2.14-py2.py3-none-any.whl (37 kB)
+Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Downloading pycares-4.11.0-cp312-cp312-manylinux_2_28_x86_64.whl (641 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 641.1/641.1 kB 4.0 MB/s eta 0:00:00
+Using cached sniffio-1.3.1-py3-none-any.whl (10 kB)
+Downloading pycparser-2.23-py3-none-any.whl (118 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 118.1/118.1 kB 3.0 MB/s eta 0:00:00
+Downloading pyproject_hooks-1.2.0-py3-none-any.whl (10 kB)
+Building wheels for collected packages: sdnotify
+  Building wheel for sdnotify (pyproject.toml) ... done
+  Created wheel for sdnotify: filename=sdnotify-0.3.2-py3-none-any.whl size=3293 sha256=7f24268341866d01b46b0e37030112eaeebc9082048c0f9d3cb75df32971a71a
+  Stored in directory: /home/tarik/.cache/pip/wheels/7b/fd/1a/aef6fcdc3b65d860837609746bf1036a52d858378c7547ce63
+Successfully built sdnotify
+Installing collected packages: sdnotify, pytz, websockets, wcwidth, urllib3, tzdata, typing-extensions, tabulate, sniffio, six, setuptools, schedule, rpds-py, python-rapidjson, pyproject_hooks, pyjwt, pygments, pycparser, pyarrow, psutil, propcache, packaging, orjson, numpy, multidict, mdurl, MarkupSafe, joblib, janus, idna, humanize, h11, greenlet, frozenlist, cython, click, charset_normalizer, certifi, cachetools, attrs, ast-comments, annotated-types, aiohappyeyeballs, aiofiles, yarl, uvicorn, typing-inspection, SQLAlchemy, requests, referencing, python-dateutil, pydantic-core, prompt-toolkit, numexpr, markdown-it-py, jinja2, httpcore, cffi, build, bottleneck, anyio, aiosignal, ta-lib, starlette, rich, questionary, pydantic, pycoingecko, pycares, pandas, jsonschema-specifications, httpx, cryptography, aiohttp, technical, python-telegram-bot, jsonschema, ft-pandas-ta, fastapi, aiodns, ccxt
+Successfully installed MarkupSafe-3.0.2 SQLAlchemy-2.0.43 aiodns-3.5.0 aiofiles-24.1.0 aiohappyeyeballs-2.6.1 aiohttp-3.12.15 aiosignal-1.4.0annotated-types-0.7.0 anyio-4.11.0 ast-comments-1.2.3 attrs-25.3.0 bottleneck-1.6.0 build-1.3.0 cachetools-6.2.0 ccxt-4.5.5 certifi-2025.8.3 cffi-2.0.0 charset_normalizer-3.4.3 click-8.3.0 cryptography-46.0.1 cython-3.1.4 fastapi-0.117.1 frozenlist-1.7.0 ft-pandas-ta-0.3.15 greenlet-3.2.4 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 humanize-4.13.0 idna-3.10 janus-2.0.0 jinja2-3.1.6 joblib-1.5.2 jsonschema-4.25.1 jsonschema-specifications-2025.9.1 markdown-it-py-4.0.0 mdurl-0.1.2 multidict-6.6.4 numexpr-2.12.1 numpy-2.3.3 orjson-3.11.3 packaging-25.0 pandas-2.3.2 prompt-toolkit-3.0.52 propcache-0.3.2 psutil-7.1.0 pyarrow-21.0.0 pycares-4.11.0 pycoingecko-3.2.0 pycparser-2.23 pydantic-2.11.9 pydantic-core-2.33.2 pygments-2.19.2 pyjwt-2.10.1 pyproject_hooks-1.2.0 python-dateutil-2.9.0.post0 python-rapidjson-1.21 python-telegram-bot-22.4 pytz-2025.2 questionary-2.1.1 referencing-0.36.2 requests-2.32.5 rich-14.1.0 rpds-py-0.27.1 schedule-1.2.2 sdnotify-0.3.2 setuptools-80.9.0 six-1.17.0 sniffio-1.3.1 starlette-0.48.0 ta-lib-0.6.7 tabulate-0.9.0 technical-1.5.3 typing-extensions-4.15.0 typing-inspection-0.4.1 tzdata-2025.2 urllib3-2.5.0 uvicorn-0.36.0 wcwidth-0.2.14 websockets-15.0.1 yarl-1.20.1
+(.venv) tarik@Duo ~/git/freqtrade
+$

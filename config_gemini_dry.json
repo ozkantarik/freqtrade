@@ -1,0 +1,28 @@
+{
+    "dry_run": true,
+    "stake_currency": "USDT",
+    "stake_amount": "unlimited",
+    "max_open_trades": 3,
+    "timeframe": "5m",
+    "fiat_display_currency": "USD",
+    "exchange": {
+        "name": "binance",
+        "key": "",
+        "secret": ""
+    },
+    "pairlists": [
+        {
+            "method": "VolumePairList",
+            "number_assets": 20,
+            "sort_key": "quoteVolume"
+        }
+    ],
+    "telegram": {
+        "enabled": false,
+        "token": "8202801760:AAEzGPaPzw-Z2IlHWdh4ONpD3KDiimiX9EQ",
+        "chat_id": "5709016282"
+    },
+    "api_server": {
+        "enabled": false
+    }
+}

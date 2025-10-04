@@ -1,0 +1,67 @@
+{
+    "max_open_trades": 3,
+    "stake_currency": "USDT",
+    "stake_amount": "unlimited",
+    "fiat_display_currency": "USD",
+    "timeframe": "5m",
+    "minimal_roi": {
+        "0": 0.03
+    },
+    "stoploss": -0.10,
+    "exchange": {
+        "name": "binance",
+        "pair_whitelist": [
+            "BTC/USDT",
+            "ETH/USDT"
+        ]
+    },
+    "entry_pricing": {
+        "price_side": "bid",
+        "use_order_book": true,
+        "order_book_top": 1
+    },
+    "exit_pricing": {
+        "price_side": "ask",
+        "use_order_book": true,
+        "order_book_top": 1
+    },
+    "pairlists": [
+        {
+            "method": "StaticPairList"
+        }
+    ],
+    "telegram": {
+        "enabled": true,
+        "token": "YOUR_TELEGRAM_TOKEN",
+        "chat_id": "YOUR_TELEGRAM_CHAT_ID"
+    },
+    "freqai": {
+        "enabled": true,
+        "purge_old_models": true,
+        "train_period_days": 30,
+        "backtest_period_days": 7,
+        "feature_parameters": {
+            "include_timeframes": [
+                "5m"
+            ],
+            "include_corr_pairlist": [
+                "BTC/USDT",
+                "ETH/USDT"
+            ],
+            "label_period_candles": 20,
+            "indicator_periods_candles": [
+                10,
+                20,
+                50
+            ]
+        },
+        "data_split_parameters": {
+            "train_split_ratio": 0.85
+        },
+        "freqaimodel": "LightGBMClassifier",
+        "triggers": {
+            "buy_trigger": "&.pred > 0.51",
+            "sell_trigger": "&.pred < 0.49"
+        }
+    }
+}

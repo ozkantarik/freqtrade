@@ -1,0 +1,58 @@
+{
+    "freqai": {
+        "enabled": true,
+        "purge_old_models": true,
+        "train_period_days": 30,
+        "backtest_period_days": 7,
+        "feature_parameters": {
+            "include_timeframes": [
+                "5m"
+            ],
+            "include_corr_pairlist": [
+                "BTC/USDT",
+                "ETH/USDT"
+            ],
+            "label_period_candles": 20,
+            "indicator_periods_candles": [
+                10,
+                20,
+                50
+            ],
+            "include_shifted_candles": 0,
+            "DI_threshold": 0,
+            "weight_factor": 0,
+            "principal_component_analysis": false,
+            "use_SVM_to_remove_outliers": false,
+            "plot_feature_importances": 0,
+            "shuffle_after_split": false,
+            "buffer_train_data_candles": 0
+        },
+        "data_split_parameters": {
+            "train_split_ratio": 0.85,
+            "shuffle": false
+        },
+        "freqaimodel": "LightGBMClassifier",
+        "triggers": {
+            "buy_trigger": "&.pred > 0.51",
+            "sell_trigger": "&.pred < 0.49"
+        },
+        "identifier": "example",
+        "write_metrics_to_disk": false,
+        "conv_width": 1,
+        "live_retrain_hours": 0,
+        "expiration_hours": 0,
+        "save_backtest_models": false,
+        "activate_tensorboard": true,
+        "wait_for_training_iteration_on_reload": true,
+        "continual_learning": false,
+        "keras": false
+    },
+    "timeframe": "5m",
+    "stake_amount": "unlimited",
+    "stake_currency": "USDT",
+    "max_open_trades": 3,
+    "pairs": [
+        "BTC/USDT",
+        "ETH/USDT"
+    ]
+}
