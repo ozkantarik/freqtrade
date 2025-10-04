@@ -60,7 +60,7 @@
         },
         "freqaimodel": "LightGBMClassifier",
         "triggers": {
-            "buy_trigger": "&.pred > 0.51",
+            "buy_trigger": "&.pred > {buy_pred_threshold}",
             "sell_trigger": "&.pred < 0.49"
         }
     }

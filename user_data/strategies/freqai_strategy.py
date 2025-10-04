@@ -3,12 +3,16 @@ import talib.abstract as ta
 from pandas import DataFrame
 
 from freqtrade.strategy import IStrategy
+from freqtrade.strategy.parameters import RealParameter
 from technical import qtpylib
 
 
 class freqai_strategy(IStrategy):
     INTERFACE_VERSION = 3
     timeframe = "5m"
+
+    # Hyperoptable parameters
+    buy_pred_threshold = RealParameter(0.5, 1.0, default=0.7, space="buy")
 
     can_short = False
     use_exit_signal = True
