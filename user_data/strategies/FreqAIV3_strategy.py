@@ -118,23 +118,24 @@ class FreqAIV3_strategy(IStrategy):
 
     def set_freqai_targets(self, dataframe: DataFrame, metadata: dict, **kwargs) -> DataFrame:
         """
-        Define the training target: a risk-adjusted future return.
+        Define the training target: the maximum future return.
 
-        We aim to predict the mean return over a future period, penalized by the
-        standard deviation (volatility) of that same period. This encourages the
-        model to find profitable but also stable opportunities.
+        We ask the model to predict the maximum percentage gain it expects over the
+        next N candles (defined by `label_period_candles`). This is a simpler and
+        more direct regression task than predicting a risk-adjusted return.
         """
         label_period = self.freqai_info["feature_parameters"]["label_period_candles"]
 
-        future_returns = dataframe["close"].shift(-label_period) / dataframe["close"] - 1
-        future_volatility = future_returns.rolling(label_period).std()
+        # Calculate the highest price reached in the next N candles
+        future_max_price = dataframe["high"].rolling(label_period).max().shift(-label_period)
 
-        # Target is the future return divided by future volatility (a simplified Sharpe Ratio)
-        # We use a small epsilon to avoid division by zero
-        dataframe["&-s-risk_adjusted_return"] = future_returns / (future_volatility + 1e-6)
+        # Target is the percentage difference between the future max price and the current price
+        dataframe["&-s_future_max_return"] = (future_max_price - dataframe["close"]) / dataframe[
+            "close"
+        ]
 
         # Fill NaNs that can result from the calculation
-        dataframe.fillna({"&-s-risk_adjusted_return": 0}, inplace=True)
+        dataframe.fillna({"&-s_future_max_return": 0}, inplace=True)
 
         return dataframe
 
@@ -154,7 +155,7 @@ class FreqAIV3_strategy(IStrategy):
         """
         enter_long_conditions = [
             dataframe["do_predict"] == 1,
-            dataframe["&-s-risk_adjusted_return"] > 0.04,  # Threshold for entry
+            dataframe["&-s_future_max_return"] > 0.03,
         ]
 
         if enter_long_conditions:
@@ -173,7 +174,7 @@ class FreqAIV3_strategy(IStrategy):
         """
         exit_long_conditions = [
             dataframe["do_predict"] == 1,
-            dataframe["&-s-risk_adjusted_return"] < -0.01,  # Threshold for exit
+            dataframe["&-s_future_max_return"] < 0.01,
         ]
 
         if exit_long_conditions:
