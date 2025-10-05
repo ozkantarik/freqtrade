@@ -54,7 +54,8 @@
         "enabled": false
     },
     "backtesting": {
-        "timerange": "20250901-20251001"
+        "timerange": "20250901-20251001",
+        "export_filename": "user_data/backtest_results/latest_run.feather"
     },
     "freqai": {
         "enabled": true,
