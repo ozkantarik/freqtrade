@@ -9,7 +9,7 @@
     "dry_run_wallet": 1000,
     "timerange": "20250901-20251001",
     "timeframe": "5m",
-    "strategy": "FreqAIV3_strategy",
+    "strategy": "GeminiV3_strategy",
     "exchange": {
         "name": "binance",
         "pair_whitelist": [
@@ -35,7 +35,7 @@
     "freqai": {
         "enabled": true,
         "freqaimodel": "LightGBMRegressor",
-        "identifier": "freqaiv3-gemini-v2",
+        "identifier": "gemini-v3",
         "train_period_days": 30,
         "backtest_period_days": 7,
         "feature_parameters": {

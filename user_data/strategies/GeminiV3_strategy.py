@@ -6,13 +6,13 @@ import talib.abstract as ta
 from pandas import DataFrame
 from technical import qtpylib
 
-from freqtrade.strategy import IStrategy
+from freqtrade.strategy import DecimalParameter, IStrategy
 
 
 logger = logging.getLogger(__name__)
 
 
-class FreqAIV3_strategy(IStrategy):
+class GeminiV3_strategy(IStrategy):
     """
     FreqAI V3 Hybrid Strategy
 
@@ -32,6 +32,11 @@ class FreqAIV3_strategy(IStrategy):
 
     INTERFACE_VERSION = 3
     timeframe = "5m"
+
+    # --- Hyperopt Spaces ---
+    # Define the ranges for the parameters we want to optimize.
+    buy_future_max_return = DecimalParameter(0.01, 0.10, default=0.03, space="buy")
+    sell_future_max_return = DecimalParameter(0.00, 0.02, default=0.01, space="sell")
 
     # ROI table and stoploss are not strictly necessary for an AI-driven strategy
     # but are kept as a fallback and for legacy analysis.
@@ -155,7 +160,7 @@ class FreqAIV3_strategy(IStrategy):
         """
         enter_long_conditions = [
             dataframe["do_predict"] == 1,
-            dataframe["&-s_future_max_return"] > 0.03,
+            dataframe["&-s_future_max_return"] > self.buy_future_max_return.value,
         ]
 
         if enter_long_conditions:
@@ -174,7 +179,7 @@ class FreqAIV3_strategy(IStrategy):
         """
         exit_long_conditions = [
             dataframe["do_predict"] == 1,
-            dataframe["&-s_future_max_return"] < 0.01,
+            dataframe["&-s_future_max_return"] < self.sell_future_max_return.value,
         ]
 
         if exit_long_conditions:
