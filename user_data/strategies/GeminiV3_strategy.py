@@ -6,7 +6,7 @@ import talib.abstract as ta
 from pandas import DataFrame
 from technical import qtpylib
 
-from freqtrade.strategy import DecimalParameter, IStrategy
+from freqtrade.strategy import IStrategy
 
 
 logger = logging.getLogger(__name__)
@@ -32,11 +32,6 @@ class GeminiV3_strategy(IStrategy):
 
     INTERFACE_VERSION = 3
     timeframe = "5m"
-
-    # --- Hyperopt Spaces ---
-    # Define the ranges for the parameters we want to optimize.
-    buy_future_max_return = DecimalParameter(0.005, 0.05, default=0.01, space="buy")
-    sell_future_max_return = DecimalParameter(0.00, 0.02, default=0.01, space="sell")
 
     # ROI table and stoploss are not strictly necessary for an AI-driven strategy
     # but are kept as a fallback and for legacy analysis.
@@ -139,24 +134,19 @@ class GeminiV3_strategy(IStrategy):
 
     def set_freqai_targets(self, dataframe: DataFrame, metadata: dict, **kwargs) -> DataFrame:
         """
-        Define the training target: the maximum future return.
+        Define the training target: a binary classification target.
 
-        We ask the model to predict the maximum percentage gain it expects over the
-        next N candles (defined by `label_period_candles`). This is a simpler and
-        more direct regression task than predicting a risk-adjusted return.
+        We ask the model to predict if the future return will be > 2% (1) or not (0).
+        This is a simpler question for the model to answer than predicting a precise value.
         """
         label_period = self.freqai_info["feature_parameters"]["label_period_candles"]
 
-        # Calculate the highest price reached in the next N candles
+        # Calculate the future return
         future_max_price = dataframe["high"].rolling(label_period).max().shift(-label_period)
+        future_return = (future_max_price - dataframe["close"]) / dataframe["close"]
 
-        # Target is the percentage difference between the future max price and the current price
-        dataframe["&-s_future_max_return"] = (future_max_price - dataframe["close"]) / dataframe[
-            "close"
-        ]
-
-        # Fill NaNs that can result from the calculation
-        dataframe.fillna({"&-s_future_max_return": 0}, inplace=True)
+        # Create the binary classification target as strings
+        dataframe["&-s_class"] = (future_return > 0.01).astype(str)
 
         return dataframe
 
@@ -176,7 +166,7 @@ class GeminiV3_strategy(IStrategy):
         """
         enter_long_conditions = [
             dataframe["do_predict"] == 1,
-            dataframe["&-s_future_max_return"] > self.buy_future_max_return.value,
+            dataframe["&-s_class"] == "1",
         ]
 
         if enter_long_conditions:
@@ -195,7 +185,7 @@ class GeminiV3_strategy(IStrategy):
         """
         exit_long_conditions = [
             dataframe["do_predict"] == 1,
-            dataframe["&-s_future_max_return"] < self.sell_future_max_return.value,
+            dataframe["&-s_class"] == "0",
         ]
 
         if exit_long_conditions:
