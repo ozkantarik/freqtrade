@@ -35,7 +35,7 @@ class GeminiV3_strategy(IStrategy):
 
     # --- Hyperopt Spaces ---
     # Define the ranges for the parameters we want to optimize.
-    buy_future_max_return = DecimalParameter(0.01, 0.10, default=0.03, space="buy")
+    buy_future_max_return = DecimalParameter(0.005, 0.05, default=0.01, space="buy")
     sell_future_max_return = DecimalParameter(0.00, 0.02, default=0.01, space="sell")
 
     # ROI table and stoploss are not strictly necessary for an AI-driven strategy
