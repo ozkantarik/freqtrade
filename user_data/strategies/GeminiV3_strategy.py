@@ -103,6 +103,8 @@ class GeminiV3_strategy(IStrategy):
         dataframe["mfi"] = ta.MFI(dataframe)
         dataframe["adx"] = ta.ADX(dataframe)
         dataframe["atr"] = ta.ATR(dataframe)
+        dataframe["ema_50"] = ta.EMA(dataframe, timeperiod=50)
+        dataframe["ema_200"] = ta.EMA(dataframe, timeperiod=200)
 
         # Normalize indicators by their recent rolling history
         for indicator in ["rsi", "mfi", "adx"]:
@@ -110,9 +112,23 @@ class GeminiV3_strategy(IStrategy):
             rolling_std = dataframe[indicator].rolling(20).std()
             dataframe[f"%-{indicator}_norm"] = (dataframe[indicator] - rolling_mean) / rolling_std
 
+        # --- Advanced Feature Creation ---
+
+        # Feature 1: Trend Strength (slope of the 50-period EMA)
+        dataframe["%-trend_strength"] = ta.LINEARREG_SLOPE(dataframe["ema_50"], timeperiod=10)
+
+        # Feature 2: Long-Term Context (price relative to 200-period EMA)
+        dataframe["%-long_term_context"] = (dataframe["close"] - dataframe["ema_200"]) / dataframe[
+            "ema_200"
+        ]
+
         # Create a composite AI score
         dataframe["%-ai_score"] = (
-            dataframe["%-rsi_norm"] + dataframe["%-mfi_norm"] + dataframe["%-adx_norm"]
+            dataframe["%-rsi_norm"]
+            + dataframe["%-mfi_norm"]
+            + dataframe["%-adx_norm"]
+            + dataframe["%-trend_strength"]
+            + dataframe["%-long_term_context"]
         )
 
         # Add time-based features

@@ -35,7 +35,7 @@
     "freqai": {
         "enabled": true,
         "freqaimodel": "LightGBMRegressor",
-        "identifier": "gemini-v3",
+        "identifier": "gemini-v4",
         "train_period_days": 30,
         "backtest_period_days": 7,
         "feature_parameters": {
