@@ -35,7 +35,7 @@
     "freqai": {
         "enabled": true,
         "freqaimodel": "LightGBMClassifier",
-        "identifier": "gemini-v11-classifier-0.5pct",
+        "identifier": "gemini-v12-classifier-balanced",
         "train_period_days": 30,
         "backtest_period_days": 7,
         "feature_parameters": {
@@ -58,6 +58,8 @@
             "test_size": 0.2,
             "random_state": 1
         },
-        "model_training_parameters": {}
+        "model_training_parameters": {
+            "class_weight": "balanced"
+        }
     }
 }
