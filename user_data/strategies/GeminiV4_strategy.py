@@ -1,6 +1,7 @@
 # --- Do not remove these imports ---
 from functools import reduce
 
+import numpy as np
 import talib.abstract as ta
 from pandas import DataFrame
 
@@ -31,13 +32,53 @@ class GeminiV4_strategy(IStrategy):
         self, dataframe: DataFrame, metadata: dict, **kwargs
     ) -> DataFrame:
         """
-        Create the core features for the volatility squeeze analysis.
+        Select and prefix the features for the AI model.
+        """
+        dataframe["%-squeeze_on"] = dataframe["squeeze_on"]
+        dataframe["%-bb_width"] = dataframe["bb_width"]
+        dataframe["%-rsi"] = dataframe["rsi"]
+
+        return dataframe
+
+    def set_freqai_targets(self, dataframe: DataFrame, metadata: dict, **kwargs) -> DataFrame:
+        """
+        Define the training target.
+
+        The goal is to predict a profitable breakout *during* a squeeze.
+        A "buy" signal (1) is generated if:
+        1. The candle is currently in a squeeze (`%-squeeze_on` == 1).
+        2. The price increases by at least (ATR * multiplier) in the next N candles.
+        """
+        label_period = self.freqai_info["feature_parameters"]["label_period_candles"]
+
+        # Calculate the maximum future price increase over the label period
+        future_max_price = dataframe["high"].rolling(label_period).max().shift(-label_period)
+        future_price_increase = future_max_price - dataframe["close"]
+
+        # Define a profitable breakout
+        profitable_breakout = future_price_increase > (
+            dataframe["atr"] * self.buy_profit_target_atr_multiplier.value
+        )
+
+        # Set the target class only for candles that are in a squeeze
+        dataframe["&-s_class"] = np.where(
+            dataframe["%-squeeze_on"] == 1, profitable_breakout, 0
+        ).astype(str)
+
+        return dataframe
+
+    def populate_indicators(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
+        """
+        Calculate all indicators for both the AI model and the strategy logic.
         """
         # -- Bollinger Bands --
         bollinger = ta.BBANDS(dataframe, timeperiod=20, nbdevup=2.0, nbdevdn=2.0, matype=0)
         dataframe["bb_lowerband"] = bollinger["lowerband"]
         dataframe["bb_middleband"] = bollinger["middleband"]
         dataframe["bb_upperband"] = bollinger["upperband"]
+        dataframe["bb_width"] = (dataframe["bb_upperband"] - dataframe["bb_lowerband"]) / dataframe[
+            "bb_middleband"
+        ]
 
         # -- Keltner Channels --
         keltner_period = 20
@@ -47,63 +88,29 @@ class GeminiV4_strategy(IStrategy):
         keltner_upper = keltner_middle + dataframe["atr"] * 1.5
         keltner_lower = keltner_middle - dataframe["atr"] * 1.5
 
-        # --- Volatility Squeeze Feature ---
-        # A "squeeze" is on when the Bollinger Bands are inside the Keltner Channels
-        squeeze_on = (dataframe["bb_lowerband"] > keltner_lower) & (
-            dataframe["bb_upperband"] < keltner_upper
-        )
-        dataframe["%-squeeze_on"] = squeeze_on.astype(int)
+        # --- Volatility Squeeze ---
+        dataframe["squeeze_on"] = (
+            (dataframe["bb_lowerband"] > keltner_lower)
+            & (dataframe["bb_upperband"] < keltner_upper)
+        ).astype(int)
 
-        # Other volatility and momentum features
-        dataframe["%-bb_width"] = (
-            dataframe["bb_upperband"] - dataframe["bb_lowerband"]
-        ) / dataframe["bb_middleband"]
-        dataframe["%-rsi"] = ta.RSI(dataframe)
+        # -- Other features --
+        dataframe["rsi"] = ta.RSI(dataframe)
 
-        return dataframe
-
-    def set_freqai_targets(self, dataframe: DataFrame, metadata: dict, **kwargs) -> DataFrame:
-        """
-        Define the training target.
-
-        The goal is to predict a profitable breakout after a volatility squeeze.
-        A "buy" signal (1) is generated if:
-        1. A squeeze has just ended (the `%-squeeze_on` feature goes from 1 to 0).
-        2. The price increases by at least 2 * ATR in the next N candles.
-        """
-        label_period = self.freqai_info["feature_parameters"]["label_period_candles"]
-
-        # Identify where the squeeze ends
-        squeeze_ends = (dataframe["%-squeeze_on"].shift(1) == 1) & (dataframe["%-squeeze_on"] == 0)
-
-        # Calculate the maximum future price increase over the label period
-        future_max_price = dataframe["high"].rolling(label_period).max().shift(-label_period)
-        future_price_increase = future_max_price - dataframe["close"]
-
-        # Define a profitable breakout as an increase of 2x ATR
-        profitable_breakout = future_price_increase > (
-            dataframe["atr"] * self.buy_profit_target_atr_multiplier.value
-        )
-
-        # Set the target class
-        dataframe["&-s_class"] = (squeeze_ends & profitable_breakout).astype(str)
-
-        return dataframe
-
-    def populate_indicators(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
-        """
-        Main entry point for FreqAI.
-        """
+        # --- FreqAI Run ---
         dataframe = self.freqai.start(dataframe, metadata, self)
+
         return dataframe
 
     def populate_entry_trend(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
         """
         AI-driven entry logic.
         """
+        squeeze_ends = (dataframe["squeeze_on"].shift(1) == 1) & (dataframe["squeeze_on"] == 0)
         enter_long_conditions = [
             dataframe["do_predict"] == 1,
             dataframe["&-s_class"] == "1",
+            squeeze_ends,
         ]
 
         if enter_long_conditions:
@@ -116,17 +123,8 @@ class GeminiV4_strategy(IStrategy):
 
     def populate_exit_trend(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
         """
-        AI-driven exit logic.
+        AI exit signal is disabled for this version.
+        Exits will be handled by stoploss or ROI.
         """
-        exit_long_conditions = [
-            dataframe["do_predict"] == 1,
-            dataframe["&-s_class"] == "0",
-        ]
-
-        if exit_long_conditions:
-            dataframe.loc[
-                reduce(lambda x, y: x & y, exit_long_conditions),
-                "exit_long",
-            ] = 1
-
+        dataframe["exit_long"] = 0
         return dataframe
