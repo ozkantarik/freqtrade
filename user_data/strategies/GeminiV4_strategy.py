@@ -4,7 +4,7 @@ from functools import reduce
 import talib.abstract as ta
 from pandas import DataFrame
 
-from freqtrade.strategy import IStrategy
+from freqtrade.strategy import DecimalParameter, IStrategy
 
 
 class GeminiV4_strategy(IStrategy):
@@ -17,6 +17,9 @@ class GeminiV4_strategy(IStrategy):
 
     INTERFACE_VERSION = 3
     timeframe = "5m"
+
+    # Define optimizable parameter for the profit target
+    buy_profit_target_atr_multiplier = DecimalParameter(0.5, 3.0, default=2.0, space="buy")
 
     # Minimal ROI and stoploss are fallbacks
     minimal_roi = {"0": 0.05}
@@ -78,7 +81,9 @@ class GeminiV4_strategy(IStrategy):
         future_price_increase = future_max_price - dataframe["close"]
 
         # Define a profitable breakout as an increase of 2x ATR
-        profitable_breakout = future_price_increase > (dataframe["atr"] * 2.0)
+        profitable_breakout = future_price_increase > (
+            dataframe["atr"] * self.buy_profit_target_atr_multiplier.value
+        )
 
         # Set the target class
         dataframe["&-s_class"] = (squeeze_ends & profitable_breakout).astype(str)
