@@ -1,4 +1,4 @@
 # Project DOING
 
-- **Current Task:** Awaiting orders for `GeminiV5` development.
-- **Next Decision:** Select a new strategic direction from the options listed in `TODO.md`.
+- **Current Mission:** Develop `GeminiV5` - A Pure Trend-Following Strategy.
+- **Objective:** Build and test a strategy that uses ADX and other indicators to identify and trade strong market trends.
