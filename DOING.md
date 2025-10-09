@@ -1,4 +1,4 @@
 # Project DOING
 
-- **Current Task:** Awaiting orders for `GeminiV4` development.
-- **Next Decision:** Select a new strategic direction from the options listed in `TODO.md`.
+- **Current Mission:** Develop `GeminiV4` - A Volatility Trading Strategy.
+- **Objective:** Build and test a strategy that uses Bollinger Bands and ATR to identify and trade volatility breakouts.
