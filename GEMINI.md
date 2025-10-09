@@ -43,3 +43,11 @@
                 - Another detail -> with an outcome
         ```
 *   **Code Simplicity:** I will produce clear, concise, and well-documented code that is easy for you to understand and manage, avoiding unnecessary complexity from external libraries or frameworks.
+
+--- End of Context from: GEMINI.md ---
+
+**Article 12: Mission Log Protocol:** We will maintain a simple, file-based mission log to track our workflow.
+- `TODO.md`: A checklist of future missions and ideas. New ideas are added here.
+- `DOING.md`: A description of the single, active mission. When a task is selected from `TODO.md`, it is moved here.
+- `DONE.md`: A historical log of completed missions, their final outcomes (success, failure, or inconclusive), and the corresponding final commit hash. When a task in `DOING.md` is complete, its summary is moved here.
+These files will be kept up-to-date and included in relevant commits to document the project's evolution.
