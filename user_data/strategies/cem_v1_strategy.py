@@ -1,4 +1,4 @@
-# CemV1 Strategy - Upgraded with AIV3 Features
+# CemV1 Strategy - Single-Stage Advanced Model
 from functools import reduce
 
 import talib.abstract as ta
