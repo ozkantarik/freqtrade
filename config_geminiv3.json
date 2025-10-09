@@ -34,8 +34,8 @@
     ],
     "freqai": {
         "enabled": true,
-        "freqaimodel": "LightGBMClassifier",
-        "identifier": "gemini-v12-classifier-balanced",
+        "freqaimodel": "XGBoostClassifier",
+        "identifier": "gemini-v13-xgboost",
         "train_period_days": 30,
         "backtest_period_days": 7,
         "feature_parameters": {
