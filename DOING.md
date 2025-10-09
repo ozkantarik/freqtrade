@@ -1,4 +1,4 @@
 # Project DOING
 
-- **Current Mission:** Optimize `GeminiV4` Volatility Trading Strategy.
-- **Objective:** Use Hyperopt to find the optimal ATR multiplier for the profit target.
+- **Current Mission:** Refactor `GeminiV4` with a Decoupled Breakout Prediction Target.
+- **Objective:** Teach the AI to predict a breakout *during* a squeeze, and then trigger the buy signal only when the squeeze ends.
