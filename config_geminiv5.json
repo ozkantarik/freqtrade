@@ -1,0 +1,53 @@
+{
+    "$schema": "https://schema.freqtrade.io/schema.json",
+    "trading_mode": "spot",
+    "max_open_trades": 3,
+    "stake_currency": "USDT",
+    "stake_amount": 200,
+    "fiat_display_currency": "USD",
+    "dry_run": true,
+    "dry_run_wallet": 1000,
+    "timeframe": "5m",
+    "strategy": "GeminiV5_strategy",
+    "exchange": {
+        "name": "binance",
+        "pair_whitelist": [
+            "BTC/USDT",
+            "ETH/USDT"
+        ]
+    },
+    "entry_pricing": {
+        "price_side": "ask",
+        "use_order_book": true,
+        "order_book_top": 1
+    },
+    "exit_pricing": {
+        "price_side": "bid",
+        "use_order_book": true,
+        "order_book_top": 1
+    },
+    "pairlists": [
+        {
+            "method": "StaticPairList"
+        }
+    ],
+    "freqai": {
+        "enabled": true,
+        "freqaimodel": "LightGBMClassifier",
+        "identifier": "gemini-v5-trend",
+        "train_period_days": 30,
+        "backtest_period_days": 7,
+        "feature_parameters": {
+            "label_period_candles": 24,
+            "include_timeframes": ["5m"],
+            "include_corr_pairlist": ["BTC/USDT", "ETH/USDT"],
+            "indicator_periods_candles": [20]
+        },
+        "data_split_parameters": {
+            "test_size": 0.2
+        },
+        "model_training_parameters": {
+            "class_weight": "balanced"
+        }
+    }
+}
