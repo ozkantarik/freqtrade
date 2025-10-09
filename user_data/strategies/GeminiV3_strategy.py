@@ -150,7 +150,7 @@ class GeminiV3_strategy(IStrategy):
         future_return = (future_max_price - dataframe["close"]) / dataframe["close"]
 
         # Create the binary classification target as strings
-        dataframe["&-s_class"] = (future_return > 0.01).astype(str)
+        dataframe["&-s_class"] = (future_return > 0.005).astype(str)
 
         return dataframe
 
