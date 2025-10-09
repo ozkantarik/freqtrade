@@ -17,13 +17,13 @@
       "max_open_trades": 2
     },
     "buy": {
-      "buy_future_max_return": 0.011
+      "buy_future_max_return": 0.079
     },
     "sell": {
-      "sell_future_max_return": 0.009
+      "sell_future_max_return": 0.001
     },
     "protection": {}
   },
   "ft_stratparam_v": 1,
-  "export_time": "2025-10-09 11:07:52.737248+00:00"
+  "export_time": "2025-10-09 13:08:25.197174+00:00"
 }
