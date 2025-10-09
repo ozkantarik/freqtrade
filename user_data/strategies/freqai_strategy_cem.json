@@ -1,0 +1,10 @@
+{
+    "params": {
+        "buy": {
+            "buy_future_max_return": 0.03
+        },
+        "sell": {
+            "sell_future_max_return": 0.01
+        }
+    }
+}
