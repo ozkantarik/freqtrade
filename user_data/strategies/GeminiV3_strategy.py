@@ -109,6 +109,10 @@ class GeminiV3_strategy(IStrategy):
 
         # --- Advanced Feature Creation ---
 
+        # Lag features (price change over the last N candles)
+        for lag in [1, 2, 3, 5, 8]:
+            dataframe[f"%-pct_change_{lag}"] = dataframe["close"].pct_change(periods=lag)
+
         # Feature 1: Trend Strength (slope of the 50-period EMA)
         dataframe["%-trend_strength"] = ta.LINEARREG_SLOPE(dataframe["ema_50"], timeperiod=10)
 
