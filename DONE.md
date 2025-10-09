@@ -4,6 +4,15 @@ This file is a log of completed missions, experiments, and their outcomes.
 
 ---
 
+### Mission: `GeminiV4` - Volatility Trading Strategy
+
+- **Objective:** Build a strategy to identify and trade volatility breakouts using a "squeeze" indicator.
+- **Final Commit:** `dc913f9b0` (baseline commit)
+- **Summary:** We designed a strategy to have an AI predict profitable breakouts following a volatility squeeze. The strategy was successfully built and debugged, but even after extensive Hyperopt tuning over a long date range, the model never found a single trading opportunity. 
+- **Final Conclusion:** **Not Viable.** The specific pattern of a predictable, profitable breakout following a Bollinger/Keltner squeeze is not present or reliably detectable in the data with this approach.
+
+---
+
 ### Mission: `GeminiV3` - Predictive AI Strategy
 
 - **Objective:** Develop a profitable trading strategy by predicting future price movements.
