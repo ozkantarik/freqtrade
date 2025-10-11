@@ -4,6 +4,18 @@ This file tracks upcoming tasks, long-term goals, and strategic ideas for the Fr
 
 ---
 
+## 🎯 Active Discussion (This Session)
+
+- **[ ] Integrate Freqtrade with MCP Orchestrator**
+
+---
+
+# Project TODO
+
+This file tracks upcoming tasks, long-term goals, and strategic ideas for the Freqtrade AI project. Each item includes context and reasoning to provide a comprehensive knowledge base.
+
+---
+
 ## 🎯 Active Mission
 
 - **[ ] `GeminiV6` - Decoupled Trend-Following**
@@ -33,6 +45,14 @@ This file tracks upcoming tasks, long-term goals, and strategic ideas for the Fr
     - **[WHY]:** Our ultimate vision is a multi-agent AI trading firm. We have the trading engine (`CemV1Strategy`) and a prototype for the communication backbone (the MCP server). This task is the critical bridge to connect them.
     - **[WHAT]:** Create a standalone "Trader AI Agent" script.
     - **[HOW]:** This agent's script would be a Python file that runs in its own terminal. It would periodically query the MCP server for directives (e.g., `{'directive': 'START_TRADE_BOT', 'strategy': 'CemV1Strategy'}`). Upon receiving a directive, it would construct and execute the appropriate `freqtrade` shell command. It would also need the ability to find and terminate existing `freqtrade` processes to stop the bot when directed.
+
+- **[ ] Define Advanced Agent Behaviors & Operational Logic**
+    - **[WHY]:** To translate our high-level agent roles (Trader, Auditor, etc.) into concrete, implementable logic, capturing the detailed operational procedures from our previous research.
+    - **[WHAT]:** Document the specific, rule-based behaviors for each agent in our AI Firm.
+    - **[HOW]:** This involves specifying the exact logic for each agent:
+        - **Trader Agent:** Must be programmed to report P&L hourly via the MCP. It must also have a function to automatically halt trading and alert the CEO if a configurable drawdown limit is breached (e.g., -2% over 3 hours).
+        - **Auditor Agent:** Must be programmed to automatically fetch new models from the "Quant Group" and run them through a gauntlet of backtests against pre-defined risk metrics (e.g., Sharpe Ratio > 1.5, Max Drawdown < 20%), flagging under-performers.
+        - **CEO Agent:** Must have the capability to issue parallelized tasks to multiple agents simultaneously (e.g., instructing 5 "Quant" agents to each train a different model on a different coin).
 
 ---
 
@@ -130,6 +150,11 @@ This file tracks upcoming tasks, long-term goals, and strategic ideas for the Fr
     - **[WHY]:** Markets are non-stationary; their underlying dynamics are always changing. A model that can adapt in real-time will always have a fresher, more relevant understanding of the market than a stale, offline model.
     - **[HOW]:** This would involve exploring models designed for online learning (e.g., using the **River ML** library). This agent wouldn't replace the offline models entirely but could act as a "fine-tuner," making small adjustments to a main strategy's predictions based on the very latest market action.
 
+- **[ ] The "Portfolio Manager" Agent (The Alpha Accountant)**
+    - **[CONCEPT]:** A specialized agent that continuously analyzes the performance of all other trading agents and strategies in the portfolio. It provides the CEO agent with the critical data needed for strategic capital allocation.
+    - **[WHY]:** To run our system like a true fund, the CEO needs to make data-driven decisions. Is the "Black Swan" Hunter" actually skillful, or just lucky? Are the "Breakout Hunter" and "CemV1" secretly making the same trades, creating hidden concentration risk? This agent answers those questions.
+    - **[HOW]:** This agent would consume the trade logs from all live strategies and calculate advanced portfolio metrics (Sharpe/Sortino Ratios, Alpha/Beta, Drawdown Analysis, Correlation Matrix). The output of this agent *is* the primary data source for the "virtual dashboard" consumed by the CEO Agent via the MCP.
+
 ---
 
 ## 🧹 Knowledge & Maintenance
@@ -137,3 +162,16 @@ This file tracks upcoming tasks, long-term goals, and strategic ideas for the Fr
 - **[ ] Review and apply the model management strategies outlined in `KNOWLEDGEBASE.md`**
     - **[WHY]:** To ensure our `user_data/models/` directory remains organized, reproducible, and that we can leverage past experiments effectively.
     - **[WHAT]:** Periodically revisit the `KNOWLEDGEBASE.md` file to execute model cleanup and leverage old models for new tests.
+
+---
+
+## ⚙️ Operational Frameworks
+
+- **[ ] Implement GitFlow Branching Model**
+    - **[WHY]:** As our project grows with multiple agents and experiments ("Hunters," "Forges," etc.), our current single `develop` branch will become chaotic and risky. Adopting a professional branching model is necessary to allow for radical experimentation without destabilizing our working, profitable strategies.
+    - **[WHAT]:** Transition our Git workflow to the GitFlow model.
+    - **[HOW]:** This involves establishing a set of branch conventions:
+        - **`main`:** Sacred branch for production-ready code only.
+        - **`develop`:** The primary integration branch for completed features.
+        - **`feature/<agent-name>`:** All new work (e.g., `feature/black-swan-hunter`) will be done in isolated branches, protecting `develop` and `main` from experimental code until it is tested and approved.
+    - **[STATUS]:** Postponed. We will implement this when the project's complexity makes it necessary.
