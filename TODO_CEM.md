@@ -1,4 +1,3 @@
-
 # Project `CemV1Strategy` - TODO List
 
 This file outlines the future development roadmap and strategic goals for the project.
@@ -49,3 +48,12 @@ This file outlines the future development roadmap and strategic goals for the pr
 *   **Priority:** 6
 *   **Description:** Begin scaffolding the `Tmux-Orchestrator` framework to manage the `CemV1Strategy` bot as a 'worker' agent.
 *   **Goal:** To achieve the final vision of an AI-managed trading firm where a 'CEO' agent can start, stop, and monitor this strategy bot.
+
+## 7. Enhance Single-Stage Model (Alternative Path)
+
+*   **Priority:** Low (User-deferred)
+*   **Description:** Instead of pursuing the two-stage model, focus on improving the profitable single-stage `CemV1Strategy`.
+*   **Tasks:**
+    *   Add a wider variety of features (volatility, volume-based, etc.) to the `feature_engineering_*` functions.
+    *   Re-run `hyperopt` on the enriched feature set to find new optimal parameters.
+    *   Analyze feature importance to prune non-informative features.

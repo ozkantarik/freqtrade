@@ -5,7 +5,7 @@ import talib.abstract as ta
 from pandas import DataFrame
 
 import freqtrade.vendor.qtpylib.indicators as qtpylib
-from freqtrade.strategy import IStrategy
+from freqtrade.strategy import IntParameter, IStrategy
 
 
 class GeminiV5_strategy(IStrategy):
@@ -19,8 +19,13 @@ class GeminiV5_strategy(IStrategy):
     INTERFACE_VERSION = 3
     timeframe = "5m"
 
+    # Define optimizable parameter for the trend definition
+    buy_adx_threshold = IntParameter(20, 40, default=25, space="buy")
+    fast_ema_period = IntParameter(10, 60, default=50, space="buy")
+    slow_ema_period = IntParameter(100, 300, default=200, space="buy")
+
     # Minimal ROI and stoploss are fallbacks
-    minimal_roi = {"0": 0.10}
+    minimal_roi = {"0": 0.1}
     stoploss = -0.10
     use_exit_signal = True
     startup_trend_req = 200
@@ -34,8 +39,8 @@ class GeminiV5_strategy(IStrategy):
         dataframe["plus_di"] = ta.PLUS_DI(dataframe)
         dataframe["minus_di"] = ta.MINUS_DI(dataframe)
 
-        dataframe["ema_fast"] = ta.EMA(dataframe, timeperiod=50)
-        dataframe["ema_slow"] = ta.EMA(dataframe, timeperiod=200)
+        dataframe["ema_fast"] = ta.EMA(dataframe, timeperiod=self.fast_ema_period.value)
+        dataframe["ema_slow"] = ta.EMA(dataframe, timeperiod=self.slow_ema_period.value)
 
         # --- FreqAI Run ---
         dataframe = self.freqai.start(dataframe, metadata, self)
@@ -68,9 +73,14 @@ class GeminiV5_strategy(IStrategy):
 
         # Define what a strong uptrend is
         strong_uptrend = (
-            (dataframe["adx"] > 25)
+            (dataframe["adx"] > self.buy_adx_threshold.value)
             & (dataframe["plus_di"] > dataframe["minus_di"])
             & (dataframe["ema_fast"] > dataframe["ema_slow"])
+        )
+
+        # --- DIAGNOSTIC ---
+        print(
+            f"\n\n: For {metadata['pair']}, found {strong_uptrend.sum()} 'strong_uptrend' signal\n"
         )
 
         # Define if the trend continued
