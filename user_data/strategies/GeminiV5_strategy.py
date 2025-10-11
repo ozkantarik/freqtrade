@@ -78,11 +78,6 @@ class GeminiV5_strategy(IStrategy):
             & (dataframe["ema_fast"] > dataframe["ema_slow"])
         )
 
-        # --- DIAGNOSTIC ---
-        print(
-            f"\n\n: For {metadata['pair']}, found {strong_uptrend.sum()} 'strong_uptrend' signal\n"
-        )
-
         # Define if the trend continued
         trend_continued = dataframe["close"].shift(-label_period) > dataframe["close"]
 
