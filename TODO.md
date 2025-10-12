@@ -41,6 +41,9 @@ This file tracks upcoming tasks, long-term goals, and strategic ideas for the Fr
     - The **"Narrative Analyst" Agent** is the team of these specialist agents, feeding the dashboard.
     - The **"Trader Agents"** and **"Developer Agents"** are the "Hunters" and "Strategy Forges" that the CEO commands to execute its vision.
 
+- **[CONCEPT]: Dynamic Agent Spawning**
+    - The CEO Agent should have the ability to dynamically spawn temporary, mission-specific "task force" agents, in addition to commanding its permanent "departments." This allows for a more flexible and efficient allocation of resources for short-term R&D tasks, like the "Strategy Development Factory" scenario.
+
 - **[ ] Integrate Freqtrade with MCP Orchestrator**
     - **[WHY]:** Our ultimate vision is a multi-agent AI trading firm. We have the trading engine (`CemV1Strategy`) and a prototype for the communication backbone (the MCP server). This task is the critical bridge to connect them.
     - **[WHAT]:** Create a standalone "Trader AI Agent" script.
@@ -53,6 +56,11 @@ This file tracks upcoming tasks, long-term goals, and strategic ideas for the Fr
         - **Trader Agent:** Must be programmed to report P&L hourly via the MCP. It must also have a function to automatically halt trading and alert the CEO if a configurable drawdown limit is breached (e.g., -2% over 3 hours).
         - **Auditor Agent:** Must be programmed to automatically fetch new models from the "Quant Group" and run them through a gauntlet of backtests against pre-defined risk metrics (e.g., Sharpe Ratio > 1.5, Max Drawdown < 20%), flagging under-performers.
         - **CEO Agent:** Must have the capability to issue parallelized tasks to multiple agents simultaneously (e.g., instructing 5 "Quant" agents to each train a different model on a different coin).
+
+- **[ ] Define Core Orchestration Technology**
+    - **[WHY]:** To turn our abstract architectural blueprint into a concrete technical plan.
+    - **[WHAT]:** Formally adopt `tmux` as the core framework for managing our multi-agent system and the `spec.md`/`prompt.md` file structure for issuing directives to the CEO agent.
+    - **[HOW]:** The "Integrate Freqtrade with MCP Orchestrator" task will be implemented using `tmux` to create and manage the different agent windows (CEO, Trader, etc.). The CEO agent will be programmed to read a `prompt.md` file to begin its work.
 
 ---
 
@@ -114,6 +122,11 @@ This file tracks upcoming tasks, long-term goals, and strategic ideas for the Fr
     - **[WHY]:** High-risk strategies require a stable capital base to draw from. This agent provides it by exploiting market inefficiencies rather than predicting market direction.
     - **[HOW]:** This agent would constantly monitor **funding rates** on perpetual futures and **basis spreads** across multiple exchanges. When a significant, sustained arbitrage opportunity appears, it would take opposing positions on the two exchanges to capture the spread as near risk-free profit.
 
+- **[ ] The "Decay Hunter" Agent (ETF Rebalancing)**
+    - **[GOAL]:** To profit from the inherent value decay of leveraged ETFs during periods of high volatility and low directional trend.
+    - **[WHY]:** This provides a source of alpha that is uncorrelated to market direction, allowing the firm to profit from sideways, choppy markets where other strategies fail.
+    - **[HOW]:** This agent would be activated by the "Market Regime Filter." It would identify suitable leveraged ETFs, verify their shortability on our target exchange, and execute short positions, holding them for a multi-day period to capture the effect of volatility decay.
+
 ---
 
 ## ✨ PHASE 3: The Sentient Trading Floor (Long-Term Vision)
@@ -154,6 +167,14 @@ This file tracks upcoming tasks, long-term goals, and strategic ideas for the Fr
     - **[CONCEPT]:** A specialized agent that continuously analyzes the performance of all other trading agents and strategies in the portfolio. It provides the CEO agent with the critical data needed for strategic capital allocation.
     - **[WHY]:** To run our system like a true fund, the CEO needs to make data-driven decisions. Is the "Black Swan" Hunter" actually skillful, or just lucky? Are the "Breakout Hunter" and "CemV1" secretly making the same trades, creating hidden concentration risk? This agent answers those questions.
     - **[HOW]:** This agent would consume the trade logs from all live strategies and calculate advanced portfolio metrics (Sharpe/Sortino Ratios, Alpha/Beta, Drawdown Analysis, Correlation Matrix). The output of this agent *is* the primary data source for the "virtual dashboard" consumed by the CEO Agent via the MCP.
+
+- **[ ] The "DevOps" Team (Self-Healing Codebase)**
+    - **[CONCEPT]:** An always-on team of agents dedicated to automating the maintenance of our `freqtrade` fork.
+    - **[WHY]:** To ensure our system always has the latest features, bug fixes, and security patches from the upstream `freqtrade` repository without requiring manual intervention.
+    - **[HOW]:** This team would consist of:
+        - A **"Lookout"** agent that periodically runs `git pull upstream develop`.
+        - A **"Quality Control"** agent that runs tests and static analysis on the new code.
+        - A **"Corrector"** agent that attempts to automatically fix any merge conflicts or new errors introduced by the update.
 
 ---
 
