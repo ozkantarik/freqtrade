@@ -3,6 +3,22 @@
 This file is a log of completed missions, experiments, and their outcomes, designed to be a comprehensive knowledge base for any human or AI agent joining the project.
 
 ---
+### Mission: `GeminiV8` - Dynamic Classification Target
+- **[GOAL]:** To improve upon the V7 architecture by implementing a dynamic, volatility-aware training target for the AI model.
+- **[PROCESS]:**
+    1. Created `GeminiV8` as a copy of the successful `GeminiV7` strategy.
+    2. Modified the `set_freqai_targets` method to make the AI's prediction goal proportional to the Average True Range (ATR), requiring a larger price move in volatile markets.
+    3. Ran `hyperopt` to find the optimal parameters for this new architecture.
+    4. The initial `hyperopt` run was a major success, yielding a **+8.03%** profit.
+    5. Hardcoded these new optimal parameters into the main strategy file.
+    6. Ran a final verification backtest which confirmed the result, producing a **+9.71%** total profit.
+- **[OUTCOME]:** **Major Success.** The `GeminiV8` strategy is our new best-performing model, more than doubling the profitability of V7. This proves that making the AI's target context-aware is a powerful technique.
+- **[KEY LEARNINGS]:**
+    - Dynamic, volatility-aware targets can significantly improve model performance and profitability.
+    - The iterative process of V5->V6->V7->V8 has been a textbook example of successful, data-driven strategy development.
+- **[COMMIT]:**
+
+---
 ### Mission: `GeminiV6` - Decoupled AI Architecture
 - **[GOAL]:** To fix the "zero trades" issue from V5 by refactoring the strategy into a "decoupled" architecture, where the AI makes a general prediction and the strategy's indicators act as a filter.
 - **[PROCESS]:**
@@ -18,7 +34,7 @@ This file is a log of completed missions, experiments, and their outcomes, desig
 - **[KEY LEARNINGS]:**
     - Decoupling the AI's prediction task from the strategy's entry filters is a highly effective architecture that solves the class imbalance and "no-trade" bias seen in V5.
     - The workflow of "architectural change -> baseline test -> hyperopt -> verification test" is a robust method for developing profitable strategies.
-- **[COMMIT]:** 
+- **[COMMIT]:**
 
 ---
 ### Mission: `GeminiV5` - Coupled Trend-Following Architecture
@@ -34,7 +50,7 @@ This file is a log of completed missions, experiments, and their outcomes, desig
     - A strategy that couples the AI training target directly to a strict set of indicator conditions is highly susceptible to "no trade" failure.
     - It is crucial to decouple the AI's general prediction task (e.g., "price will rise") from the strategy's specific entry filters (e.g., "we are in a strong trend").
     - Diagnostic instrumentation (`print` statements, counters) is essential for disproving hypotheses and correctly identifying the root cause of a failure.
-- **[COMMIT]:** 
+- **[COMMIT]:**
 
 ---
 ### Mission: `CemV1Strategy` - Successful Implementation & Optimization

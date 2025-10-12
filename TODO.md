@@ -70,10 +70,16 @@ This file tracks upcoming tasks, long-term goals, and strategic ideas for the Fr
     - **[WHY]:** This is a classic, proven trading archetype that is the opposite of trend-following. It operates on the assumption that prices will revert to a historical average.
     - **[WHAT]:** Design and build a new FreqAI strategy based on mean-reversion principles.
     - **[HOW]:** An agent could start by using features like RSI, Stochastic RSI, or the distance of the price from a long-term moving average. The AI's goal would be to predict when the price is "over-extended" and likely to snap back.
+        - **[NOTE]:** A potential implementation could be a "HFT-Lite" version focused on very short timeframes (seconds).
 
 - **[ ] Trend-Continuation Classifier**
     - **[WHY]:** A variation of trend-following. Instead of just identifying a trend, this would use AI to determine the probability of an *existing* trend continuing.
     - **[WHAT]:** Build a strategy that first confirms a strong trend is in place using traditional indicators (like ADX), and *then* uses an AI model to decide if it's a good time to enter in the direction of that trend.
+
+- **[ ] Explore Options Trading Strategies**
+    - **[WHY]:** To expand our firm's capabilities beyond spot/futures and into the derivatives market, which offers unique opportunities for alpha generation.
+    - **[WHAT]:** Research and develop agents capable of trading options.
+    - **[HOW]:** The first candidate for implementation would be a **"Vol-Skew Harvest"** strategy. This involves using delta-hedged straddle/strangle combinations to profit from mispricings in the options volatility skew.
 
 ---
 
@@ -111,6 +117,7 @@ This file tracks upcoming tasks, long-term goals, and strategic ideas for the Fr
     - **[GOAL]:** To profit from extreme market volatility events (flash crashes, parabolic spikes).
     - **[WHY]:** A single, correctly predicted 30-50% market move, when properly leveraged, can generate returns that would otherwise take years to accumulate. This is the highest risk/reward agent.
     - **[HOW]:** This agent would monitor derivatives data, order book depth, cross-exchange liquidity gaps, and extreme volatility indicators. It would be trained to recognize the statistical signatures that precede a liquidity crisis or cascading liquidation event and execute a significant leveraged position.
+        - **[NOTE]:** This can be enhanced with an "Event-Driven" approach, using a macro-economic calendar to anticipate volatility around specific known events (e.g., FED announcements, token unlocks).
 
 - **[ ] The "Breakout" Hunter (Multi-Year Level Exploitation)**
     - **[GOAL]:** To profit from the momentum ignition when a major asset breaks a multi-year support or resistance level.
@@ -126,12 +133,18 @@ This file tracks upcoming tasks, long-term goals, and strategic ideas for the Fr
     - **[GOAL]:** To profit from the inherent value decay of leveraged ETFs during periods of high volatility and low directional trend.
     - **[WHY]:** This provides a source of alpha that is uncorrelated to market direction, allowing the firm to profit from sideways, choppy markets where other strategies fail.
     - **[HOW]:** This agent would be activated by the "Market Regime Filter." It would identify suitable leveraged ETFs, verify their shortability on our target exchange, and execute short positions, holding them for a multi-day period to capture the effect of volatility decay.
+        - **[NOTE]:** A more advanced version could incorporate an AI-driven "factor-tilt" (e.g., shifting from low-volatility to momentum based on market conditions).
+
+- **[ ] The "Stat-Arb" Hunter (Statistical Arbitrage)**
+    - **[GOAL]:** To profit from temporary statistical deviations in a basket of cointegrated assets (e.g., crypto stocks, related tokens, ETFs).
+    - **[WHY]:** A market-neutral strategy that profits from relative value rather than market direction. It is often highly compatible with leverage.
+    - **[HOW]:** The agent would find a basket of assets that historically move together. When one asset in the basket deviates significantly from the others, the agent would short the outperformer and long the underperformer(s), betting on the statistical relationship (the "spread") to revert to its mean.
 
 ---
 
 ## ✨ PHASE 3: The Sentient Trading Floor (Long-Term Vision)
 
-- **[PHILOSOPHY]:** This is the ultimate evolution of our project. It moves beyond a static portfolio of agents into a self-improving, self-auditing ecosystem. The goal is to create a system that not only executes trades but also *autonomously creates, tests, and refines its own strategies* while actively trying to eliminate its own weaknesses.
+- **[PHILOSOPHY]:** This is the ultimate evolution of our project. It moves beyond a static portfolio of agents into a self-improving, self-auditing ecosystem. The goal is to create a system that not only executes trades but also *autonomously creates, tests, and refines its own strategies* while actively trying to eliminate its own weaknesses. The emergent behavior of this system is the **"Adaptive Alpha Hunter"** - a firm that automatically re-trains and re-allocates capital when its profit curve begins to droop.
 
 - **[ ] The "Strategy Forge" (The R&D Department)**
     - **[CONCEPT]:** An engine that uses **Genetic Algorithms (GAs)** to automatically evolve new, profitable "Hunter" agents.
@@ -196,3 +209,12 @@ This file tracks upcoming tasks, long-term goals, and strategic ideas for the Fr
         - **`develop`:** The primary integration branch for completed features.
         - **`feature/<agent-name>`:** All new work (e.g., `feature/black-swan-hunter`) will be done in isolated branches, protecting `develop` and `main` from experimental code until it is tested and approved.
     - **[STATUS]:** Postponed. We will implement this when the project's complexity makes it necessary.
+
+---
+
+## PHASE 4: Future Frontiers (Post-Sentience)
+
+- **[ ] Liquidity Magnet Market-Maker (LMO)**
+    - **[CONCEPT]:** A market-making strategy that analyzes order book micro-structure to provide liquidity and capture the bid-ask spread, plus exchange rebates.
+    - **[WHY]:** This is a fundamentally different source of alpha that can generate profit even in flat, low-volatility markets. It is a highly specialized, institutional-grade strategy.
+    - **[STATUS]:** Postponed. This likely requires a different, lower-latency technology stack than Freqtrade and should only be considered after the core AI Firm is fully operational and profitable.
