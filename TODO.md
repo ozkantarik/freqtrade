@@ -18,10 +18,19 @@ This file tracks upcoming tasks, long-term goals, and strategic ideas for the Fr
 
 ## 🎯 Active Mission
 
-- **[ ] `GeminiV6` - Decoupled Trend-Following**
-    - **[WHY]:** The `GeminiV5` experiment proved that a "coupled" architecture (training the AI on pre-filtered signals) is flawed and leads to a no-trade bias. This is our attempt to fix that core problem.
-    - **[WHAT]:** Refactor the strategy to decouple the AI's prediction from the strategy's entry filters.
-    - **[HOW]:** The AI's job will be simplified to predict "will the price rise in the next N candles?" on all data. The strategy's job will be to use its trend indicators as a filter, only acting on the AI's signal when the trend conditions are met.
+- **[ ] `GeminiV10` - The Patient Hunter**
+    - **[WHY]:** The `GeminiV9` experiment proved that our trend-following logic is profitable, but the mean-reversion logic for ranging markets was a failure. This mission will leverage that insight.
+    - **[WHAT]:** Create a strategy that uses the V9 regime filter to actively trade trending markets and sit in cash during ranging markets.
+    - **[HOW]:** Refactor the `GeminiV9` strategy to remove the `ranging_buy` logic and only trade when the regime filter identifies a trend.
+
+- **[ ] `GeminiV11` - The All-Weather Hunter (Shorting Ranging Markets)**
+    - **[WHY]:** The `GeminiV10` "Patient Hunter" proves the value of the regime filter by avoiding unprofitable ranging markets. The next logical evolution is to monetize these ranging periods instead of sitting in cash.
+    - **[WHAT]:** Enhance the `GeminiV10` architecture to include a "shorting" personality that activates during ranging market conditions.
+    - **[HOW]:**
+        - This will require a significant architectural shift to `futures` trading mode.
+        - A new, separate AI model will need to be trained to specifically predict price *decreases*.
+        - New mean-reversion logic will be implemented to enter short positions when the market is ranging and RSI is overbought.
+        - The `populate_entry_trend` will be refactored to switch between `long` and `short` personalities based on the regime filter.
 
 - **[ ] Enhance `CemV1Strategy` - Our Current Best Model**
     - **[WHY]:** We achieved a significant milestone with `CemV1Strategy`, creating a profitable baseline. Before exploring entirely new strategies, we should maximize the potential of our best-performing asset.
