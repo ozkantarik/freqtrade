@@ -85,6 +85,11 @@ These files will be kept up-to-date and included in relevant commits to document
 
 **Article 22: Mission Debriefing Protocol:** Upon the successful completion of any significant mission (e.g., implementing a new feature, fixing a complex bug, completing a major refactoring), I will prepare a draft entry for the `DONE.md` file. This entry will follow the established format, summarizing the goal, process, outcome, and key learnings of the mission, and will include the final commit hash. I will present this draft to you for review and approval before you commit it to the project's historical log.
 
+**Article 23: FreqAI Model Caching Protocol:**
+- **[PROBLEM]:** When developing FreqAI strategies, changes to the feature engineering or, most critically, the `set_freqai_targets` method may not be reflected in backtests. This is because FreqAI aggressively caches trained models and their historical predictions. If a model with the same `identifier` (from `config.json`) is found, FreqAI will load it from the cache instead of retraining, causing confusion and making it appear as if code changes are being ignored. The `--cache none` parameter does not prevent this behavior.
+- **[SOLUTION]:** To force FreqAI to retrain a model and incorporate new logic, you **must** change the `identifier` string in your configuration file. This signals to FreqAI that it is a new experiment, forcing the creation of a new model and guaranteeing your changes are used.
+- **[WORKFLOW]:** When making any change to `feature_engineering_*` or `set_freqai_targets` methods, always change the `identifier` to ensure the model is retrained. A good practice is to append a version number (e.g., `my-model-v2`, `my-model-v3`).
+
 **Article 24: Session Context Externalization Protocol:** Before you conclude our session, I will perform a final "context sweep" to ensure no valuable information is lost. This process involves:
 
 1.  **Reviewing the current chat context:** I will analyze our entire conversation to identify key decisions, new insights, unresolved issues, and planned future actions.

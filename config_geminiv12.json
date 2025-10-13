@@ -9,7 +9,7 @@
     "dry_run": true,
     "dry_run_wallet": 1000,
     "timeframe": "5m",
-    "strategy": "GeminiV11_strategy",
+    "strategy": "GeminiV12_strategy",
     "exchange": {
         "name": "binance",
         "pair_whitelist": [
@@ -35,7 +35,7 @@
     "freqai": {
         "enabled": true,
         "freqaimodel": "LightGBMClassifier",
-        "identifier": "gemini-v11-mc6-features",
+        "identifier": "gemini-v12-regressor-v1",
         "train_period_days": 30,
         "backtest_period_days": 7,
         "feature_parameters": {
@@ -48,7 +48,6 @@
             "test_size": 0.2
         },
         "model_training_parameters": {
-            "class_weight": {"0": 0.1, "1": 1.0, "2": 1.0}
         }
     }
 }

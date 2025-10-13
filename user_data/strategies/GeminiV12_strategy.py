@@ -9,26 +9,26 @@ import freqtrade.vendor.qtpylib.indicators as qtpylib
 from freqtrade.strategy import IStrategy, DecimalParameter
 
 
-class GeminiV11_strategy(IStrategy):
+class GeminiV12_strategy(IStrategy):
     """
-    GeminiV11 - The All-Weather Hunter
+    GeminiV12 - The Confidence Engine
 
-    This strategy is a true all-weather hunter, capable of going long in
-    trending markets and short in ranging markets.
+    This strategy uses a regression model to predict future returns and trades
+    based on the confidence of that prediction.
     """
 
     INTERFACE_VERSION = 3
     timeframe = "5m"
     can_short = True
 
+    # --- Hyperparameters ---
+    entry_threshold = 0.01 # Custom entry threshold
+
     # --- Optimal Trend-Following Parameters (from V8) ---
     buy_adx_threshold = 26
     fast_ema_period = 50
     slow_ema_period = 358
     slope_period = 7
-
-    # --- Optimizable AI Target ---
-    target_atr_multiplier = DecimalParameter(0.1, 1.0, default=0.49, space="buy")
 
     # --- Market Regime Filter Parameters ---
     regime_adx_threshold = 25
@@ -93,24 +93,12 @@ class GeminiV11_strategy(IStrategy):
 
     def set_freqai_targets(self, dataframe: DataFrame, metadata: dict, **kwargs) -> DataFrame:
         """
-        Target for the primary AI model.
+        Target for the new regression model.
         """
         label_period = self.freqai_info["feature_parameters"]["label_period_candles"]
-        future_price = dataframe["close"].shift(-label_period)
-
-        # Define thresholds for UP and DOWN movements
-        up_threshold = dataframe["close"] + (dataframe["atr"] * self.target_atr_multiplier.value)
-        down_threshold = dataframe["close"] - (dataframe["atr"] * self.target_atr_multiplier.value)
-
-        # Set conditions for each class
-        conditions = [
-            (future_price > up_threshold),  # Class 2: UP
-            (future_price < down_threshold), # Class 1: DOWN
-        ]
-        # Default class is 0 (SIDEWAYS)
-        choices = ["2", "1"]
-        dataframe["&-s_class"] = np.select(conditions, choices, default="0")
-
+        dataframe["&s-future_return"] = (
+            dataframe["close"].shift(-label_period) / dataframe["close"] - 1
+        )
         return dataframe
 
     def populate_entry_trend(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
@@ -123,17 +111,17 @@ class GeminiV11_strategy(IStrategy):
 
     def populate_entry_long_trend(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
         """
-        Long entry logic - PURE AI TEST
+        Long entry logic - REGRESSION MODEL
         """
         enter_long_conditions = [
             (dataframe["do_predict"] == 1),
-            (dataframe["&-s_class"] == "2"),  # Enter on explicit UP signal
+            (dataframe["&-s_prediction"] > self.entry_threshold),
         ]
 
         dataframe.loc[
             reduce(lambda x, y: x & y, enter_long_conditions),
             ["enter_long", "enter_tag"],
-        ] = (1, "pure_ai_long")
+        ] = (1, "regression_long")
         return dataframe
 
     def populate_exit_long_trend(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
@@ -148,17 +136,17 @@ class GeminiV11_strategy(IStrategy):
 
     def populate_entry_short_trend(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
         """
-        Short entry logic - PURE AI TEST
+        Short entry logic - REGRESSION MODEL
         """
         enter_short_conditions = [
             (dataframe["do_predict"] == 1),
-            (dataframe["&-s_class"] == "1"),  # Enter on explicit DOWN signal
+            (dataframe["&-s_prediction"] < -self.entry_threshold),
         ]
 
         dataframe.loc[
             reduce(lambda x, y: x & y, enter_short_conditions),
             ["enter_short", "enter_tag"],
-        ] = (1, "pure_ai_short")
+        ] = (1, "regression_short")
 
     def populate_exit_short_trend(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
         """

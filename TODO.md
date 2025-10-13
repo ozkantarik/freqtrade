@@ -75,6 +75,11 @@ This file tracks upcoming tasks, long-term goals, and strategic ideas for the Fr
 
 ## 🧠 Future Strategy R&D
 
+- **[ ] `GeminiV12` - Confidence-Based Trading**
+    - **[WHY]:** A simple class prediction (UP/DOWN/SIDEWAYS) doesn't capture the model's confidence. A model might be 51% sure or 99% sure, and the strategy should treat these differently.
+    - **[WHAT]:** Refactor the strategy to use the raw class probabilities (e.g., `&-s_class_2_prob`) instead of the final prediction.
+    - **[HOW]:** The entry logic will be changed to trade only when the predicted probability for a class crosses a certain threshold (e.g., `dataframe['&-s_class_2_prob'] > 0.7`). This threshold can then be optimized.
+
 - **[ ] Mean Reversion Strategy**
     - **[WHY]:** This is a classic, proven trading archetype that is the opposite of trend-following. It operates on the assumption that prices will revert to a historical average.
     - **[WHAT]:** Design and build a new FreqAI strategy based on mean-reversion principles.
