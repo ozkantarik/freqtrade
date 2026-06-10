@@ -3,6 +3,24 @@
 This file is a log of completed missions, experiments, and their outcomes, designed to be a comprehensive knowledge base for any human or AI agent joining the project.
 
 ---
+### Mission: `GeminiV11` - Multi-Class AI Hunter
+
+- **[GOAL]:** To develop a profitable, all-weather strategy using a 3-class FreqAI model (UP/DOWN/SIDEWAYS) to trade both long and short in futures markets.
+- **[PROCESS]:**
+    1. Refactored the `GeminiV10` strategy to a 3-class model (`UP`/`DOWN`/`SIDEWAYS`).
+    2. Encountered and solved a critical model caching issue where FreqAI would not retrain after target changes, documented as Article 23 in `GEMINI.md`.
+    3. Diagnosed the persistent "zero trades" issue as severe class imbalance; the model always predicted the majority "SIDEWAYS" class.
+    4. Attempted to solve the imbalance via `hyperopt` on the `target_atr_multiplier` to find a better class distribution. This failed to produce trades.
+    5. Attempted to solve the imbalance by manually setting `class_weight` in the configuration to force the model to prioritize minority classes. This failed to produce trades.
+    6. Attempted to solve the imbalance by enriching the feature set with `RSI` and `bb_width`. This also failed to produce trades.
+- **[OUTCOME]:** **Failure.** The classification approach, even with extensive, systematic debugging, proved non-viable for this dataset and feature set. The model was never able to find a confident edge to predict anything other than the majority class.
+- **[KEY LEARNINGS]:**
+    - A classification model is not always the right tool, especially in a noisy market where "sideways" is the dominant condition. The model's statistical correctness leads to strategic failure.
+    - When a model consistently fails to produce signals despite architectural and parameter changes, the underlying problem framing (e.g., classification vs. regression) must be questioned.
+    - The project has pivoted to a regression-based approach (`GeminiV12`) as a direct, data-driven result of these findings.
+- **[COMMIT]:** `bca853890`
+
+---
 ### Mission: `GeminiV8` - Dynamic Classification Target
 - **[GOAL]:** To improve upon the V7 architecture by implementing a dynamic, volatility-aware training target for the AI model.
 - **[PROCESS]:**

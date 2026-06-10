@@ -35,7 +35,7 @@
     "freqai": {
         "enabled": true,
         "freqaimodel": "LightGBMClassifier",
-        "identifier": "gemini-v12-regressor-v1",
+        "identifier": "gemini-v12-regressor-v8-framework-fix",
         "train_period_days": 30,
         "backtest_period_days": 7,
         "feature_parameters": {

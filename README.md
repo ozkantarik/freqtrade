@@ -1,3 +1,5 @@
+> **NOTE FOR NEW AGENT:** To understand the current state and history of the FreqAI Gemini project, please review the file `1-RESUME-IMPORTANT-ALL-NOTES.md` in the root directory. This document contains a comprehensive summary of the strategy, debugging history, and key learnings.
+
 # ![freqtrade](https://raw.githubusercontent.com/freqtrade/freqtrade/develop/docs/assets/freqtrade_poweredby.svg)
 
 [![Freqtrade CI](https://github.com/freqtrade/freqtrade/actions/workflows/ci.yml/badge.svg?branch=develop)](https://github.com/freqtrade/freqtrade/actions/)

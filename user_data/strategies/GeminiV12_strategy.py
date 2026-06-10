@@ -6,7 +6,7 @@ import talib.abstract as ta
 from pandas import DataFrame
 
 import freqtrade.vendor.qtpylib.indicators as qtpylib
-from freqtrade.strategy import IStrategy, DecimalParameter
+from freqtrade.strategy import IStrategy
 
 
 class GeminiV12_strategy(IStrategy):
@@ -20,24 +20,13 @@ class GeminiV12_strategy(IStrategy):
     INTERFACE_VERSION = 3
     timeframe = "5m"
     can_short = True
+    stoploss = -0.1
 
-    # --- Hyperparameters ---
-    entry_threshold = 0.01 # Custom entry threshold
-
-    # --- Optimal Trend-Following Parameters (from V8) ---
+    # --- V11 Feature Engineering ---
     buy_adx_threshold = 26
     fast_ema_period = 50
     slow_ema_period = 358
     slope_period = 7
-
-    # --- Market Regime Filter Parameters ---
-    regime_adx_threshold = 25
-
-    # Minimal ROI and stoploss are fallbacks
-    minimal_roi = {"0": 0.1}
-    stoploss = -0.10
-    use_exit_signal = True
-    startup_trend_req = 200
 
     @staticmethod
     def rolling_slope(ser, window):
@@ -57,11 +46,8 @@ class GeminiV12_strategy(IStrategy):
         dataframe["ema_slow"] = ta.EMA(dataframe, timeperiod=self.slow_ema_period)
         dataframe["atr"] = ta.ATR(dataframe)
         dataframe["adx_slope"] = self.rolling_slope(dataframe["adx"], self.slope_period)
-        dataframe["fast_ema_slope"] = self.rolling_slope(
-            dataframe["ema_fast"], self.slope_period
-        )
+        dataframe["fast_ema_slope"] = self.rolling_slope(dataframe["ema_fast"], self.slope_period)
 
-        # New indicators for V11
         dataframe["rsi"] = ta.RSI(dataframe)
         bollinger = qtpylib.bollinger_bands(qtpylib.typical_price(dataframe), window=20, stds=2)
         dataframe["bb_lowerband"] = bollinger["lower"]
@@ -77,17 +63,17 @@ class GeminiV12_strategy(IStrategy):
         """
         Features for the primary AI model.
         """
-        dataframe["ema_spread"] = (
-            dataframe["ema_fast"] - dataframe["ema_slow"]
-        ) / dataframe["ema_slow"]
+        dataframe["ema_spread"] = (dataframe["ema_fast"] - dataframe["ema_slow"]) / dataframe[
+            "ema_slow"
+        ]
         dataframe["%-ema_spread"] = dataframe["ema_spread"]
         dataframe["%-adx_slope"] = dataframe["adx_slope"]
         dataframe["%-fast_ema_slope"] = dataframe["fast_ema_slope"]
         dataframe["%-adx"] = dataframe["adx"]
-
-        # New features for V11
         dataframe["%-rsi"] = dataframe["rsi"]
-        dataframe["%-bb_width"] = (dataframe["bb_upperband"] - dataframe["bb_lowerband"]) / dataframe["bb_middleband"]
+        dataframe["%-bb_width"] = (
+            dataframe["bb_upperband"] - dataframe["bb_lowerband"]
+        ) / dataframe["bb_middleband"]
 
         return dataframe
 
@@ -96,7 +82,7 @@ class GeminiV12_strategy(IStrategy):
         Target for the new regression model.
         """
         label_period = self.freqai_info["feature_parameters"]["label_period_candles"]
-        dataframe["&s-future_return"] = (
+        dataframe["future_return_pct"] = (
             dataframe["close"].shift(-label_period) / dataframe["close"] - 1
         )
         return dataframe
@@ -115,7 +101,7 @@ class GeminiV12_strategy(IStrategy):
         """
         enter_long_conditions = [
             (dataframe["do_predict"] == 1),
-            (dataframe["&-s_prediction"] > self.entry_threshold),
+            (dataframe["future_return_pct"] > 0.0001),
         ]
 
         dataframe.loc[
@@ -140,13 +126,13 @@ class GeminiV12_strategy(IStrategy):
         """
         enter_short_conditions = [
             (dataframe["do_predict"] == 1),
-            (dataframe["&-s_prediction"] < -self.entry_threshold),
+            (dataframe["future_return_pct"] < -0.0001),
         ]
-
         dataframe.loc[
             reduce(lambda x, y: x & y, enter_short_conditions),
             ["enter_short", "enter_tag"],
         ] = (1, "regression_short")
+        return dataframe
 
     def populate_exit_short_trend(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
         """
